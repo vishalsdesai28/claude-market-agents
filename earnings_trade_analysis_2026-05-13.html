@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis - 2026-05-13</title>
+<style>
+  :root{
+    --bg:#0b1220; --panel:#121a2b; --panel2:#1a2438; --text:#e6edf7; --muted:#9aa7c2;
+    --accent:#4f8cff; --good:#22c55e; --warn:#f59e0b; --bad:#ef4444; --gold:#fbbf24;
+    --A:#22c55e; --B:#3b82f6; --C:#f59e0b; --D:#ef4444;
+    --border:rgba(255,255,255,0.08);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(135deg,#0b1220 0%,#101a30 100%);color:var(--text);line-height:1.55}
+  .container{max-width:1200px;margin:0 auto;padding:24px}
+  header{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 16px;border-bottom:1px solid var(--border);margin-bottom:24px}
+  header h1{margin:0 0 8px;font-size:28px;background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header .meta{color:var(--muted);font-size:14px}
+  .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:24px}
+  .summary .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+  .summary .card .num{font-size:28px;font-weight:700}
+  .summary .card .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px}
+  .grade-A{color:var(--A)} .grade-B{color:var(--B)} .grade-C{color:var(--C)} .grade-D{color:var(--D)}
+  .table-wrap{overflow-x:auto;background:var(--panel);border:1px solid var(--border);border-radius:12px;margin-bottom:24px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
+  th{background:var(--panel2);color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:0.05em}
+  tr:last-child td{border-bottom:none}
+  .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-weight:700;font-size:12px}
+  .badge.A{background:rgba(34,197,94,0.15);color:var(--A);border:1px solid rgba(34,197,94,0.3)}
+  .badge.B{background:rgba(59,130,246,0.15);color:var(--B);border:1px solid rgba(59,130,246,0.3)}
+  .badge.C{background:rgba(245,158,11,0.15);color:var(--C);border:1px solid rgba(245,158,11,0.3)}
+  .badge.D{background:rgba(239,68,68,0.15);color:var(--D);border:1px solid rgba(239,68,68,0.3)}
+  .stock-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:18px}
+  .stock-card .row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
+  .stock-card h2{margin:0;font-size:22px}
+  .stock-card .ticker{color:var(--accent);font-weight:700}
+  .stock-card .price{font-size:18px;font-weight:700}
+  .stock-card .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+  .stock-card .metric{background:var(--panel2);border-radius:10px;padding:10px 12px;text-align:center}
+  .stock-card .metric .v{font-size:16px;font-weight:700}
+  .stock-card .metric .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;margin-top:2px}
+  .stock-card .scores{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}
+  .stock-card .score-cell{background:var(--panel2);border-radius:10px;padding:10px;text-align:center}
+  .stock-card .score-cell .pts{font-size:18px;font-weight:700}
+  .stock-card .score-cell .lab{font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:2px}
+  .stock-card .summary-block{background:var(--panel2);border-radius:10px;padding:12px;margin-top:10px}
+  .stock-card .summary-block h4{margin:0 0 6px;font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em}
+  .stock-card .summary-block p{margin:0;color:var(--text);font-size:14px}
+  .stock-card ul{margin:6px 0 0;padding-left:18px;color:var(--text);font-size:14px}
+  .stock-card li{margin-bottom:4px}
+  .progress{background:rgba(255,255,255,0.08);border-radius:6px;height:8px;overflow:hidden;margin-top:6px}
+  .progress > div{height:100%;background:linear-gradient(90deg,#60a5fa,#a78bfa)}
+  .stars{color:var(--gold);font-size:14px}
+  .footer{margin-top:24px;color:var(--muted);font-size:12px;text-align:center;border-top:1px solid var(--border);padding-top:14px}
+  .disclaimer{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:10px;padding:12px;color:#fecaca;font-size:13px;margin-top:24px}
+  @media(max-width:640px){
+    .stock-card .scores{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+  <div class="meta">Report Date: <strong>2026-05-13 (Wednesday)</strong> &nbsp;|&nbsp; Generated: 2026-05-13 09:30 ET &nbsp;|&nbsp; Source: Finviz Earnings Trading Screener</div>
+</header>
+
+<section class="summary">
+  <div class="card"><div class="num">3</div><div class="lbl">Stocks Analyzed</div></div>
+  <div class="card"><div class="num grade-A">0</div><div class="lbl">A-Grade</div></div>
+  <div class="card"><div class="num grade-B">1</div><div class="lbl">B-Grade</div></div>
+  <div class="card"><div class="num grade-C">2</div><div class="lbl">C-Grade</div></div>
+  <div class="card"><div class="num grade-D">0</div><div class="lbl">D-Grade</div></div>
+</section>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th><th>Ticker</th><th>Company</th><th>Price</th><th>Gap</th><th>Score</th><th>Grade</th><th>Probability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>NBIS</strong></td><td>Nebius Group N.V.</td><td>$207.00</td><td>+15.57%</td><td>71.0</td><td><span class="badge B">B</span></td><td>62%</td></tr>
+      <tr><td>2</td><td><strong>NXT</strong></td><td>Nextracker Inc.</td><td>$141.67</td><td>+13.00%</td><td>69.0</td><td><span class="badge C">C</span></td><td>55%</td></tr>
+      <tr><td>3</td><td><strong>TSEM</strong></td><td>Tower Semiconductor Ltd.</td><td>$254.35</td><td>+15.18%</td><td>61.0</td><td><span class="badge C">C</span></td><td>50%</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- NBIS Card -->
+<div class="stock-card">
+  <div class="row">
+    <div>
+      <h2>Nebius Group N.V. <span class="ticker">(NBIS)</span></h2>
+      <div style="color:var(--muted);font-size:13px">AI Cloud / Neocloud Infrastructure &nbsp;|&nbsp; Market Cap: ~$43B</div>
+    </div>
+    <div style="text-align:right">
+      <div class="price">Price: $207.00</div>
+      <div><span class="badge B">B-Grade</span> <span class="stars">&#9733;&#9733;&#9733;&#9733;</span></div>
+      <div style="color:var(--muted);font-size:12px;margin-top:4px">Score: <strong>71.0</strong> / 100</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="metric"><div class="v">+15.57%</div><div class="l">Gap-Up</div></div>
+    <div class="metric"><div class="v">+10.60%</div><div class="l">20-Day Pre-Trend</div></div>
+    <div class="metric"><div class="v">92.6%</div><div class="l">Volume Ratio</div></div>
+    <div class="metric"><div class="v">+98.75%</div><div class="l">vs MA200</div></div>
+    <div class="metric"><div class="v">+52.60%</div><div class="l">vs MA50</div></div>
+  </div>
+
+  <div class="scores">
+    <div class="score-cell"><div class="pts">2</div><div class="lab">Gap (25%)</div></div>
+    <div class="score-cell"><div class="pts">4</div><div class="lab">Pre-Earn (30%)</div></div>
+    <div class="score-cell"><div class="pts">3</div><div class="lab">Volume (20%)</div></div>
+    <div class="score-cell"><div class="pts">5</div><div class="lab">MA200 (15%)</div></div>
+    <div class="score-cell"><div class="pts">5</div><div class="lab">MA50 (10%)</div></div>
+  </div>
+  <div class="progress"><div style="width:71%"></div></div>
+
+  <div class="summary-block">
+    <h4>Earnings Result (Q1 2026)</h4>
+    <ul>
+      <li><strong>Revenue +684% YoY</strong> — beat consensus by a wide margin; "near eightfold" jump driven by AI training/inference demand.</li>
+      <li>Management cited <strong>"unprecedented demand"</strong>; raised capex outlook to scale GW-scale AI factory in Independence, MO.</li>
+      <li>Strategic move: licensed Clarifai's inference IP and onboarded its core team to bolster Token Factory.</li>
+      <li>Stock surging in pre-market to fresh highs; analysts (Schaeffer's, Barron's) flag momentum extension.</li>
+    </ul>
+  </div>
+
+  <div class="summary-block">
+    <h4>Probability of Continuation Higher (next 2-10 days)</h4>
+    <p><strong>62%</strong> — Strongest fundamental story of the day. The very large gap (+15.6%) is the main offset (historically 10%+ gaps have only ~28% follow-through), but the combination of explosive revenue growth, tier-1 AI capex narrative, and being well above all moving averages creates buyer-of-dips dynamics.</p>
+  </div>
+
+  <div class="summary-block">
+    <h4>Technical Factors</h4>
+    <p>Trading +98.75% above MA200 and +52.60% above MA50 — Stage 2 advancement, but extended. 20-day pre-earnings trend of +10.6% reflects strong momentum into the print. Volume ratio of 92.6% is acceptable. Watch $186-180 as first support if profit-taking emerges; resistance at $197.89 (recent high).</p>
+  </div>
+</div>
+
+<!-- NXT Card -->
+<div class="stock-card">
+  <div class="row">
+    <div>
+      <h2>Nextracker Inc. <span class="ticker">(NXT)</span></h2>
+      <div style="color:var(--muted);font-size:13px">Solar Tracker / Power Conversion &nbsp;|&nbsp; Market Cap: ~$18.6B</div>
+    </div>
+    <div style="text-align:right">
+      <div class="price">Price: $141.67</div>
+      <div><span class="badge C">C-Grade</span> <span class="stars">&#9733;&#9733;&#9733;</span></div>
+      <div style="color:var(--muted);font-size:12px;margin-top:4px">Score: <strong>69.0</strong> / 100</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="metric"><div class="v">+13.00%</div><div class="l">Gap-Up</div></div>
+    <div class="metric"><div class="v">+9.09%</div><div class="l">20-Day Pre-Trend</div></div>
+    <div class="metric"><div class="v">106.3%</div><div class="l">Volume Ratio</div></div>
+    <div class="metric"><div class="v">+48.93%</div><div class="l">vs MA200</div></div>
+    <div class="metric"><div class="v">+21.18%</div><div class="l">vs MA50</div></div>
+  </div>
+
+  <div class="scores">
+    <div class="score-cell"><div class="pts">2</div><div class="lab">Gap (25%)</div></div>
+    <div class="score-cell"><div class="pts">3</div><div class="lab">Pre-Earn (30%)</div></div>
+    <div class="score-cell"><div class="pts">4</div><div class="lab">Volume (20%)</div></div>
+    <div class="score-cell"><div class="pts">5</div><div class="lab">MA200 (15%)</div></div>
+    <div class="score-cell"><div class="pts">5</div><div class="lab">MA50 (10%)</div></div>
+  </div>
+  <div class="progress"><div style="width:69%"></div></div>
+
+  <div class="summary-block">
+    <h4>Earnings Result (Q4 / FY2026)</h4>
+    <ul>
+      <li>Strong yearly growth despite "short-term" softness; topped consensus EPS expectations.</li>
+      <li>Announced <strong>definitive agreement to acquire an Advanced Power Conversion product portfolio</strong>, expanding utility-scale offering.</li>
+      <li>Schaeffer's noted bullish sentiment ahead of the print; pre-earnings momentum confirmed by post-earnings gap.</li>
+      <li>Volume on report day surged to ~5.7M shares (vs. ~2.0M 20-day avg) — institutional engagement.</li>
+    </ul>
+  </div>
+
+  <div class="summary-block">
+    <h4>Probability of Continuation Higher (next 2-10 days)</h4>
+    <p><strong>55%</strong> — Solid setup with healthy volume confirmation and acquisition catalyst, but +13% gap is in the lower follow-through bucket. Pre-earnings 20-day trend (+9%) just shy of the 10%+ "strong momentum" threshold.</p>
+  </div>
+
+  <div class="summary-block">
+    <h4>Technical Factors</h4>
+    <p>+21.18% above MA50 and +48.93% above MA200 — clean Stage 2 uptrend. Volume ratio 106.3% indicates rising interest. Resistance at $134.32 (recent high, now broken via gap); support shelf at $125-126. Acquisition narrative may extend the move; risk is solar-sector beta if rates spike.</p>
+  </div>
+</div>
+
+<!-- TSEM Card -->
+<div class="stock-card">
+  <div class="row">
+    <div>
+      <h2>Tower Semiconductor Ltd. <span class="ticker">(TSEM)</span></h2>
+      <div style="color:var(--muted);font-size:13px">Specialty Foundry / Silicon Photonics &nbsp;|&nbsp; Market Cap: ~$24.7B</div>
+    </div>
+    <div style="text-align:right">
+      <div class="price">Price: $254.35</div>
+      <div><span class="badge C">C-Grade</span> <span class="stars">&#9733;&#9733;&#9733;</span></div>
+      <div style="color:var(--muted);font-size:12px;margin-top:4px">Score: <strong>61.0</strong> / 100</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="metric"><div class="v">+15.18%</div><div class="l">Gap-Up</div></div>
+    <div class="metric"><div class="v">+3.14%</div><div class="l">20-Day Pre-Trend</div></div>
+    <div class="metric"><div class="v">87.3%</div><div class="l">Volume Ratio</div></div>
+    <div class="metric"><div class="v">+118.28%</div><div class="l">vs MA200</div></div>
+    <div class="metric"><div class="v">+37.57%</div><div class="l">vs MA50</div></div>
+  </div>
+
+  <div class="scores">
+    <div class="score-cell"><div class="pts">2</div><div class="lab">Gap (25%)</div></div>
+    <div class="score-cell"><div class="pts">3</div><div class="lab">Pre-Earn (30%)</div></div>
+    <div class="score-cell"><div class="pts">2</div><div class="lab">Volume (20%)</div></div>
+    <div class="score-cell"><div class="pts">5</div><div class="lab">MA200 (15%)</div></div>
+    <div class="score-cell"><div class="pts">5</div><div class="lab">MA50 (10%)</div></div>
+  </div>
+  <div class="progress"><div style="width:61%"></div></div>
+
+  <div class="summary-block">
+    <h4>Earnings Result (Q1 2026)</h4>
+    <ul>
+      <li>Beat-and-raise quarter: <strong>+15% YoY revenue growth</strong>; upbeat next-quarter revenue guidance.</li>
+      <li>Signed <strong>$1.3B in silicon photonics customer contracts for 2027</strong> — major AI/data-center connectivity story.</li>
+      <li>Wedbush had flagged the print as a likely beat on strong industry trends; thesis confirmed.</li>
+      <li>IBD: stock breakout on beat-and-raise narrative; new 52-week high territory.</li>
+    </ul>
+  </div>
+
+  <div class="summary-block">
+    <h4>Probability of Continuation Higher (next 2-10 days)</h4>
+    <p><strong>50%</strong> — Best-of-show fundamentals but the technical picture is overextended (+118% above MA200) and volume ratio (87.3%) is below trend, suggesting some distribution into the recent rip. The very large gap (+15%) further trims short-term follow-through odds.</p>
+  </div>
+
+  <div class="summary-block">
+    <h4>Technical Factors</h4>
+    <p>Far above all major MAs — late-stage Stage 2 / parabolic risk. 20-day pre-earnings trend only +3.14% (the stock churned in $200-220 range). Below-average volume in the run-up suggests narrow leadership. Watch $228-230 as gap-fill / first support; $200 is psychological / structural support.</p>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <strong>Disclaimer</strong>: This report is for educational and informational purposes only and does not constitute investment advice. Past backtest performance does not guarantee future results. Earnings-gap trades carry elevated risk. Always size positions appropriately and use stop-losses. Verify all data with primary sources before acting.
+</div>
+
+<div class="footer">
+  Methodology: Finviz Earnings Trading Screener (Large+ cap, EPS upward revision, net margin 3%+, price $30+, today's reaction up). Backtest weights: Gap 25% / Pre-Earnings 30% / Volume 20% / MA200 15% / MA50 10%.
+</div>
+</div>
+</body>
+</html>
