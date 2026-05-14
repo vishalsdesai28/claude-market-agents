@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis | 2026-05-14</title>
+<style>
+  :root{
+    --bg:#0b1220; --card:#121a2c; --card2:#172240; --line:#22304a;
+    --text:#e8ecf3; --muted:#9fb1cc; --accent:#4ea1ff; --accent2:#7ee7c7;
+    --good:#22c55e; --warn:#f59e0b; --bad:#ef4444; --b:#3b82f6; --c:#a855f7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Hiragino Kaku Gothic ProN","Yu Gothic UI",sans-serif;background:linear-gradient(180deg,#0a1020 0%,#0b1220 100%);color:var(--text);line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 64px}
+  header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:18px}
+  h1{margin:0 0 4px 0;font-size:1.8rem;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:.95rem}
+  .meta{font-size:.85rem;color:var(--muted)}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+  .col-12{grid-column:span 12}.col-6{grid-column:span 6}.col-4{grid-column:span 4}.col-3{grid-column:span 3}
+  @media (max-width:900px){.col-6,.col-4,.col-3{grid-column:span 12}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .card h2{margin:0 0 10px 0;font-size:1.05rem;color:#cdd9ee;letter-spacing:.3px;text-transform:uppercase}
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media (max-width:700px){.summary{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .kpi .k{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.5px}
+  .kpi .v{font-size:1.5rem;font-weight:700;margin-top:6px}
+  .stock-card{background:linear-gradient(180deg,#152244 0%,#121a2c 100%);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;overflow:hidden}
+  .stock-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+  .ticker{font-size:1.5rem;font-weight:800;letter-spacing:.5px}
+  .company{color:var(--muted);font-size:.95rem}
+  .grade-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-weight:800;font-size:.95rem}
+  .grade-A{background:rgba(34,197,94,.15);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+  .grade-B{background:rgba(59,130,246,.15);color:#93c5fd;border:1px solid rgba(59,130,246,.4)}
+  .grade-C{background:rgba(168,85,247,.15);color:#d8b4fe;border:1px solid rgba(168,85,247,.4)}
+  .grade-D{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.4)}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+  @media (max-width:700px){.metrics{grid-template-columns:repeat(2,1fr)}}
+  .metric{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .metric .lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .metric .val{font-size:1.1rem;font-weight:700;margin-top:3px}
+  .scoretab{margin-top:14px;border-collapse:separate;border-spacing:0;width:100%;font-size:.92rem}
+  .scoretab th,.scoretab td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+  .scoretab th{color:var(--muted);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.5px}
+  .scoretab td.score{font-weight:700;text-align:right}
+  .pts-5{color:#86efac}.pts-4{color:#a7f3d0}.pts-3{color:#fde68a}.pts-2{color:#fcd34d}.pts-1{color:#fca5a5}
+  .bar{height:8px;border-radius:999px;background:#1f2a44;overflow:hidden;margin-top:6px}
+  .bar > div{height:100%;border-radius:999px}
+  .pos{color:var(--good)} .neg{color:var(--bad)} .neu{color:var(--warn)}
+  .news{margin-top:14px;background:#0e1730;border:1px dashed var(--line);border-radius:10px;padding:12px}
+  .news h3{margin:0 0 6px 0;font-size:.85rem;color:#cdd9ee;text-transform:uppercase;letter-spacing:.5px}
+  .news ul{margin:6px 0 0 18px;padding:0}
+  .news li{margin:3px 0}
+  .tech{margin-top:10px;font-size:.92rem;color:#d6e2f6}
+  .footer{margin-top:24px;color:var(--muted);font-size:.8rem}
+  .disclaimer{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.35);border-radius:12px;padding:12px;color:#fde68a;font-size:.85rem}
+  .pill{display:inline-block;padding:3px 8px;font-size:.75rem;border-radius:999px;background:#1f2a44;color:#cdd9ee;margin-right:6px}
+  .top-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+      <div class="sub">Daily earnings trade screening &mdash; momentum gap setups, backtest-scored A/B/C/D</div>
+    </div>
+    <div class="meta">
+      <div><strong>Report date:</strong> 2026-05-14 (Thu)</div>
+      <div><strong>Generated:</strong> 2026-05-14T06:05:00-05:00</div>
+      <div><strong>Source:</strong> finviz earnings_trading_screener (Large+ cap, $30+, EPS upward, NM&ge;3%)</div>
+    </div>
+  </header>
+
+  <section class="grid" style="margin-bottom:18px">
+    <div class="col-12 card">
+      <h2>Summary Dashboard</h2>
+      <div class="summary">
+        <div class="kpi"><div class="k">Stocks Analyzed</div><div class="v">2</div></div>
+        <div class="kpi"><div class="k">A-Grade</div><div class="v" style="color:#86efac">0</div></div>
+        <div class="kpi"><div class="k">B-Grade</div><div class="v" style="color:#93c5fd">1</div></div>
+        <div class="kpi"><div class="k">C-Grade</div><div class="v" style="color:#d8b4fe">1</div></div>
+      </div>
+      <div class="top-strip" style="margin-top:14px">
+        <span class="pill">Top pick: <strong style="color:#93c5fd">CSCO (B, 82.0)</strong></span>
+        <span class="pill">Secondary: <strong style="color:#d8b4fe">VIK (C, 67.0)</strong></span>
+        <span class="pill">Theme: AI infrastructure spend / Restructuring catalyst</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSCO -->
+  <section class="grid">
+    <div class="col-12 stock-card">
+      <div class="stock-head">
+        <div>
+          <div class="ticker">CSCO</div>
+          <div class="company">Cisco Systems, Inc. &middot; Communication Equipment / Technology</div>
+        </div>
+        <div style="text-align:right">
+          <span class="grade-badge grade-B">B-Grade &middot; 82.0 &middot; &#9733;&#9733;&#9733;&#9733;</span>
+          <div class="sub" style="margin-top:6px">Success probability: 55-69%</div>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="lbl">Price</div><div class="val">$101.87</div></div>
+        <div class="metric"><div class="lbl">Gap (today)</div><div class="val pos">+2.60%</div></div>
+        <div class="metric"><div class="lbl">Pre-Earnings 20D</div><div class="val pos">+23.69%</div></div>
+        <div class="metric"><div class="lbl">Volume Ratio (20D/60D)</div><div class="val neu">94.9%</div></div>
+        <div class="metric"><div class="lbl">vs MA20</div><div class="val pos">+11.29%</div></div>
+        <div class="metric"><div class="lbl">vs MA50</div><div class="val pos">+20.61%</div></div>
+        <div class="metric"><div class="lbl">vs MA200</div><div class="val pos">+33.32%</div></div>
+        <div class="metric"><div class="lbl">Market Cap</div><div class="val">$402B</div></div>
+      </div>
+
+      <table class="scoretab">
+        <thead><tr><th>Factor</th><th>Value</th><th>Points (1-5)</th><th>Weight</th><th>Contribution</th></tr></thead>
+        <tbody>
+          <tr><td>Gap Size</td><td>+2.60%</td><td class="score pts-3">3</td><td>25%</td><td class="score">15.0</td></tr>
+          <tr><td>Pre-Earnings Trend</td><td>+23.69%</td><td class="score pts-5">5</td><td>30%</td><td class="score">30.0</td></tr>
+          <tr><td>Volume Trend</td><td>94.9%</td><td class="score pts-3">3</td><td>20%</td><td class="score">12.0</td></tr>
+          <tr><td>MA200 Position</td><td>+33.32%</td><td class="score pts-5">5</td><td>15%</td><td class="score">15.0</td></tr>
+          <tr><td>MA50 Position</td><td>+20.61%</td><td class="score pts-5">5</td><td>10%</td><td class="score">10.0</td></tr>
+          <tr><td><strong>Total</strong></td><td></td><td></td><td><strong>100%</strong></td><td class="score"><strong>82.0</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="bar" style="margin-top:10px"><div style="width:82%;background:linear-gradient(90deg,#3b82f6,#7ee7c7)"></div></div>
+
+      <div class="news">
+        <h3>Earnings Result Summary</h3>
+        <ul>
+          <li>Cisco Q3 FY2026 EPS &amp; revenue <strong>beat estimates</strong>; raised full-year revenue guidance.</li>
+          <li>Announced <strong>$1B AI-focused restructuring</strong> with ~5% workforce cuts (~4,000 jobs) to redeploy spend toward AI/security.</li>
+          <li>AI infrastructure orders <strong>booming</strong>; sales forecast tops Street.</li>
+          <li>Dividend maintained; stock hit a <strong>record high</strong> intraday on the print.</li>
+        </ul>
+      </div>
+
+      <div class="tech">
+        <strong>Technical Factors:</strong> Powerful Stage-2 trend &mdash; price stacked above MA20 (+11.3%), MA50 (+20.6%), MA200 (+33.3%). Pre-earnings 20-day run of <strong>+23.7%</strong> shows the move was already in motion; the +2.6% gap-day extension and 45M volume confirms institutional sponsorship. Volume ratio <100% signals participation broadening rather than parabolic exhaustion. Score downgraded from A only because the gap is modest and run-up already extended &mdash; favors disciplined pullback entries vs. chasing.
+      </div>
+      <div class="tech" style="margin-top:8px">
+        <strong>Suggested Entry / Risk:</strong> Buy zone $99.50&ndash;$101.50 on intraday pullback. Stop $96.00 (-5.8% from $101.87). Targets: T1 $107 (+5%), T2 $112 (+10%). Position size: 1-2% portfolio risk. Watch for distribution day reversal &gt;3% on heavy volume.
+      </div>
+    </div>
+  </section>
+
+  <!-- VIK -->
+  <section class="grid" style="margin-top:18px">
+    <div class="col-12 stock-card">
+      <div class="stock-head">
+        <div>
+          <div class="ticker">VIK</div>
+          <div class="company">Viking Holdings Ltd &middot; Travel Services / Consumer Cyclical</div>
+        </div>
+        <div style="text-align:right">
+          <span class="grade-badge grade-C">C-Grade &middot; 67.0 &middot; &#9733;&#9733;&#9733;</span>
+          <div class="sub" style="margin-top:6px">Success probability: 40-54%</div>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="lbl">Price</div><div class="val">$82.17</div></div>
+        <div class="metric"><div class="lbl">Gap (today)</div><div class="val pos">+1.95%</div></div>
+        <div class="metric"><div class="lbl">Pre-Earnings 20D</div><div class="val pos">+1.23%</div></div>
+        <div class="metric"><div class="lbl">Volume Ratio (20D/60D)</div><div class="val pos">102.7%</div></div>
+        <div class="metric"><div class="lbl">vs MA20</div><div class="val pos">+0.47%</div></div>
+        <div class="metric"><div class="lbl">vs MA50</div><div class="val pos">+7.22%</div></div>
+        <div class="metric"><div class="lbl">vs MA200</div><div class="val pos">+19.83%</div></div>
+        <div class="metric"><div class="lbl">Market Cap</div><div class="val">$36B</div></div>
+      </div>
+
+      <table class="scoretab">
+        <thead><tr><th>Factor</th><th>Value</th><th>Points (1-5)</th><th>Weight</th><th>Contribution</th></tr></thead>
+        <tbody>
+          <tr><td>Gap Size</td><td>+1.95%</td><td class="score pts-2">2</td><td>25%</td><td class="score">10.0</td></tr>
+          <tr><td>Pre-Earnings Trend</td><td>+1.23%</td><td class="score pts-3">3</td><td>30%</td><td class="score">18.0</td></tr>
+          <tr><td>Volume Trend</td><td>102.7%</td><td class="score pts-4">4</td><td>20%</td><td class="score">16.0</td></tr>
+          <tr><td>MA200 Position</td><td>+19.83%</td><td class="score pts-5">5</td><td>15%</td><td class="score">15.0</td></tr>
+          <tr><td>MA50 Position</td><td>+7.22%</td><td class="score pts-4">4</td><td>10%</td><td class="score">8.0</td></tr>
+          <tr><td><strong>Total</strong></td><td></td><td></td><td><strong>100%</strong></td><td class="score"><strong>67.0</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="bar" style="margin-top:10px"><div style="width:67%;background:linear-gradient(90deg,#a855f7,#7ee7c7)"></div></div>
+
+      <div class="news">
+        <h3>Earnings Result Summary</h3>
+        <ul>
+          <li>Viking reported <strong>Q1 2026</strong> results before the open; beat consensus on the top &amp; bottom line.</li>
+          <li>Concurrently announced a <strong>CEO transition</strong> &mdash; leadership change adds an idiosyncratic overhang.</li>
+          <li>Cruise demand remains resilient; bookings commentary constructive for forward quarters.</li>
+          <li>Stock had pulled back ~5% off late-April highs ($87) into print &mdash; gap-up filling the gap rather than extending.</li>
+        </ul>
+      </div>
+
+      <div class="tech">
+        <strong>Technical Factors:</strong> Healthy long-term trend (price +19.8% above MA200, +7.2% above MA50) but pinned at MA20 (+0.5%) after a 5-week consolidation. Pre-earnings 20-day return only +1.2% indicates indecision before print. Volume ratio 102.7% is constructive (interest rising). CEO transition is a wild card &mdash; markets typically need 1-2 sessions to digest, suggesting choppy follow-through.
+      </div>
+      <div class="tech" style="margin-top:8px">
+        <strong>Suggested Entry / Risk:</strong> Wait for confirmation close above $84 before entering; chase risk is low given modest gap. Stop $79.00 (-3.9%). Targets: T1 $87 (April highs, +5.9%), T2 $90 (+9.5%). Smaller size (0.5-1% risk) due to C-grade and CEO uncertainty.
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:18px">
+    <div class="col-12 card">
+      <h2>Position Sizing &amp; Risk Framework</h2>
+      <table class="scoretab">
+        <thead><tr><th>Ticker</th><th>Grade</th><th>Score</th><th>Entry</th><th>Stop</th><th>Target 1</th><th>Target 2</th><th>Suggested Risk</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CSCO</strong></td><td>B</td><td>82.0</td><td>$99.50&ndash;$101.50</td><td>$96.00</td><td>$107.00</td><td>$112.00</td><td>1.0&ndash;2.0% of portfolio</td></tr>
+          <tr><td><strong>VIK</strong></td><td>C</td><td>67.0</td><td>&gt; $84.00 confirm</td><td>$79.00</td><td>$87.00</td><td>$90.00</td><td>0.5&ndash;1.0% of portfolio</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:18px">
+    <div class="col-12 disclaimer">
+      <strong>Disclaimer:</strong> This report is for informational and educational purposes only and is not investment advice. Earnings-driven trades carry elevated volatility risk, including overnight gap risk. Always size positions to portfolio risk tolerance, use stops, and confirm setups with your own analysis. Past backtest performance does not guarantee future results.
+    </div>
+  </section>
+
+  <div class="footer">
+    Methodology: 5-factor backtest score &mdash; Gap (25%) + Pre-Earnings Trend (30%) + Volume Ratio (20%) + MA200 (15%) + MA50 (10%). Source: finviz screener (mandatory), Alpaca bars, FMP quotes. Generated by claude-market-agents earnings trade pipeline.
+  </div>
+</div>
+</body>
+</html>
