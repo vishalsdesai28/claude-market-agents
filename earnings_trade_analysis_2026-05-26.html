@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post-Earnings Gap-Up Stock Analysis - 2026-05-26</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 24px;
+            line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            padding: 32px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        header .subtitle {
+            color: #c7d2fe;
+            font-size: 15px;
+        }
+        header .timestamp {
+            margin-top: 12px;
+            color: #a5b4fc;
+            font-size: 13px;
+            font-family: "SF Mono", Menlo, monospace;
+        }
+        .info-banner {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            border: 1px solid rgba(147, 197, 253, 0.3);
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .info-banner .badge {
+            background: rgba(255,255,255,0.15);
+            color: #dbeafe;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .info-banner .text { color: #dbeafe; font-size: 15px; }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        .stat-card .label {
+            font-size: 12px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .stat-card .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+        .stat-card .sublabel {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .grade-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .grade-pill {
+            flex: 1;
+            text-align: center;
+            padding: 8px 4px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .grade-A { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+        .grade-B { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .grade-C { background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
+        .grade-D { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .section {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.08);
+            padding: 28px;
+            border-radius: 14px;
+            margin-bottom: 24px;
+        }
+        .section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 22px;
+            background: linear-gradient(180deg, #6366f1, #8b5cf6);
+            border-radius: 2px;
+        }
+        .section p { color: #cbd5e1; margin-bottom: 12px; }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 12px;
+            border: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+        .empty-state .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+        .empty-state h3 {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .empty-state p { color: #94a3b8; font-size: 14px; max-width: 600px; margin: 0 auto; }
+        .filter-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .filter-item {
+            background: rgba(15, 23, 42, 0.5);
+            border-left: 3px solid #6366f1;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+        .filter-item strong { color: #e2e8f0; font-weight: 600; }
+        .scoring-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .scoring-card {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+        .scoring-card .factor {
+            font-size: 13px;
+            color: #a5b4fc;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .scoring-card .weight {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+        .scoring-card .desc {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+        .disclaimer {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 18px 22px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-top: 24px;
+        }
+        .disclaimer strong { color: #cbd5e1; }
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(148, 163, 184, 0.08);
+        }
+        @media (max-width: 640px) {
+            body { padding: 14px; }
+            header { padding: 24px; }
+            header h1 { font-size: 22px; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+            <div class="subtitle">Daily earnings trade screening &amp; backtest scoring report</div>
+            <div class="timestamp">Report Date: 2026-05-26 (Tuesday) &nbsp;|&nbsp; Generated: 2026-05-26 09:05 ET</div>
+        </header>
+
+        <div class="info-banner">
+            <div class="badge">POST-HOLIDAY OPEN</div>
+            <div class="text">
+                <strong>First trading day after Memorial Day</strong> &mdash; US markets reopen Tuesday, May 26, 2026 at 09:30 ET. The Friday 5/22 after-hours and Tuesday 5/26 pre-market earnings window is the screening universe.
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="stat-card">
+                <div class="label">Stocks Analyzed</div>
+                <div class="value">0</div>
+                <div class="sublabel">From earnings_trading_screener()</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Grade Distribution</div>
+                <div class="value" style="font-size: 18px; color: #94a3b8;">No candidates</div>
+                <div class="grade-row">
+                    <div class="grade-pill grade-A">A: 0</div>
+                    <div class="grade-pill grade-B">B: 0</div>
+                    <div class="grade-pill grade-C">C: 0</div>
+                    <div class="grade-pill grade-D">D: 0</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Market Status</div>
+                <div class="value" style="font-size: 18px; color: #4ade80;">Open</div>
+                <div class="sublabel">Regular session resumes 09:30 ET</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Next Major Earnings</div>
+                <div class="value" style="font-size: 18px;">Wed, 5/27</div>
+                <div class="sublabel">NVDA AH highlight of the week</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Screener Result</h2>
+            <div class="empty-state">
+                <div class="icon">&#9888;</div>
+                <h3>No stocks available for earnings trading</h3>
+                <p>
+                    The Finviz <code>earnings_trading_screener()</code> returned <strong>zero</strong> tickers matching the fixed filter conditions for the 2026-05-26 trading session. The screening window covers Friday 5/22 after-hours releases (Memorial Day weekend) plus Tuesday 5/26 pre-market reports. None of the available earnings names satisfied the full gating set: Large+ ($10B+) market cap, upward EPS revision, net margin &ge; 3%, price &ge; $30, 4-week performance above 0%, and trending-up price action with positive EPS surprise.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Why an Empty Result Today</h2>
+            <p>
+                Tuesday post-holiday sessions historically have a sparse earnings calendar. The bulk of the Q1 mega-cap reporting season concluded in early May, and Memorial Day weekend pulls all Monday after-hours activity off the table. With NVDA (the week&apos;s marquee report) scheduled for Wednesday after-hours, the Tuesday morning earnings tape is dominated by smaller-cap names that fail the $10B Large+ and $30 minimum price gates, or by reports that miss the EPS upward-revision criterion.
+            </p>
+            <p>
+                Returning zero candidates is expected behavior for the strict, high-conviction filter design &mdash; the screener intentionally rejects setups that lack a confirmed analyst upgrade trajectory or that come from low-margin issuers. Stages 2&ndash;4 (MCP data acquisition, 5-element backtest scoring, news analysis) are therefore skipped today.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Methodology &amp; Filter Conditions</h2>
+            <p>The screener applies a non-negotiable set of fixed filters designed to surface large-cap, profitable, upward-revising names with constructive technical posture into earnings:</p>
+            <div class="filter-list">
+                <div class="filter-item"><strong>Market cap:</strong> Large+ ($10B or higher)</div>
+                <div class="filter-item"><strong>Earnings window:</strong> Yesterday after-hours OR today pre-market</div>
+                <div class="filter-item"><strong>EPS forecast:</strong> Upward revision</div>
+                <div class="filter-item"><strong>Net margin:</strong> 3% or higher</div>
+                <div class="filter-item"><strong>Average volume:</strong> 200,000+ shares</div>
+                <div class="filter-item"><strong>Price:</strong> $30 or higher</div>
+                <div class="filter-item"><strong>Price action:</strong> Trending up (change up)</div>
+                <div class="filter-item"><strong>4-week performance:</strong> Above 0%</div>
+                <div class="filter-item"><strong>Sort:</strong> EPS surprise descending</div>
+                <div class="filter-item"><strong>Cap:</strong> Max 60 stocks</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Backtest Scoring Framework (Reference)</h2>
+            <p>For days when candidates are returned, the 5-element weighted score below is applied. A-grade (85+) names target 70%+ historical success rates on the post-earnings momentum continuation pattern.</p>
+            <div class="scoring-grid">
+                <div class="scoring-card">
+                    <div class="factor">Gap Size</div>
+                    <div class="weight">25%</div>
+                    <div class="desc">Sweet spot: 0&ndash;2% (52% hit rate)</div>
+                </div>
+                <div class="scoring-card">
+                    <div class="factor">Pre-Earnings Trend</div>
+                    <div class="weight">30%</div>
+                    <div class="desc">Best: 10&ndash;20% prior 20-day move</div>
+                </div>
+                <div class="scoring-card">
+                    <div class="factor">Volume Trend</div>
+                    <div class="weight">20%</div>
+                    <div class="desc">Best: 110&ndash;120% vs 60-day avg</div>
+                </div>
+                <div class="scoring-card">
+                    <div class="factor">MA200 Position</div>
+                    <div class="weight">15%</div>
+                    <div class="desc">Best: &gt;110% above 200-day MA</div>
+                </div>
+                <div class="scoring-card">
+                    <div class="factor">MA50 Position</div>
+                    <div class="weight">10%</div>
+                    <div class="desc">Best: &gt;110% above 50-day MA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Operational Note</h2>
+            <p>
+                The JSON candidates file (<code>earnings_trade_candidates_2026-05-26.json</code>) is emitted with an empty <code>candidates</code> array so downstream consumers (automated signal processing, paper-trading executor) can rely on the path existing and continue their daily polling cycle without error.
+            </p>
+            <p>
+                The next high-signal cycle is expected Thursday, 2026-05-28 (post-NVDA Wednesday after-hours), when several mega-cap semis and adjacent names report and the screener typically returns a broader candidate set.
+            </p>
+        </div>
+
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This report is generated for educational and informational purposes only. It does not constitute investment, financial, legal, or tax advice. Earnings-related gap trades carry elevated risk &mdash; always use predefined position sizing, stop-loss discipline, and consult a licensed financial professional before placing trades. Past backtest performance does not guarantee future results.
+        </div>
+
+        <footer>
+            Generated by claude-market-agents &middot; earnings-trade analyzer pipeline &middot; 2026-05-26
+        </footer>
+    </div>
+</body>
+</html>
