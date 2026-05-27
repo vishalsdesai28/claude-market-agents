@@ -186,36 +186,57 @@ For each earnings ticker:
 ### 5. X Post Generator (Single Post – MANDATORY)
 
 > **IMPORTANT**: X投稿は必ず**1つのシングルポスト**にまとめること。スレッド形式（複数投稿への分割）は禁止。
+> X Premium long-form を前提とするため 280 文字制限に切り詰めない。下記テンプレートの情報密度を維持すること。
+
+#### Canonical Reference
+
+* **正本テンプレート**: `reports/2026-05-26-after-market-x-post.md` （以降のX投稿はこの構造に合わせる）
 
 #### Template (Single Combined Post)
 
 ```text
-🇺🇸 US Market Close (Mon DD)
-$SPY +X.XX% | $QQQ +X.XX% | $IWM +X.XX%
-$GLD +X.XX% (commentary)
+🇺🇸 US Market Close (Mon DD) — <Short Context Tagline>
+$SPY ±X.XX% | $QQQ ±X.XX% | $DIA ±X.XX% | $IWM ±X.XX%
+$TLT ±X.XX% | $GLD ±X.XX%
 
-🔥 Top Movers:
-$SYMBOL1 +XX.XX% (Xx vol) | $SYMBOL2 +XX.XX% | $SYMBOL3 +XX.XX%
+🔥 Top Volume-Surge Movers:
+$SYM1 +XX.XX% 🚀 | $SYM2 +XX.XX% | $SYM3 +XX.XX%
+$SYM4 +XX.XX% | $SYM5 +XX.XX% (verified catalyst)
+$SYM6 +XX.XX% | $SYM7 +XX.XX% | $SYM8 +XX.XX%
 
-🌙 After-Hours Earnings:
-$EARNINGS1 +XX.XX% (EPS beat/miss) | $EARNINGS2 +XX.XX% | $EARNINGS3 +XX.XX%
+🌙 After-Hours Earnings (N/N beat EPS):
+$STAR +XX.XX% AH 🚀 (EPS +XX.XX%, Sales +XX% QoQ)
+$ER2 +XX.XX% AH (EPS beat +X.XX%) | $ER3 +XX.XX% AH
+$ER4 +XX.XX% AH | $ER5 +XX.XX% AH (EPS +XX.XX%)
 
-📊 Sectors: Sector1 +X.XX%, Sector2 +X.XX%, Sector3 +X.XX%
-X,XXX uptrends | XX volume-surge stocks | XX earnings this week
+📊 Sectors: SectorA +X.XX%, SectorB +X.XX%, SectorC +X.XX%
+SectorX -X.XX%, SectorY -X.XX%, SectorZ -X.XX%
+NN volume-surge stocks | NNN uptrend stocks | Avg move +X.X%
 
-#StockMarket #MarketAnalysis #EarningsSeason
+🗓️ <Next-session> earnings: $TICK1 $TICK2 $TICK3   ← optional, verified only
+
+#StockMarket #MarketAnalysis #EarningsSeason #AfterHours #<TickerOrTheme>
 ```
 
-#### Guidelines
+#### Section-by-Section Rules
 
-* 全情報を1投稿に凝縮する（主要指数 → トップムーバー → アフターアワーズ → セクター → 統計）
-* アフターアワーズ決算がない日は🌙セクションを省略し、他のセクションを拡充
-* 参考: `reports/2026-01-27-after-market-xpost-combined.md`
+| Block | Rule |
+|-------|------|
+| Header tagline | Required when day has a clear narrative; one short phrase (≤6 words). Omit only on flat/quiet days. |
+| ETFs line 1 | Exactly 4 indices in this order: SPY, QQQ, DIA, IWM. |
+| ETFs line 2 | TLT + GLD. Add brief `(commentary)` only if move ≥1% and reason is verifiable. |
+| 🔥 Volume-Surge | 6–9 tickers across 2–3 lines, pipe-separated. Add 🚀 only on the top mover. Parentheticals only when catalyst is verifiable from fetched data (sector tag, EPS surprise, news headline). **Never invent catalysts.** |
+| 🌙 After-Hours | Omit entirely on Fridays or when `earnings_afterhours_screener` returns empty. Standout on its own line with EPS surprise + (optional) Sales QoQ. Remaining tickers grouped on pipe-separated lines with short surprise data where space permits. |
+| 📊 Sectors | Line 1 = top 3 winners; Line 2 = bottom 2–3 losers. Pull from `get_sector_performance`. |
+| Stats | `NN volume-surge stocks | NNN uptrend stocks | Avg move +X.X%` — counts/avg from `get_market_overview`. |
+| 🗓️ Next-session earnings | Optional; include only tickers verified through `upcoming_earnings_screener`. Skip if uncertain. |
+| Hashtags | 5–7 total. Core set: `#StockMarket #MarketAnalysis #EarningsSeason`. Situational adds: `#AfterHours`, `#AIStocks`, `#Semiconductors`, ticker tags (`#SNOW`, `#MRVL`). |
 
 #### Hashtags
 
-* **Core**: #StockMarket #MarketAnalysis #EarningsSeason
-* **Optional**: #AfterHours #VolumeAnalysis + sector-specific tags
+* **Core (always include all 3)**: #StockMarket #MarketAnalysis #EarningsSeason
+* **Situational**: #AfterHours #AIStocks #Semiconductors #VolumeAnalysis
+* **Ticker / theme tags**: 1–2 max, only when truly relevant (e.g., #SNOW on a 30%+ AH day)
 
 ### 6. Quality Checklist (Earnings Edition)
 
@@ -244,15 +265,22 @@ X,XXX uptrends | XX volume-surge stocks | XX earnings this week
 * [ ] Hover effects work
 * [ ] Color rules consistent (up = green, down = red)
 
-**Post Quality**
+**Post Quality** (canonical reference: `reports/2026-05-26-after-market-x-post.md`)
 
-* [ ] Fits X 280‑character limit
+* [ ] Single post (no thread split); X Premium long-form OK — do NOT truncate to 280 chars
+* [ ] Section order matches template: Header → ETFs(×2) → 🔥 Movers → 🌙 AH Earnings → 📊 Sectors → Stats → 🗓️ (opt) → Hashtags
+* [ ] Header tagline reflects day's narrative (or omitted for genuinely flat days)
+* [ ] ETF line 1 has SPY/QQQ/DIA/IWM in that order; line 2 has TLT/GLD
+* [ ] 🔥 Movers block: 6–9 tickers across 2–3 lines, 🚀 only on top mover
+* [ ] Parenthetical catalysts trace to verifiable data (no invented narratives)
+* [ ] 🌙 After-hours omitted on Fridays / when screener empty
+* [ ] 📊 Sectors: 2 lines (top 3 winners + bottom 2–3 losers)
+* [ ] Stats line includes volume-surge count, uptrend count, avg move
+* [ ] All tickers prefixed with `$`
+* [ ] Percentages correct (recomputed vs. prior close)
+* [ ] Hashtags: 5–7 total with all 3 core tags
 * [ ] 🆕 Regular vs. after‑hours clearly separated
-* [ ] 🆕 Key surprise data included
-* [ ] All tickers prefixed with \$
-* [ ] Percentages correct
-* [ ] 🆕 Appropriate earnings hashtags used
-* [ ] Finviz screener link valid
+* [ ] 🆕 EPS / Sales surprise data accurate vs. consensus
 
 ### 7. Error Handling (Earnings Edition)
 

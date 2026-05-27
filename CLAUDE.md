@@ -26,9 +26,34 @@
 
 ## X Post Policy
 - All X posts **must be a single post**. Thread format (splitting into multiple posts) is prohibited
-- Use `reports/2026-01-27-after-market-xpost-combined.md` as template reference
-- Condense major indices, top movers, after-hours, sectors, and market stats into one post
+- **Reference template**: `reports/2026-05-26-after-market-x-post.md` (canonical structure for after-market posts)
 - File naming: `reports/YYYY-MM-DD-after-market-x-post.md`
+- X Premium long-form is allowed; do NOT artificially truncate to 280 chars — match the reference template's depth instead
+
+### Required Section Order (after-market X post)
+Follow this exact block order, separated by blank lines:
+
+1. **Header line**: `🇺🇸 US Market Close (Mon DD) — <short context tagline>`
+   - Tagline examples: "Indexes Flat, Earnings Sweep", "Post-Memorial Day Return", "Risk-On Rally". Omit only if the day is genuinely uneventful.
+2. **Major ETFs — 2 lines**:
+   - Line 1: `$SPY ±X.XX% | $QQQ ±X.XX% | $DIA ±X.XX% | $IWM ±X.XX%`
+   - Line 2: `$TLT ±X.XX% | $GLD ±X.XX%`
+3. **🔥 Top Volume-Surge Movers**: header line + 2–3 lines listing 6–9 tickers with `$TICKER +XX.XX%` separated by ` | `. Add a short parenthetical only when the catalyst is verifiable from fetched data (e.g., `(guidance raise)`, `(crypto/AI infra)`). Use 🚀 on the standout. Do NOT invent catalysts.
+4. **🌙 After-Hours Earnings** (skip entire block on Fridays or when no after-hours data):
+   - Header `🌙 After-Hours Earnings (N/N beat EPS):` when applicable
+   - Standout on its own line with EPS surprise + sales/QoQ: `$XXX +XX.XX% AH 🚀 (EPS +X.XX%, Sales +XX% QoQ)`
+   - Remaining tickers on follow-up lines, pipe-separated, with brief surprise data where space allows
+5. **📊 Sectors — 2 lines**:
+   - Line 1: top 3 winning sectors with %
+   - Line 2: bottom 2–3 losing sectors with %
+6. **Stats line**: `NN volume-surge stocks | NNN uptrend stocks | Avg move +X.X%`
+7. **🗓️ Next-session earnings preview** (optional, only with verified tickers): `🗓️ Thu earnings: $XXX $YYY $ZZZ`
+8. **Hashtags**: 5–7 tags, core set = `#StockMarket #MarketAnalysis #EarningsSeason` + situational (`#AfterHours`, `#AIStocks`, ticker tags like `#SNOW`).
+
+### Quality Rules
+- Parenthetical catalysts must trace to fetched data (EPS surprise %, sales QoQ, screener tag). Never guess.
+- Counts (volume-surge, uptrend, avg move) must come from `finviz:get_market_overview` output, not estimated.
+- After-hours block is omitted entirely on Fridays per the after-market-report prompt's Friday Rule.
 
 ## Development Practices
 - Use `/tdd-developer` skill for all code implementation (Test-Driven Development)
