@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-05-27</title>
+<style>
+  :root {
+    --bg: #0b1220;
+    --panel: #131c2e;
+    --panel-2: #182241;
+    --text: #e6ecff;
+    --muted: #9aa6c2;
+    --accent: #4ea3ff;
+    --bull: #21c187;
+    --bear: #ff5d6c;
+    --warn: #ffb547;
+    --grade-a: #21c187;
+    --grade-b: #4ea3ff;
+    --grade-c: #ffb547;
+    --grade-d: #ff5d6c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #060a17 0%, #0b1220 100%);
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  header {
+    text-align: center;
+    padding: 32px 16px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  header h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 0.5px; }
+  header .subtitle { color: var(--muted); font-size: 14px; }
+  header .timestamp { color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .stat {
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .stat .value { font-size: 26px; font-weight: 700; margin-top: 6px; }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 18px 0;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  }
+  .card-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .ticker {
+    font-size: 28px; font-weight: 800; letter-spacing: 0.5px;
+  }
+  .company { color: var(--muted); font-size: 14px; margin-top: 2px; }
+  .grade-badge {
+    display: inline-block; padding: 6px 14px; border-radius: 999px;
+    font-weight: 800; font-size: 14px; letter-spacing: 0.8px;
+  }
+  .grade-A { background: rgba(33,193,135,0.16); color: var(--grade-a); border: 1px solid var(--grade-a); }
+  .grade-B { background: rgba(78,163,255,0.16); color: var(--grade-b); border: 1px solid var(--grade-b); }
+  .grade-C { background: rgba(255,181,71,0.16); color: var(--grade-c); border: 1px solid var(--grade-c); }
+  .grade-D { background: rgba(255,93,108,0.16); color: var(--grade-d); border: 1px solid var(--grade-d); }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .metric {
+    background: var(--panel-2);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+  }
+  .metric .lbl { color: var(--muted); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .metric .val { font-size: 18px; font-weight: 700; margin-top: 4px; }
+  .pos { color: var(--bull); }
+  .neg { color: var(--bear); }
+
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .score-table th, .score-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-align: left;
+  }
+  .score-table th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+  .bar-wrap { background: rgba(255,255,255,0.06); border-radius: 6px; height: 8px; overflow: hidden; width: 100%; }
+  .bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--bull)); }
+
+  .section-title { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin: 16px 0 6px; }
+  .news, .technicals { background: var(--panel-2); border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+  .news ul { margin: 8px 0; padding-left: 18px; }
+  .news li { margin: 4px 0; }
+  .prob-bar { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
+  .prob-bar .track { flex: 1; height: 10px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; }
+  .prob-bar .fill { height: 100%; background: linear-gradient(90deg, var(--warn), var(--bull)); }
+  .prob-bar .pct { font-weight: 700; font-size: 16px; }
+
+  .disclaimer {
+    margin-top: 24px; padding: 14px; border-radius: 10px;
+    background: rgba(255,93,108,0.08); border: 1px solid rgba(255,93,108,0.25);
+    color: var(--muted); font-size: 12px;
+  }
+  footer { color: var(--muted); font-size: 12px; text-align: center; padding: 20px 0; }
+  @media (max-width: 600px) {
+    .ticker { font-size: 24px; }
+    header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="subtitle">Backtest-Driven Earnings Trade Candidates</div>
+    <div class="timestamp">Report Date: Wednesday, 2026-05-27 | Generated: 06:15 ET</div>
+  </header>
+
+  <section class="dashboard">
+    <div class="stat">
+      <div class="label">Stocks Screened</div>
+      <div class="value">1</div>
+    </div>
+    <div class="stat">
+      <div class="label">A-Grade</div>
+      <div class="value" style="color:var(--grade-a)">0</div>
+    </div>
+    <div class="stat">
+      <div class="label">B-Grade</div>
+      <div class="value" style="color:var(--grade-b)">0</div>
+    </div>
+    <div class="stat">
+      <div class="label">C-Grade</div>
+      <div class="value" style="color:var(--grade-c)">1</div>
+    </div>
+    <div class="stat">
+      <div class="label">D-Grade</div>
+      <div class="value" style="color:var(--grade-d)">0</div>
+    </div>
+  </section>
+
+  <!-- DY Card -->
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="ticker">DY</div>
+        <div class="company">Dycom Industries, Inc. — Telecom / Engineering Services</div>
+      </div>
+      <div>
+        <span class="grade-badge grade-C">C-Grade · 65/100</span>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="lbl">Price</div><div class="val">$537.00</div></div>
+      <div class="metric"><div class="lbl">Prev Close</div><div class="val">$420.47</div></div>
+      <div class="metric"><div class="lbl">Gap Up</div><div class="val pos">+27.71%</div></div>
+      <div class="metric"><div class="lbl">MA20 Pos</div><div class="val pos">+24.03%</div></div>
+      <div class="metric"><div class="lbl">MA50 Pos</div><div class="val pos">+35.06%</div></div>
+      <div class="metric"><div class="lbl">MA200 Pos</div><div class="val pos">+56.32%</div></div>
+      <div class="metric"><div class="lbl">Pre-EPS 20D Trend</div><div class="val pos">+4.22%</div></div>
+      <div class="metric"><div class="lbl">Vol Ratio (20/60)</div><div class="val">96.5%</div></div>
+    </div>
+
+    <div class="section-title">5-Element Backtest Scoring</div>
+    <table class="score-table">
+      <thead>
+        <tr><th>Factor</th><th>Weight</th><th>Raw</th><th>Reading</th><th>Contribution</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gap Size</td><td>25%</td><td>2 / 5</td><td>+27.71% (10%+, prone to mean-revert)</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:40%"></div></div></td>
+        </tr>
+        <tr>
+          <td>Pre-Earnings Trend</td><td>30%</td><td>3 / 5</td><td>+4.22% (stable uptrend, 0-10%)</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:60%"></div></div></td>
+        </tr>
+        <tr>
+          <td>Volume Trend</td><td>20%</td><td>3 / 5</td><td>96.5% (near average)</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:60%"></div></div></td>
+        </tr>
+        <tr>
+          <td>MA200</td><td>15%</td><td>5 / 5</td><td>+56.32% (very bullish, &gt;110% of MA)</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:100%"></div></div></td>
+        </tr>
+        <tr>
+          <td>MA50</td><td>10%</td><td>5 / 5</td><td>+35.06% (very bullish, &gt;110% of MA)</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:100%"></div></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">Earnings Result</div>
+    <div class="news">
+      <ul>
+        <li>Q1 FY27 record results; revenue and earnings growth accelerated.</li>
+        <li>Raised full-year fiscal 2027 outlook.</li>
+        <li>Growth driven by data center / fiber buildout acquisitions.</li>
+        <li>Shares surged ~+27% pre-market, per Barron's coverage ("Stock Soars 20%+").</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Success Probability (Short-Term, 2-10 Day Swing)</div>
+    <div class="prob-bar">
+      <div class="track"><div class="fill" style="width:48%"></div></div>
+      <div class="pct">48%</div>
+    </div>
+
+    <div class="section-title">Technical Factors</div>
+    <div class="technicals">
+      Long-term trend extremely strong (MA200 +56%, MA50 +35%). However, the +27% earnings gap is large enough to flag mean-reversion risk per backtest (28% historical success rate for 10%+ gaps). Pre-earnings trend constructive but not explosive (+4%). Volume profile is average — no abnormal blow-off spike yet. Watch for intraday fade and prior swing-high resistance near $464. Suggested approach: smaller initial size; wait for first 30-minute consolidation; stop below morning low; target prior 52-week high $464.82.
+    </div>
+
+    <div class="section-title">Risk / Reward Plan</div>
+    <table class="score-table">
+      <tbody>
+        <tr><td>Entry zone (after 30-min)</td><td>$525 – $540 (on hold above VWAP)</td></tr>
+        <tr><td>Stop loss</td><td>Below intraday low / $505</td></tr>
+        <tr><td>Target 1 (2-3 days)</td><td>$560</td></tr>
+        <tr><td>Target 2 (5-10 days)</td><td>$580</td></tr>
+        <tr><td>Suggested size</td><td>0.5x normal (large gap risk)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> This report is for educational purposes only and is not investment advice. Earnings-gap trades carry elevated risk including overnight gaps, slippage, and rapid reversals. Position size conservatively and always use stop-loss discipline. Verify all data independently before trading.
+  </div>
+
+  <footer>Generated by Earnings Trade Analyst · MCP Data: Finviz, Alpaca, FMP</footer>
+</div>
+</body>
+</html>
