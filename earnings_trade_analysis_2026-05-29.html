@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-05-29</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c2330; --border:#2a3340;
+    --text:#e6edf3; --muted:#8b98a5; --accent:#3b82f6;
+    --green:#16c784; --red:#ea3943; --amber:#f0b90b;
+    --gradeA:#16c784; --gradeB:#3b82f6; --gradeC:#f0b90b; --gradeD:#8b98a5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.55;padding:24px 16px 60px}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.page{text-align:center;margin-bottom:28px}
+  header.page h1{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;
+    background:linear-gradient(90deg,#3b82f6,#16c784);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header.page .sub{color:var(--muted);font-size:.95rem;margin-top:6px}
+  header.page .ts{color:var(--muted);font-size:.8rem;margin-top:4px}
+  .disclaimer-top{background:#2a1f00;border:1px solid #5c4500;color:#f0d98b;
+    font-size:.8rem;padding:10px 14px;border-radius:10px;margin:18px auto 26px;max-width:900px;text-align:center}
+
+  /* Dashboard */
+  .dash{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
+  .stat .n{font-size:1.8rem;font-weight:800}
+  .stat .l{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+  .gA{color:var(--gradeA)} .gB{color:var(--gradeB)} .gC{color:var(--gradeC)} .gD{color:var(--gradeD)}
+
+  /* Summary table */
+  .section-title{font-size:1.2rem;font-weight:700;margin:26px 0 14px;border-left:4px solid var(--accent);padding-left:10px}
+  table.summary{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+  table.summary th,table.summary td{padding:11px 12px;text-align:right;font-size:.88rem;border-bottom:1px solid var(--border)}
+  table.summary th{background:var(--card2);color:var(--muted);text-transform:uppercase;font-size:.72rem;letter-spacing:.5px}
+  table.summary td.l,table.summary th.l{text-align:left}
+  table.summary tr:last-child td{border-bottom:none}
+  .badge{display:inline-block;padding:2px 9px;border-radius:20px;font-weight:700;font-size:.78rem;color:#0d1117}
+  .badge.A{background:var(--gradeA)} .badge.B{background:var(--gradeB)} .badge.C{background:var(--gradeC)} .badge.D{background:var(--gradeD)}
+  .pos{color:var(--green);font-weight:600} .neg{color:var(--red);font-weight:600}
+
+  /* Cards */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:22px;
+    border-top:4px solid var(--border)}
+  .card.A{border-top-color:var(--gradeA)} .card.B{border-top-color:var(--gradeB)}
+  .card.C{border-top-color:var(--gradeC)} .card.D{border-top-color:var(--gradeD)}
+  .card-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+  .card-head .name{font-size:1.35rem;font-weight:800}
+  .card-head .name span.tk{color:var(--accent)}
+  .card-head .co{color:var(--muted);font-size:.85rem;font-weight:400}
+  .card-head .priceblk{text-align:right}
+  .card-head .price{font-size:1.45rem;font-weight:800}
+  .card-head .gap{font-size:.9rem;font-weight:700}
+  .scoreline{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+  .scoreline .gbadge{font-size:1.1rem;padding:5px 16px}
+  .scoreline .score{font-size:1.6rem;font-weight:800}
+  .scoreline .score small{font-size:.85rem;color:var(--muted);font-weight:500}
+  .scoreline .stars{color:var(--amber);font-size:1.05rem;letter-spacing:2px}
+  .scoreline .prob{margin-left:auto;text-align:right}
+  .scoreline .prob .pv{font-size:1.3rem;font-weight:800}
+  .scoreline .prob .pl{font-size:.72rem;color:var(--muted);text-transform:uppercase}
+
+  /* Score breakdown bars */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .factors{margin-top:4px}
+  .factor{margin-bottom:11px}
+  .factor .top{display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:3px}
+  .factor .top .fl{color:var(--text)} .factor .top .fr{color:var(--muted)}
+  .bar{height:8px;background:var(--card2);border-radius:6px;overflow:hidden}
+  .bar > span{display:block;height:100%;border-radius:6px}
+  .b5{background:var(--green)} .b4{background:#4ade80} .b3{background:var(--accent)} .b2{background:var(--amber)} .b1{background:var(--red)}
+
+  .block h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:7px}
+  .kv{font-size:.85rem;margin-bottom:5px;display:flex;justify-content:space-between;gap:10px}
+  .kv .k{color:var(--muted)} .kv .v{font-weight:600;text-align:right}
+  .news{background:var(--card2);border-radius:10px;padding:12px 14px;margin-top:14px;font-size:.86rem}
+  .news h4{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .news ul{list-style:none} .news li{padding-left:16px;position:relative;margin-bottom:4px}
+  .news li:before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  .reason{margin-top:10px;font-size:.85rem;color:var(--muted)}
+  .reason b{color:var(--text)}
+
+  footer{margin-top:40px;text-align:center;color:var(--muted);font-size:.78rem;border-top:1px solid var(--border);padding-top:18px}
+  footer .disc{max-width:760px;margin:0 auto 12px;font-size:.74rem;line-height:1.5}
+  .scoremethod{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-top:14px;font-size:.82rem;color:var(--muted)}
+  .scoremethod b{color:var(--text)}
+  @media(max-width:760px){
+    .dash{grid-template-columns:repeat(2,1fr)}
+    .grid2{grid-template-columns:1fr}
+    table.summary{font-size:.78rem;display:block;overflow-x:auto;white-space:nowrap}
+    header.page h1{font-size:1.4rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="sub">Backtest-Scored Earnings Momentum Candidates — After-Hours 2026-05-28 / Pre-Market 2026-05-29</div>
+    <div class="ts">Analysis generated: 2026-05-29 09:05 ET (America/New_York) · Prices = pre-market quotes vs prior session (5/28) close</div>
+  </header>
+
+  <div class="disclaimer-top">
+    Educational analysis only — NOT investment advice. Earnings gap trades are high-risk. Always use stop-losses and proper position sizing.
+  </div>
+
+  <!-- Dashboard -->
+  <div class="dash">
+    <div class="stat"><div class="n">3</div><div class="l">Stocks Screened</div></div>
+    <div class="stat"><div class="n gA">0</div><div class="l">A-Grade (85+)</div></div>
+    <div class="stat"><div class="n gB">2</div><div class="l">B-Grade (70-84)</div></div>
+    <div class="stat"><div class="n gC">1</div><div class="l">C-Grade (55-69)</div></div>
+  </div>
+
+  <!-- Summary table -->
+  <div class="section-title">Summary Dashboard — Sorted by Score</div>
+  <table class="summary">
+    <thead>
+      <tr>
+        <th class="l">Rank</th>
+        <th class="l">Ticker</th>
+        <th class="l">Company</th>
+        <th>Price</th>
+        <th>Gap</th>
+        <th>Score</th>
+        <th>Grade</th>
+        <th>Win Prob.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="l">1</td><td class="l"><b>DELL</b></td><td class="l">Dell Technologies Inc.</td>
+        <td>$423.01</td><td class="pos">+33.42%</td><td><b>81</b></td><td><span class="badge B">B</span></td><td>62%</td>
+      </tr>
+      <tr>
+        <td class="l">2</td><td class="l"><b>OKTA</b></td><td class="l">Okta, Inc.</td>
+        <td>$103.26</td><td class="pos">+9.02%</td><td><b>78</b></td><td><span class="badge B">B</span></td><td>60%</td>
+      </tr>
+      <tr>
+        <td class="l">3</td><td class="l"><b>NTAP</b></td><td class="l">NetApp, Inc.</td>
+        <td>$169.90</td><td class="pos">+19.31%</td><td><b>69</b></td><td><span class="badge C">C</span></td><td>50%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Detailed cards -->
+  <div class="section-title">Individual Stock Analysis</div>
+
+  <!-- ===== DELL ===== -->
+  <div class="card B">
+    <div class="card-head">
+      <div>
+        <div class="name"><span class="tk">$DELL</span> Dell Technologies</div>
+        <div class="co">Dell Technologies Inc. · Technology / Computer Hardware</div>
+      </div>
+      <div class="priceblk">
+        <div class="price">$423.01</div>
+        <div class="gap pos">Gap +33.42% (prev close $317.05)</div>
+      </div>
+    </div>
+    <div class="scoreline">
+      <span class="badge B gbadge">B-Grade</span>
+      <span class="score">81<small>/100</small></span>
+      <span class="stars">★★★★☆</span>
+      <div class="prob"><div class="pv pos">62%</div><div class="pl">Upside Probability</div></div>
+    </div>
+    <div class="grid2">
+      <div class="block">
+        <h4>5-Element Score Breakdown</h4>
+        <div class="factors">
+          <div class="factor"><div class="top"><span class="fl">Gap Size (25%)</span><span class="fr">+33.42% → 2/5</span></div><div class="bar"><span class="b2" style="width:40%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">Pre-Earnings Trend (30%)</span><span class="fr">+54.16% (20d) → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">Volume Trend (20%)</span><span class="fr">100.0% → 4/5</span></div><div class="bar"><span class="b4" style="width:80%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">MA200 Position (15%)</span><span class="fr">274% of MA200 → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">MA50 Position (10%)</span><span class="fr">196% of MA50 → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+        </div>
+      </div>
+      <div class="block">
+        <h4>Technical Factors</h4>
+        <div class="kv"><span class="k">Current Price</span><span class="v">$423.01</span></div>
+        <div class="kv"><span class="k">Prior Close (5/28)</span><span class="v">$317.05</span></div>
+        <div class="kv"><span class="k">Pre-Earnings 20d Trend</span><span class="v pos">+54.16%</span></div>
+        <div class="kv"><span class="k">Vol Ratio (20d/60d)</span><span class="v">100.0%</span></div>
+        <div class="kv"><span class="k">Price vs MA200</span><span class="v pos">+173.8%</span></div>
+        <div class="kv"><span class="k">Price vs MA50</span><span class="v pos">+95.7%</span></div>
+        <div class="kv"><span class="k">Price vs MA20</span><span class="v pos">+62.4%</span></div>
+      </div>
+    </div>
+    <div class="news">
+      <h4>Earnings Result &amp; News Summary</h4>
+      <ul>
+        <li>Q1 FY2027 beat estimates with revenue up ~88% YoY; AI server revenue surged (reported &gt;750% growth in AI server segment per Stocktwits/IBD).</li>
+        <li>Raised full-year outlook on surging AI infrastructure / data-center buildout demand (Reuters, WSJ).</li>
+        <li>Won a $9.7B Pentagon software contract; IREN signed a $1.6B Blackwell systems deal — reinforcing AI infrastructure pipeline.</li>
+        <li>Shares soared ~33-40% pre-market; sympathy rally lifted HPE, SMCI, NOW (Bloomberg, Barron's).</li>
+      </ul>
+      <div class="reason"><b>Reason:</b> Blowout AI-driven beat plus raised guidance and large government/AI deals create strong momentum, but the +33% gap is already extreme and stretched far above all moving averages, capping the gap-size score and raising pullback risk. Net: high-momentum B-grade setup with elevated chase risk.</div>
+    </div>
+  </div>
+
+  <!-- ===== OKTA ===== -->
+  <div class="card B">
+    <div class="card-head">
+      <div>
+        <div class="name"><span class="tk">$OKTA</span> Okta</div>
+        <div class="co">Okta, Inc. · Technology / Identity &amp; Security Software</div>
+      </div>
+      <div class="priceblk">
+        <div class="price">$103.26</div>
+        <div class="gap pos">Gap +9.02% (prev close $94.72)</div>
+      </div>
+    </div>
+    <div class="scoreline">
+      <span class="badge B gbadge">B-Grade</span>
+      <span class="score">78<small>/100</small></span>
+      <span class="stars">★★★★☆</span>
+      <div class="prob"><div class="pv pos">60%</div><div class="pl">Upside Probability</div></div>
+    </div>
+    <div class="grid2">
+      <div class="block">
+        <h4>5-Element Score Breakdown</h4>
+        <div class="factors">
+          <div class="factor"><div class="top"><span class="fl">Gap Size (25%)</span><span class="fr">+9.02% → 3/5</span></div><div class="bar"><span class="b3" style="width:60%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">Pre-Earnings Trend (30%)</span><span class="fr">+24.37% (20d) → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">Volume Trend (20%)</span><span class="fr">86.6% → 2/5</span></div><div class="bar"><span class="b2" style="width:40%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">MA200 Position (15%)</span><span class="fr">121% of MA200 → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">MA50 Position (10%)</span><span class="fr">131% of MA50 → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+        </div>
+      </div>
+      <div class="block">
+        <h4>Technical Factors</h4>
+        <div class="kv"><span class="k">Current Price</span><span class="v">$103.26</span></div>
+        <div class="kv"><span class="k">Prior Close (5/28)</span><span class="v">$94.72</span></div>
+        <div class="kv"><span class="k">Pre-Earnings 20d Trend</span><span class="v pos">+24.37%</span></div>
+        <div class="kv"><span class="k">Vol Ratio (20d/60d)</span><span class="v">86.6%</span></div>
+        <div class="kv"><span class="k">Price vs MA200</span><span class="v pos">+21.4%</span></div>
+        <div class="kv"><span class="k">Price vs MA50</span><span class="v pos">+30.5%</span></div>
+        <div class="kv"><span class="k">Price vs MA20</span><span class="v pos">+21.5%</span></div>
+      </div>
+    </div>
+    <div class="news">
+      <h4>Earnings Result &amp; News Summary</h4>
+      <ul>
+        <li>Q1 FY2027 beat on revenue and profit; key metrics topped estimates (IBD, Investing.com).</li>
+        <li>Revenue surged as agentic AI stoked demand for identity-security tools (Quartz).</li>
+        <li>Management highlighted strategic AI / AI-agent opportunity as a growth driver (MarketWatch, GuruFocus call notes).</li>
+        <li>Shares rose ~7-9% pre-market; most moderate gap of the three names, leaving more headroom.</li>
+      </ul>
+      <div class="reason"><b>Reason:</b> Clean beat with an AI-identity growth narrative and a moderate, tradeable +9% gap that scores best on gap-size of the group. Volume ratio is slightly below the 60-day average (86.6%), the main drag on the score. Solid B-grade momentum setup with the most favorable gap-to-extension profile.</div>
+    </div>
+  </div>
+
+  <!-- ===== NTAP ===== -->
+  <div class="card C">
+    <div class="card-head">
+      <div>
+        <div class="name"><span class="tk">$NTAP</span> NetApp</div>
+        <div class="co">NetApp, Inc. · Technology / Data Storage</div>
+      </div>
+      <div class="priceblk">
+        <div class="price">$169.90</div>
+        <div class="gap pos">Gap +19.31% (prev close $142.40)</div>
+      </div>
+    </div>
+    <div class="scoreline">
+      <span class="badge C gbadge">C-Grade</span>
+      <span class="score">69<small>/100</small></span>
+      <span class="stars">★★★☆☆</span>
+      <div class="prob"><div class="pv">50%</div><div class="pl">Upside Probability</div></div>
+    </div>
+    <div class="grid2">
+      <div class="block">
+        <h4>5-Element Score Breakdown</h4>
+        <div class="factors">
+          <div class="factor"><div class="top"><span class="fl">Gap Size (25%)</span><span class="fr">+19.31% → 2/5</span></div><div class="bar"><span class="b2" style="width:40%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">Pre-Earnings Trend (30%)</span><span class="fr">+31.06% (20d) → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">Volume Trend (20%)</span><span class="fr">123.6% → 1/5</span></div><div class="bar"><span class="b1" style="width:20%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">MA200 Position (15%)</span><span class="fr">153% of MA200 → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+          <div class="factor"><div class="top"><span class="fl">MA50 Position (10%)</span><span class="fr">152% of MA50 → 5/5</span></div><div class="bar"><span class="b5" style="width:100%"></span></div></div>
+        </div>
+      </div>
+      <div class="block">
+        <h4>Technical Factors</h4>
+        <div class="kv"><span class="k">Current Price</span><span class="v">$169.90</span></div>
+        <div class="kv"><span class="k">Prior Close (5/28)</span><span class="v">$142.40</span></div>
+        <div class="kv"><span class="k">Pre-Earnings 20d Trend</span><span class="v pos">+31.06%</span></div>
+        <div class="kv"><span class="k">Vol Ratio (20d/60d)</span><span class="v">123.6%</span></div>
+        <div class="kv"><span class="k">Price vs MA200</span><span class="v pos">+53.4%</span></div>
+        <div class="kv"><span class="k">Price vs MA50</span><span class="v pos">+51.8%</span></div>
+        <div class="kv"><span class="k">Price vs MA20</span><span class="v pos">+36.5%</span></div>
+      </div>
+    </div>
+    <div class="news">
+      <h4>Earnings Result &amp; News Summary</h4>
+      <ul>
+        <li>Q4 FY2026 earnings and forward sales forecast topped estimates amid the AI data-storage boom (IBD, AP).</li>
+        <li>Record revenue and strategic AI expansion highlighted on the earnings call (GuruFocus).</li>
+        <li>Morgan Stanley raised its price target ~55%, but flagged the risk/reward as skewed after the run (Stocktwits).</li>
+        <li>Shares jumped ~19% pre-market alongside Dell's storage/AI infrastructure halo.</li>
+      </ul>
+      <div class="reason"><b>Reason:</b> Strong AI-storage beat and a big PT hike, but the volume ratio is abnormally elevated (123.6% &gt; 120% threshold = instability flag) and the +19% gap is large, both of which cap the score at C-grade. Sell-side itself cautions risk/reward is skewed — treat as the most speculative of the three.</div>
+    </div>
+  </div>
+
+  <div class="scoremethod">
+    <b>Scoring methodology.</b> Weighted 5-element backtest model: Gap Size (25%), Pre-Earnings 20-Day Trend (30%), Volume Trend 20d/60d (20%), Price vs MA200 (15%), Price vs MA50 (10%). Each element scored 1-5, normalized to a 0-100 total. Grades: A ≥ 85 (70%+ win rate), B 70-84 (55-69%), C 55-69 (40-54%), D ≤ 54 (&lt;40%). Prices are 2026-05-29 pre-market quotes; gap measured vs the 2026-05-28 regular-session close. MA positions from Finviz; volume/price history from Alpaca daily bars (60 sessions).
+  </div>
+
+  <footer>
+    <div class="disc">
+      <b>Disclaimer:</b> This report is generated for educational and informational purposes only and does not constitute investment advice, a recommendation, or an offer to buy or sell any security. Post-earnings gap trades carry substantial risk of loss, including overnight and pre-market gaps. Past performance and backtest statistics do not guarantee future results. Conduct your own due diligence and consult a licensed financial advisor before trading.
+    </div>
+    Post-Earnings Gap-Up Stock Analysis · 2026-05-29 · 3 stocks analyzed (0 A / 2 B / 1 C / 0 D)
+  </footer>
+</div>
+</body>
+</html>
