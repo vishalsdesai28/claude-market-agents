@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-06-01</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --panel-2: #1c2333;
+    --border: #2d3748;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 24px 16px;
+  }
+  .container { max-width: 1080px; margin: 0 auto; }
+  header.report-head {
+    text-align: center;
+    padding: 32px 20px;
+    background: linear-gradient(135deg, #161b22 0%, #1c2333 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 24px;
+  }
+  header.report-head h1 {
+    font-size: 1.9rem;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, #58a6ff, #3fb950);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  header.report-head .subtitle { color: var(--muted); margin-top: 8px; font-size: 0.95rem; }
+  header.report-head .timestamp { color: var(--muted); margin-top: 4px; font-size: 0.82rem; }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+  }
+  .stat-card .value { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+  .stat-card .label { color: var(--muted); font-size: 0.82rem; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .empty-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 40px 28px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .empty-panel .icon { font-size: 3rem; margin-bottom: 12px; }
+  .empty-panel h2 { font-size: 1.4rem; margin-bottom: 10px; color: var(--amber); }
+  .empty-panel p { color: var(--muted); max-width: 640px; margin: 0 auto 8px; }
+
+  .info-section {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .info-section h3 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .filter-item {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+  .filter-item .k { color: var(--muted); }
+  .filter-item .v { color: var(--text); font-weight: 600; }
+
+  .scoring-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  .scoring-table th, .scoring-table td {
+    text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border);
+  }
+  .scoring-table th { color: var(--accent); font-weight: 600; }
+  .scoring-table td { color: var(--muted); }
+
+  .grade-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+  .grade-pill { padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+  .grade-a { background: rgba(63,185,80,0.18); color: var(--green); border: 1px solid var(--green); }
+  .grade-b { background: rgba(88,166,255,0.18); color: var(--accent); border: 1px solid var(--accent); }
+  .grade-c { background: rgba(210,153,34,0.18); color: var(--amber); border: 1px solid var(--amber); }
+  .grade-d { background: rgba(248,81,73,0.18); color: var(--red); border: 1px solid var(--red); }
+
+  footer.disclaimer {
+    color: var(--muted); font-size: 0.78rem; text-align: center;
+    padding: 20px; border-top: 1px solid var(--border); margin-top: 8px;
+  }
+  @media (max-width: 600px) {
+    header.report-head h1 { font-size: 1.4rem; }
+    .stat-card .value { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="report-head">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="subtitle">Earnings-Driven Momentum Gap Trading &mdash; Backtest Scoring System</div>
+    <div class="timestamp">Report Date: Monday, June 1, 2026 &nbsp;|&nbsp; Analysis generated 2026-06-01 08:30 ET</div>
+  </header>
+
+  <div class="dashboard">
+    <div class="stat-card"><div class="value">0</div><div class="label">Qualifying Stocks</div></div>
+    <div class="stat-card"><div class="value">0</div><div class="label">A-Grade</div></div>
+    <div class="stat-card"><div class="value">0</div><div class="label">B-Grade</div></div>
+    <div class="stat-card"><div class="value">0</div><div class="label">C / D-Grade</div></div>
+  </div>
+
+  <div class="empty-panel">
+    <div class="icon">&#128202;</div>
+    <h2>No Stocks Available for Earnings Trading</h2>
+    <p>The mandatory Finviz <code>earnings_trading_screener()</code> returned <strong>zero stocks</strong> matching the fixed filter criteria for today.</p>
+    <p>This was independently confirmed by the after-hours and pre-market earnings screeners, which also returned no qualifying tickers.</p>
+    <p><strong>Why today is empty:</strong> Today is Monday, June 1, 2026. The "yesterday after-hours" window covers Sunday (companies do not release earnings on Sundays), and there are no qualifying large-cap pre-market reports ahead of the Monday open. Early June also falls in the seasonal lull between the Q1 and Q2 earnings reporting cycles, so the strict filter (Large+ cap, price &ge; $30, net margin &ge; 3%, EPS upward revision, trending up) finds no matches.</p>
+    <p>Returning zero stocks is a normal and expected outcome under these strict conditions &mdash; not a data error.</p>
+  </div>
+
+  <div class="info-section">
+    <h3>Screener Filter Conditions (Fixed / Read-Only)</h3>
+    <div class="filter-grid">
+      <div class="filter-item"><span class="k">Market Cap: </span><span class="v">Large+ ($10B&plus;)</span></div>
+      <div class="filter-item"><span class="k">Earnings: </span><span class="v">Yest. after-hrs / today pre-mkt</span></div>
+      <div class="filter-item"><span class="k">EPS Forecast: </span><span class="v">Upward revision</span></div>
+      <div class="filter-item"><span class="k">Net Margin: </span><span class="v">&ge; 3%</span></div>
+      <div class="filter-item"><span class="k">Avg Volume: </span><span class="v">&ge; 200K shares</span></div>
+      <div class="filter-item"><span class="k">Price: </span><span class="v">&ge; $30</span></div>
+      <div class="filter-item"><span class="k">Price Action: </span><span class="v">Trending up</span></div>
+      <div class="filter-item"><span class="k">4-Week Perf: </span><span class="v">Month above 0%</span></div>
+      <div class="filter-item"><span class="k">Sort: </span><span class="v">EPS surprise &darr;</span></div>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3>Backtest Scoring System (for reference)</h3>
+    <table class="scoring-table">
+      <thead>
+        <tr><th>Factor</th><th>Weight</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Gap Size</td><td>25%</td><td>Magnitude of post-earnings gap-up</td></tr>
+        <tr><td>Pre-Earnings Trend (20d)</td><td>30%</td><td>Price trend into the print</td></tr>
+        <tr><td>Volume Trend</td><td>20%</td><td>Recent 20d vs. 60d avg volume ratio</td></tr>
+        <tr><td>MA200 Position</td><td>15%</td><td>Deviation from 200-day moving average</td></tr>
+        <tr><td>MA50 Position</td><td>10%</td><td>Deviation from 50-day moving average</td></tr>
+      </tbody>
+    </table>
+    <div class="grade-legend">
+      <span class="grade-pill grade-a">A &ge;85 &middot; 70%+ win</span>
+      <span class="grade-pill grade-b">B 70-84 &middot; 55-69% win</span>
+      <span class="grade-pill grade-c">C 55-69 &middot; 40-54% win</span>
+      <span class="grade-pill grade-d">D &le;54 &middot; &lt;40% win</span>
+    </div>
+  </div>
+
+  <footer class="disclaimer">
+    <p>This report is for informational and educational purposes only and does not constitute investment advice. Earnings gap trading carries substantial risk, including the risk of total loss. Always use proper position sizing and stop-loss discipline. Past backtest performance does not guarantee future results. Verify all data independently before trading.</p>
+  </footer>
+
+</div>
+</body>
+</html>
