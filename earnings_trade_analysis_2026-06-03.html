@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-06-03</title>
+<style>
+  :root{
+    --bg:#0f1419; --card:#1a2230; --card2:#222c3d; --line:#2c3a50;
+    --text:#e7edf5; --muted:#94a3b8; --accent:#3b82f6;
+    --green:#22c55e; --red:#ef4444; --amber:#f59e0b;
+    --gradeA:#22c55e; --gradeB:#3b82f6; --gradeC:#f59e0b; --gradeD:#94a3b8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.55;
+    padding:24px 16px 60px;
+  }
+  .wrap{max-width:1080px;margin:0 auto;}
+  header.top{
+    text-align:center; padding:28px 16px 22px;
+    background:linear-gradient(135deg,#16243b 0%,#1a2230 100%);
+    border:1px solid var(--line); border-radius:16px; margin-bottom:24px;
+  }
+  header.top h1{font-size:1.7rem;letter-spacing:.3px;margin-bottom:8px;}
+  header.top .sub{color:var(--muted);font-size:.95rem;}
+  header.top .ts{color:var(--muted);font-size:.8rem;margin-top:10px;}
+  .dash{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;margin-bottom:26px;
+  }
+  .stat{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px;text-align:center;
+  }
+  .stat .num{font-size:1.7rem;font-weight:700;}
+  .stat .lbl{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.6px;margin-top:4px;}
+  .gradeChips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+  .chip{font-size:.72rem;padding:3px 8px;border-radius:20px;font-weight:600;}
+  .chip.A{background:rgba(34,197,94,.18);color:var(--gradeA);}
+  .chip.B{background:rgba(59,130,246,.18);color:var(--gradeB);}
+  .chip.C{background:rgba(245,158,11,.18);color:var(--gradeC);}
+  .chip.D{background:rgba(148,163,184,.18);color:var(--gradeD);}
+  h2.section{font-size:1.15rem;margin:6px 0 14px;border-left:4px solid var(--accent);padding-left:10px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px;margin-bottom:22px;overflow:hidden;
+  }
+  .card-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px;}
+  .ident h3{font-size:1.35rem;}
+  .ident .name{color:var(--muted);font-size:.9rem;}
+  .badges{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+  .grade-badge{
+    font-size:1.1rem;font-weight:800;padding:8px 16px;border-radius:12px;color:#0f1419;
+  }
+  .grade-badge.D{background:var(--gradeD);}
+  .grade-badge.C{background:var(--gradeC);}
+  .grade-badge.B{background:var(--gradeB);color:#fff;}
+  .grade-badge.A{background:var(--gradeA);}
+  .score-pill{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:8px 14px;text-align:center;}
+  .score-pill .v{font-size:1.3rem;font-weight:700;}
+  .score-pill .l{font-size:.68rem;color:var(--muted);text-transform:uppercase;}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:18px;}
+  .metric{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;}
+  .metric .v{font-size:1.15rem;font-weight:700;}
+  .metric .l{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:3px;}
+  .pos{color:var(--green);} .neg{color:var(--red);} .neu{color:var(--amber);}
+  .score-table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:.88rem;}
+  .score-table th,.score-table td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;}
+  .score-table th{color:var(--muted);font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:.5px;}
+  .bar{height:8px;border-radius:6px;background:var(--card2);overflow:hidden;min-width:80px;}
+  .bar > span{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#3b82f6,#22c55e);}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .panel{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .panel h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:10px;}
+  .panel ul{list-style:none;}
+  .panel li{padding:5px 0 5px 18px;position:relative;font-size:.9rem;}
+  .panel li::before{content:"▸";position:absolute;left:0;color:var(--accent);}
+  .prob-wrap{margin:10px 0 4px;}
+  .prob-bar{height:22px;border-radius:11px;background:var(--card);overflow:hidden;position:relative;border:1px solid var(--line);}
+  .prob-bar > span{display:block;height:100%;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e);}
+  .prob-val{font-size:1.4rem;font-weight:800;}
+  .levels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;}
+  .level{border-radius:10px;padding:12px;text-align:center;border:1px solid var(--line);}
+  .level.entry{background:rgba(59,130,246,.10);}
+  .level.stop{background:rgba(239,68,68,.10);}
+  .level.target{background:rgba(34,197,94,.10);}
+  .level .v{font-size:1.1rem;font-weight:700;}
+  .level .l{font-size:.68rem;color:var(--muted);text-transform:uppercase;}
+  .disclaimer{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);border-radius:12px;padding:16px;font-size:.82rem;color:#cbd5e1;margin-top:8px;}
+  footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:30px;}
+  @media(max-width:680px){.twocol{grid-template-columns:1fr;}.levels{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="sub">Stocks reporting after-hours 2026-06-02 or pre-market 2026-06-03, gapping up</div>
+    <div class="ts">Analysis generated: 2026-06-03 09:01 ET &nbsp;|&nbsp; Backtest Scoring System (5-factor weighted)</div>
+  </header>
+
+  <!-- Summary dashboard -->
+  <div class="dash">
+    <div class="stat"><div class="num">1</div><div class="lbl">Stocks Screened</div></div>
+    <div class="stat"><div class="num" style="color:var(--gradeD)">1</div><div class="lbl">Top Candidate</div></div>
+    <div class="stat"><div class="num">54.0</div><div class="lbl">Top Score</div></div>
+    <div class="stat">
+      <div class="num">D</div>
+      <div class="lbl">Grade Mix</div>
+      <div class="gradeChips">
+        <span class="chip A">A:0</span><span class="chip B">B:0</span>
+        <span class="chip C">C:0</span><span class="chip D">D:1</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section">Screener Result</h2>
+  <p style="color:var(--muted);font-size:.9rem;margin-bottom:22px;">
+    The fixed-condition <code>earnings_trading_screener()</code> (Large+ cap $10B+, EPS upward revision,
+    net margin 3%+, price $30+, 4-week perf 0%-to-down recovery candidate) returned
+    <strong>1 stock: MDT</strong>. Per methodology, only screener-returned tickers are analyzed; no augmentation
+    from other sources. A small or zero result set is normal given the strict filter.
+  </p>
+
+  <!-- ================= MDT CARD ================= -->
+  <div class="card">
+    <div class="card-head">
+      <div class="ident">
+        <h3>$MDT</h3>
+        <div class="name">Medtronic plc &nbsp;·&nbsp; Medical Devices &nbsp;·&nbsp; Fiscal Q4 / FY2026 results</div>
+      </div>
+      <div class="badges">
+        <div class="score-pill"><div class="v">54.0</div><div class="l">Score / 100</div></div>
+        <div class="grade-badge D">D&nbsp;⭐⭐</div>
+      </div>
+    </div>
+
+    <!-- key metrics -->
+    <div class="metrics">
+      <div class="metric"><div class="v">$78.50</div><div class="l">Current Price</div></div>
+      <div class="metric"><div class="v pos">+6.44%</div><div class="l">Gap Up</div></div>
+      <div class="metric"><div class="v neg">-5.81%</div><div class="l">Pre-Earnings 20D Trend</div></div>
+      <div class="metric"><div class="v pos">116.3%</div><div class="l">Vol Ratio (20D/60D)</div></div>
+      <div class="metric"><div class="v neu">96.3%</div><div class="l">Price / MA50</div></div>
+      <div class="metric"><div class="v neg">84.8%</div><div class="l">Price / MA200</div></div>
+    </div>
+
+    <!-- 5-factor scoring -->
+    <table class="score-table">
+      <thead>
+        <tr><th>Factor</th><th>Weight</th><th>Value</th><th>Pts (1-5)</th><th style="width:140px;">Contribution</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gap Size</td><td>25%</td><td>+6.44% (5-10%)</td><td>3</td>
+          <td><div class="bar"><span style="width:60%"></span></div></td>
+        </tr>
+        <tr>
+          <td>Pre-Earnings Trend</td><td>30%</td><td>-5.81% (-10~0%)</td><td>2</td>
+          <td><div class="bar"><span style="width:40%"></span></div></td>
+        </tr>
+        <tr>
+          <td>Volume Trend</td><td>20%</td><td>116.3% (110-120%)</td><td>5</td>
+          <td><div class="bar"><span style="width:100%"></span></div></td>
+        </tr>
+        <tr>
+          <td>MA200 Position</td><td>15%</td><td>84.8% (&lt;90%)</td><td>1</td>
+          <td><div class="bar"><span style="width:20%"></span></div></td>
+        </tr>
+        <tr>
+          <td>MA50 Position</td><td>10%</td><td>96.3% (95-100%)</td><td>2</td>
+          <td><div class="bar"><span style="width:40%"></span></div></td>
+        </tr>
+        <tr style="font-weight:700;">
+          <td>Weighted Total</td><td>100%</td><td colspan="2">2.70 × 20</td><td>54.0 / 100</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- probability -->
+    <div class="prob-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <h4 style="font-size:.82rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);">Success Probability (next few months)</h4>
+        <span class="prob-val neu">42%</span>
+      </div>
+      <div class="prob-bar"><span style="width:42%"></span></div>
+    </div>
+
+    <!-- news + technical -->
+    <div class="twocol" style="margin-top:16px;">
+      <div class="panel">
+        <h4>Earnings &amp; News Summary</h4>
+        <ul>
+          <li>Q4/FY2026 EPS beat consensus; revenue grew, the highest annual revenue growth in 10 years.</li>
+          <li>Forward guidance came in soft / below estimates — primary overhang on the move.</li>
+          <li>Hugo robotic-assisted surgery: new 510(k) filings to expand into general & gynecologic specialties.</li>
+          <li>Strategic investment to scale the Affera cardiac-ablation portfolio amid broadening demand.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>Technical Factors</h4>
+        <ul>
+          <li>Gap reclaims the 20-day SMA (+2.45%), an early recovery signal.</li>
+          <li>Still below 50-day (−3.7%) and well below 200-day (−15.2%): structure remains bearish.</li>
+          <li>Volume expanding — 20D avg is 116% of the 60D avg (strong interest).</li>
+          <li>Pre-earnings 20D trend negative (−5.8%): bounce off a corrective phase, not trend continuation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- trade levels -->
+    <div class="levels">
+      <div class="level entry"><div class="v">$78.50</div><div class="l">Entry (gap zone)</div></div>
+      <div class="level stop"><div class="v">$75.50</div><div class="l">Stop (~3.8%)</div></div>
+      <div class="level target"><div class="v">$82.00</div><div class="l">Target (MA50 area)</div></div>
+    </div>
+    <p style="color:var(--muted);font-size:.8rem;margin-top:12px;">
+      Risk/reward note: first resistance is the 50-day SMA near $81.5. With a D-grade score and a soft-guidance
+      overhang, this is a low-conviction, smaller-size mean-reversion play rather than a momentum continuation.
+      Reason a stop sits below the rising 20-day SMA: a failure of the gap to hold invalidates the recovery thesis.
+    </p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> This analysis is generated by an automated backtest scoring system for
+    informational and educational purposes only. It is not investment advice. Earnings trades carry elevated
+    risk of large, rapid moves. Backtest grades reflect historical pattern frequencies, not guarantees of future
+    results. Always apply your own due diligence, position sizing, and stop-loss discipline. Prices reflect
+    pre-market levels at 2026-06-03 09:01 ET and may change.
+  </div>
+
+  <footer>
+    Data sources: Finviz (screener, moving-average position, news), Alpaca (price bars / snapshot), FMP (quote).
+    Generated 2026-06-03 09:01 ET.
+  </footer>
+
+</div>
+</body>
+</html>
