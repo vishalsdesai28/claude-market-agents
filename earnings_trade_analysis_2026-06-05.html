@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-06-05</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2a3240;
+    --text:#e6edf3; --muted:#9aa7b4; --accent:#58a6ff;
+    --green:#2ea043; --green-soft:#1f6f33; --red:#da3633; --amber:#d29922;
+    --gradeA:#2ea043; --gradeB:#58a6ff; --gradeC:#d29922; --gradeD:#8b949e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.55; padding:24px;
+  }
+  .wrap{max-width:1080px;margin:0 auto}
+  header.hero{
+    background:linear-gradient(135deg,#161b22 0%,#1c2330 100%);
+    border:1px solid var(--border); border-radius:16px; padding:28px 28px 22px;
+    margin-bottom:22px;
+  }
+  header.hero h1{font-size:1.7rem;letter-spacing:.3px;margin-bottom:6px}
+  header.hero .sub{color:var(--muted);font-size:.95rem}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .pill{
+    background:var(--panel2);border:1px solid var(--border);border-radius:999px;
+    padding:6px 14px;font-size:.82rem;color:var(--muted)
+  }
+  .pill b{color:var(--text)}
+  .grid-summary{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;margin:22px 0
+  }
+  .stat{
+    background:var(--panel);border:1px solid var(--border);border-radius:12px;
+    padding:16px 18px
+  }
+  .stat .label{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.6px}
+  .stat .value{font-size:1.5rem;font-weight:700;margin-top:6px}
+  h2.section{font-size:1.15rem;margin:26px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+  .card{
+    background:var(--panel);border:1px solid var(--border);border-radius:16px;
+    padding:22px;margin-bottom:18px;position:relative;overflow:hidden
+  }
+  .card.gradeD{border-left:5px solid var(--gradeD)}
+  .card.gradeC{border-left:5px solid var(--gradeC)}
+  .card.gradeB{border-left:5px solid var(--gradeB)}
+  .card.gradeA{border-left:5px solid var(--gradeA)}
+  .card-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:14px}
+  .tick{display:flex;align-items:baseline;gap:10px}
+  .tick .symbol{font-size:1.5rem;font-weight:800;letter-spacing:.5px}
+  .tick .name{color:var(--muted);font-size:.9rem}
+  .price-box{text-align:right}
+  .price-box .price{font-size:1.6rem;font-weight:800}
+  .price-box .gap{font-size:.95rem;font-weight:700;color:var(--green)}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;align-items:center}
+  .grade-badge{
+    font-weight:800;font-size:.85rem;border-radius:8px;padding:4px 12px;color:#fff
+  }
+  .grade-badge.D{background:var(--gradeD)}
+  .grade-badge.C{background:var(--gradeC);color:#1a1a1a}
+  .grade-badge.B{background:var(--gradeB);color:#0d1117}
+  .grade-badge.A{background:var(--gradeA)}
+  .score-badge{
+    background:var(--panel2);border:1px solid var(--border);border-radius:8px;
+    padding:4px 12px;font-weight:700;font-size:.85rem
+  }
+  .prob-badge{
+    background:var(--panel2);border:1px solid var(--border);border-radius:8px;
+    padding:4px 12px;font-weight:700;font-size:.85rem;color:var(--amber)
+  }
+  .scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:18px}
+  .score-item{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+  .score-item .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .score-item .top .k{font-size:.8rem;color:var(--muted)}
+  .score-item .top .w{font-size:.7rem;color:var(--muted)}
+  .score-item .v{font-size:.92rem;font-weight:700;margin-bottom:8px}
+  .bar{height:7px;background:#0d1117;border-radius:6px;overflow:hidden}
+  .bar > span{display:block;height:100%;border-radius:6px}
+  .b1{background:var(--red)}.b2{background:var(--amber)}.b3{background:var(--accent)}
+  .b4{background:var(--green)}.b5{background:var(--green)}
+  .pts{font-size:.72rem;color:var(--muted);margin-top:5px}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  @media(max-width:680px){.twocol{grid-template-columns:1fr}}
+  .block{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+  .block h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+  .block ul{list-style:none;font-size:.9rem}
+  .block ul li{padding:3px 0;padding-left:16px;position:relative}
+  .block ul li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  table.tech{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:6px}
+  table.tech td{padding:5px 6px;border-bottom:1px solid var(--border)}
+  table.tech td:first-child{color:var(--muted)}
+  table.tech td:last-child{text-align:right;font-weight:600}
+  .pos{color:var(--green)}.neg{color:var(--red)}.neu{color:var(--amber)}
+  .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:16px}
+  .level{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
+  .level .lk{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .level .lv{font-size:1.15rem;font-weight:800;margin-top:4px}
+  .level.entry .lv{color:var(--accent)}
+  .level.stop .lv{color:var(--red)}
+  .level.target .lv{color:var(--green)}
+  .verdict{margin-top:16px;background:#1a1f0d;border:1px solid #3a3a1a;border-radius:10px;padding:14px 16px;font-size:.9rem}
+  .verdict.caution{background:#241616;border-color:#4a2222}
+  .verdict b{color:var(--amber)}
+  footer{margin-top:30px;padding:20px;background:var(--panel);border:1px solid var(--border);border-radius:12px;font-size:.8rem;color:var(--muted)}
+  footer .disc{margin-top:10px}
+  .methodology{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px 20px;font-size:.85rem;color:var(--muted)}
+  .methodology h3{color:var(--text);font-size:.95rem;margin-bottom:10px}
+  .methodology code{background:var(--panel2);padding:2px 6px;border-radius:5px;color:var(--accent);font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="sub">Data-driven earnings momentum screening &amp; 5-element backtest scoring</div>
+    <div class="meta-row">
+      <span class="pill"><b>Report Date:</b> 2026-06-05 (Friday)</span>
+      <span class="pill"><b>Analysis Time:</b> 06:00 PDT (09:00 ET)</span>
+      <span class="pill"><b>Universe:</b> Finviz earnings_trading_screener (Large+ $10B, EPS rev up, NM&gt;3%)</span>
+      <span class="pill"><b>Stocks Found:</b> 1</span>
+    </div>
+  </header>
+
+  <div class="grid-summary">
+    <div class="stat"><div class="label">Stocks Screened</div><div class="value">1</div></div>
+    <div class="stat"><div class="label">A-Grade</div><div class="value" style="color:var(--gradeA)">0</div></div>
+    <div class="stat"><div class="label">B-Grade</div><div class="value" style="color:var(--gradeB)">0</div></div>
+    <div class="stat"><div class="label">C-Grade</div><div class="value" style="color:var(--gradeC)">0</div></div>
+    <div class="stat"><div class="label">D-Grade</div><div class="value" style="color:var(--gradeD)">1</div></div>
+    <div class="stat"><div class="label">Top Score</div><div class="value">49.0</div></div>
+  </div>
+
+  <h2 class="section">D-Grade Stocks (54 points or below) ⭐⭐</h2>
+
+  <!-- ===================== COO ===================== -->
+  <div class="card gradeD">
+    <div class="card-head">
+      <div>
+        <div class="tick">
+          <span class="symbol">COO</span>
+          <span class="name">The Cooper Companies, Inc.</span>
+        </div>
+        <div class="badges">
+          <span class="grade-badge D">D-GRADE ⭐⭐</span>
+          <span class="score-badge">Score: 49.0 / 100</span>
+          <span class="prob-badge">Success Prob: ~40%</span>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">$67.00</div>
+        <div class="gap">Gap +8.03%</div>
+      </div>
+    </div>
+
+    <div class="scores">
+      <div class="score-item">
+        <div class="top"><span class="k">Gap Size</span><span class="w">25%</span></div>
+        <div class="v">+8.03% &nbsp;<span style="color:var(--muted);font-weight:400">(5–10%)</span></div>
+        <div class="bar"><span class="b3" style="width:60%"></span></div>
+        <div class="pts">3 / 5 pts &middot; 42% hist. success</div>
+      </div>
+      <div class="score-item">
+        <div class="top"><span class="k">Pre-Earnings Trend</span><span class="w">30%</span></div>
+        <div class="v">+1.47% &nbsp;<span style="color:var(--muted);font-weight:400">(0–10%)</span></div>
+        <div class="bar"><span class="b3" style="width:60%"></span></div>
+        <div class="pts">3 / 5 pts &middot; stable uptrend</div>
+      </div>
+      <div class="score-item">
+        <div class="top"><span class="k">Volume Trend</span><span class="w">20%</span></div>
+        <div class="v">120.5% &nbsp;<span style="color:var(--muted);font-weight:400">(&gt;120%)</span></div>
+        <div class="bar"><span class="b1" style="width:20%"></span></div>
+        <div class="pts">1 / 5 pts &middot; abnormal vol, instability</div>
+      </div>
+      <div class="score-item">
+        <div class="top"><span class="k">MA200 Position</span><span class="w">15%</span></div>
+        <div class="v">92.0% &nbsp;<span style="color:var(--muted);font-weight:400">(90–95%)</span></div>
+        <div class="bar"><span class="b2" style="width:40%"></span></div>
+        <div class="pts">2 / 5 pts &middot; below 200-day MA</div>
+      </div>
+      <div class="score-item">
+        <div class="top"><span class="k">MA50 Position</span><span class="w">10%</span></div>
+        <div class="v">103.2% &nbsp;<span style="color:var(--muted);font-weight:400">(100–105%)</span></div>
+        <div class="bar"><span class="b3" style="width:60%"></span></div>
+        <div class="pts">3 / 5 pts &middot; above 50-day MA</div>
+      </div>
+    </div>
+
+    <div class="twocol">
+      <div class="block">
+        <h4>Earnings Result Summary</h4>
+        <ul>
+          <li>Q2 FY2026 results released 2026-06-04 after-hours; positive EPS surprise (upward EPS revision flag triggered screener inclusion).</li>
+          <li>Earnings call highlighted "record revenue" and strategic execution (GuruFocus, 2026-06-05).</li>
+          <li>Post-earnings reaction: gap-up to ~$67.00 from $62.02 prior close (+8.03%), reversing recent 4-week weakness.</li>
+          <li>CooperVision named Muru Annamalai President, Asia-Pacific (2026-05-29) — management continuity signal.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h4>Technical Factors</h4>
+        <table class="tech">
+          <tr><td>Current Price</td><td>$67.00</td></tr>
+          <tr><td>Prior Close (06-04)</td><td>$62.02</td></tr>
+          <tr><td>vs 20-day SMA ($61.10)</td><td class="pos">+9.65%</td></tr>
+          <tr><td>vs 50-day SMA ($64.90)</td><td class="pos">+3.23%</td></tr>
+          <tr><td>vs 200-day SMA ($72.84)</td><td class="neg">-8.02%</td></tr>
+          <tr><td>Recent 20d Avg Vol</td><td>2,781,893</td></tr>
+          <tr><td>60d Avg Vol</td><td>2,309,070</td></tr>
+          <tr><td>Volume Ratio</td><td class="neu">120.5%</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="levels">
+      <div class="level entry"><div class="lk">Suggested Entry</div><div class="lv">$67.00</div></div>
+      <div class="level stop"><div class="lk">Stop-Loss</div><div class="lv">$62.00</div></div>
+      <div class="level target"><div class="lk">Target 1</div><div class="lv">$72.80</div></div>
+      <div class="level target"><div class="lk">Target 2</div><div class="lv">$74.00</div></div>
+    </div>
+
+    <div class="verdict caution">
+      <b>Verdict — D-Grade / Caution.</b> The earnings beat and +8% gap are constructive, but the setup scores poorly on the backtest model:
+      volume ratio crossed into the "abnormal" &gt;120% zone (instability factor), the stock still trades 8% below its 200-day SMA
+      (long-term downtrend not yet reclaimed), and the pre-earnings 20-day trend was nearly flat (+1.47%). The first major overhead
+      resistance is the 200-day SMA near $72.84. Reward/risk to Target 1 ($72.80) vs. stop ($62.00) is roughly 1.16:1 — modest.
+      <b>Position sizing: minimal (0.25–0.5R) or pass.</b> A reclaim and hold above the 200-day SMA would be the more durable signal.
+    </div>
+  </div>
+
+  <h2 class="section">Methodology &amp; Scoring</h2>
+  <div class="methodology">
+    <h3>5-Element Backtest Score (weighted, scaled to 100)</h3>
+    <p>
+      <code>Total = Gap×0.25 + PreTrend×0.30 + Volume×0.20 + MA200×0.15 + MA50×0.10</code>,
+      each element scored 1–5 then scaled to a 0–100 composite.
+      Grades: <b style="color:var(--gradeA)">A ≥85</b> (70%+ success) &middot;
+      <b style="color:var(--gradeB)">B 70–84</b> (55–69%) &middot;
+      <b style="color:var(--gradeC)">C 55–69</b> (40–54%) &middot;
+      <b style="color:var(--gradeD)">D ≤54</b> (&lt;40%).
+    </p>
+    <p style="margin-top:8px">
+      COO weighted calc: (3×0.25)+(3×0.30)+(1×0.20)+(2×0.15)+(3×0.10) = 2.45 / 5 → <b>49.0 / 100 → D-Grade</b>.
+    </p>
+    <p style="margin-top:8px">
+      Data sources: Finviz <code>earnings_trading_screener</code> &amp; <code>get_moving_average_position</code>;
+      Alpaca <code>get_stock_bars</code> (60-day daily volume/price); FMP <code>get_historical_price_eod_light</code>;
+      Finviz <code>get_stock_news</code>. Current price reflects the live post-earnings reaction price ($67.00) from Finviz;
+      prior close ($62.02) is the last completed daily bar (2026-06-04).
+    </p>
+  </div>
+
+  <footer>
+    <div><b>Generated:</b> 2026-06-05 06:00 PDT (09:00 ET) &middot; Universe: 1 stock from Finviz earnings_trading_screener (read-only fixed filter).</div>
+    <div class="disc">
+      <b>Disclaimer:</b> This report is for informational and educational purposes only and does not constitute financial advice
+      or a recommendation to buy or sell any security. Earnings trades carry elevated risk including gap-down and overnight exposure.
+      Entry/stop/target levels are illustrative. Always perform your own due diligence and use disciplined position sizing and
+      stop-loss management. Past performance and backtest statistics do not guarantee future results.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
