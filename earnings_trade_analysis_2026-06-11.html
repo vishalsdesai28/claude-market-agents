@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-06-11</title>
+<style>
+  :root {
+    --bg: #0f1420;
+    --card: #1a2233;
+    --card-2: #222c42;
+    --accent: #3b82f6;
+    --accent-2: #22d3ee;
+    --text: #e6edf6;
+    --muted: #9aa7bd;
+    --green: #22c55e;
+    --red: #ef4444;
+    --amber: #f59e0b;
+    --border: #2c3855;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(160deg, #0b0f1a 0%, #0f1420 60%, #111a2c 100%);
+    color: var(--text);
+    line-height: 1.55;
+    padding: 24px 16px 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1080px; margin: 0 auto; }
+  header.page-head {
+    text-align: center;
+    padding: 28px 20px 24px;
+    border-radius: 18px;
+    background: radial-gradient(120% 140% at 50% 0%, #1c2740 0%, #141b2b 70%);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  header.page-head h1 {
+    font-size: 1.7rem;
+    letter-spacing: 0.3px;
+    background: linear-gradient(90deg, #60a5fa, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 6px;
+  }
+  header.page-head .subtitle { color: var(--muted); font-size: 0.95rem; }
+  header.page-head .meta {
+    margin-top: 14px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    justify-content: center;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+  .chip strong { color: var(--text); font-weight: 600; }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .stat .num { font-size: 1.9rem; font-weight: 700; color: var(--text); }
+  .stat .label { font-size: 0.78rem; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat.a .num { color: #fbbf24; }
+  .stat.b .num { color: #60a5fa; }
+  .stat.c .num { color: var(--accent-2); }
+  .stat.d .num { color: var(--muted); }
+
+  .empty-state {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 48px 28px;
+    text-align: center;
+    margin-bottom: 26px;
+  }
+  .empty-state .icon {
+    font-size: 3.2rem;
+    margin-bottom: 14px;
+    filter: grayscale(0.2);
+  }
+  .empty-state h2 { font-size: 1.35rem; margin-bottom: 10px; color: var(--text); }
+  .empty-state p { color: var(--muted); max-width: 640px; margin: 0 auto 10px; font-size: 0.95rem; }
+
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px 22px 18px;
+    margin-bottom: 20px;
+  }
+  .panel h3 {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+  }
+  .panel h3 .bar {
+    width: 4px; height: 18px; border-radius: 3px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    display: inline-block;
+  }
+  table.screener {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table.screener th, table.screener td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  table.screener th { color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.4px; }
+  table.screener td { color: var(--text); }
+  table.screener tr:last-child td { border-bottom: none; }
+  .status-empty { color: var(--amber); font-weight: 600; }
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .filter-item {
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.83rem;
+  }
+  .filter-item .k { color: var(--muted); display: block; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 2px; }
+  .filter-item .v { color: var(--text); font-weight: 600; }
+
+  ul.reason-list { list-style: none; }
+  ul.reason-list li {
+    padding: 8px 0 8px 26px;
+    position: relative;
+    color: var(--muted);
+    font-size: 0.92rem;
+    border-bottom: 1px solid rgba(44,56,85,0.5);
+  }
+  ul.reason-list li:last-child { border-bottom: none; }
+  ul.reason-list li::before {
+    content: "›";
+    position: absolute; left: 8px; top: 7px;
+    color: var(--accent-2); font-weight: 700;
+  }
+  ul.reason-list li strong { color: var(--text); }
+
+  .disclaimer {
+    margin-top: 28px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.25);
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  .disclaimer strong { color: #fca5a5; }
+  footer.page-foot {
+    text-align: center;
+    margin-top: 26px;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (max-width: 560px) {
+    header.page-head h1 { font-size: 1.35rem; }
+    .stat .num { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="page-head">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="subtitle">Backtest-Scored Earnings Momentum Screen · Large-Cap ($10B+)</div>
+    <div class="meta">
+      <span class="chip">📅 Report Date <strong>2026-06-11 (Thu)</strong></span>
+      <span class="chip">🕖 Generated <strong>06:00 ET</strong></span>
+      <span class="chip">🔎 Source <strong>Finviz earnings_trading_screener()</strong></span>
+    </div>
+  </header>
+
+  <section class="dashboard">
+    <div class="stat"><div class="num">0</div><div class="label">Stocks Screened</div></div>
+    <div class="stat a"><div class="num">0</div><div class="label">A-Grade</div></div>
+    <div class="stat b"><div class="num">0</div><div class="label">B-Grade</div></div>
+    <div class="stat c"><div class="num">0</div><div class="label">C-Grade</div></div>
+    <div class="stat d"><div class="num">0</div><div class="label">D-Grade</div></div>
+  </section>
+
+  <section class="empty-state">
+    <div class="icon">🗓️</div>
+    <h2>No Stocks Available for Earnings Trading</h2>
+    <p>The fixed-condition earnings screener returned <strong>zero qualifying tickers</strong> for the
+       2026-06-10 after-hours and 2026-06-11 pre-market earnings windows.</p>
+    <p>No large-cap company that reported earnings in these windows satisfied all of the screener's
+       fixed filters (upward EPS revision, net margin ≥ 3%, price ≥ $30, gapping up). This is a normal
+       and expected outcome during a quiet stretch of the earnings calendar.</p>
+  </section>
+
+  <section class="panel">
+    <h3><span class="bar"></span>Screener Result</h3>
+    <table class="screener">
+      <thead>
+        <tr><th>Screen</th><th>Window</th><th>Result</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>earnings_trading_screener()</td>
+          <td>Yest. after-hours + today pre-market</td>
+          <td class="status-empty">0 stocks — no matches</td>
+        </tr>
+        <tr>
+          <td>earnings_premarket_screener() <span style="color:var(--muted)">(corroboration)</span></td>
+          <td>Today pre-market (BMO)</td>
+          <td class="status-empty">0 stocks — no matches</td>
+        </tr>
+        <tr>
+          <td>earnings_afterhours_screener() <span style="color:var(--muted)">(corroboration)</span></td>
+          <td>Today after-hours</td>
+          <td class="status-empty">0 stocks — no matches</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h3><span class="bar"></span>Why the Screen Is Empty</h3>
+    <ul class="reason-list">
+      <li><strong>Mid-quarter earnings lull.</strong> June 11 falls between the Q1 and Q2 large-cap reporting seasons, so very few $10B+ names reported in the target windows.</li>
+      <li><strong>Strict fixed filters.</strong> The screen requires upward EPS revision, net margin ≥ 3%, price ≥ $30, average volume ≥ 200K, an up-day, and a positive 4-week trend simultaneously — a high bar that frequently yields zero on light-calendar days.</li>
+      <li><strong>Confirmed across three independent screens.</strong> The primary earnings-trading screen plus the pre-market and after-hours corroboration screens all returned zero, indicating a genuine empty result rather than a transient data gap.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h3><span class="bar"></span>Screener Fixed Filters (Reference)</h3>
+    <div class="filter-grid">
+      <div class="filter-item"><span class="k">Market Cap</span><span class="v">Large+ ($10B or higher)</span></div>
+      <div class="filter-item"><span class="k">Earnings Date</span><span class="v">Yest. after-hours / today before</span></div>
+      <div class="filter-item"><span class="k">EPS Forecast</span><span class="v">Upward revision</span></div>
+      <div class="filter-item"><span class="k">Net Margin</span><span class="v">≥ 3%</span></div>
+      <div class="filter-item"><span class="k">Avg Volume</span><span class="v">≥ 200,000 shares</span></div>
+      <div class="filter-item"><span class="k">Price</span><span class="v">≥ $30</span></div>
+      <div class="filter-item"><span class="k">Price Action</span><span class="v">Trending up</span></div>
+      <div class="filter-item"><span class="k">4-Week Perf.</span><span class="v">Month above 0%</span></div>
+      <div class="filter-item"><span class="k">Sort</span><span class="v">EPS surprise descending</span></div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> This analysis is generated for informational and educational purposes only and does not
+    constitute investment advice or a recommendation to buy or sell any security. Earnings-momentum trading carries
+    substantial risk, including the risk of rapid and significant loss. Backtest grades reflect historical patterns and
+    do not guarantee future results. Always conduct your own due diligence and apply disciplined position sizing and
+    stop-loss management. All screener data sourced from Finviz at the time of generation.
+  </div>
+
+  <footer class="page-foot">
+    Post-Earnings Gap-Up Stock Analysis · Generated 2026-06-11 06:00 ET · Data: Finviz MCP
+  </footer>
+
+</div>
+</body>
+</html>
