@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>U.S. Stock Market Analysis — 2026-06-16</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      min-height: 100vh;
+      color: #fff;
+      padding: 20px;
+    }
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      padding: 40px 20px 30px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: 1px; }
+    .header .subtitle { font-size: 1.1rem; color: #a8c4f0; margin-top: 8px; }
+    .header .date { font-size: 1rem; color: #7eb3f0; margin-top: 6px; }
+
+    /* ── Grid ── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+    @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } }
+
+    /* ── Cards ── */
+    .card {
+      background: rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-3px); }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #a8d8ff;
+    }
+    .full-width { grid-column: 1 / -1; }
+
+    /* ── ETF Grid ── */
+    .etf-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    @media (max-width: 600px) { .etf-grid { grid-template-columns: repeat(2, 1fr); } }
+    .etf-card {
+      background: rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: transform 0.2s;
+    }
+    .etf-card:hover { transform: scale(1.03); }
+    .etf-symbol { font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .etf-name { font-size: 0.7rem; color: #a8c4f0; margin: 4px 0 8px; line-height: 1.3; }
+    .etf-price { font-size: 1.4rem; font-weight: 700; }
+    .etf-change { font-size: 1.1rem; font-weight: 700; margin-top: 4px; }
+    .etf-vol { font-size: 0.7rem; color: #90b8e8; margin-top: 5px; }
+
+    /* ── Up / Down colors ── */
+    .up   { color: #00ff88; text-shadow: 0 0 8px rgba(0,255,136,0.4); }
+    .down { color: #ff6b6b; text-shadow: 0 0 8px rgba(255,107,107,0.4); }
+    .flat { color: #ffd700; }
+
+    /* ── Volume-Surge Table ── */
+    .surge-table { width: 100%; border-collapse: collapse; }
+    .surge-table th {
+      text-align: left; padding: 8px 10px;
+      font-size: 0.75rem; color: #a8c4f0; text-transform: uppercase; letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .surge-table td { padding: 10px 10px; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .surge-table tr:hover td { background: rgba(255,255,255,0.05); }
+    .ticker-badge {
+      display: inline-block; background: rgba(255,255,255,0.15);
+      border-radius: 6px; padding: 2px 8px; font-weight: 700; font-size: 0.9rem;
+    }
+    .catalyst-tag {
+      display: inline-block; font-size: 0.7rem; padding: 2px 7px;
+      border-radius: 10px; background: rgba(255,215,0,0.2); color: #ffd700;
+      border: 1px solid rgba(255,215,0,0.3); margin-left: 6px; vertical-align: middle;
+    }
+
+    /* ── After-Hours Section ── */
+    .afterhours-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      border-left: 5px solid #ffd700;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(255,215,0,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .afterhours-section .card-title { color: #ffd700; }
+    .fallback-box {
+      background: rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-top: 12px;
+    }
+    .fallback-box h4 { font-size: 0.95rem; color: #ffd700; margin-bottom: 12px; }
+    .earnings-cal-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .earnings-cal-item:last-child { border-bottom: none; }
+    .ec-date { font-size: 0.75rem; color: #a8c4f0; min-width: 60px; }
+    .ec-time { font-size: 0.72rem; color: #7eb3f0; min-width: 40px; }
+    .ec-ticker { font-weight: 700; font-size: 0.95rem; min-width: 55px; }
+    .ec-name { font-size: 0.8rem; color: #d0e8ff; }
+    .ec-sector { font-size: 0.7rem; color: #a8c4f0; margin-left: auto; }
+    .bmo-tag { background: rgba(135,206,250,0.2); color: #87cefa; border: 1px solid rgba(135,206,250,0.3); border-radius: 8px; padding: 1px 7px; font-size: 0.7rem; }
+    .amc-tag { background: rgba(255,165,0,0.2); color: #ffa500; border: 1px solid rgba(255,165,0,0.3); border-radius: 8px; padding: 1px 7px; font-size: 0.7rem; }
+
+    /* ── Stats ── */
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    @media (max-width: 600px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-box {
+      background: rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 18px 14px; text-align: center;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .stat-number { font-size: 1.8rem; font-weight: 700; color: #00ff88; }
+    .stat-label { font-size: 0.75rem; color: #a8c4f0; margin-top: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* ── Sector Table ── */
+    .sector-table { width: 100%; border-collapse: collapse; }
+    .sector-table th {
+      text-align: left; padding: 8px 10px;
+      font-size: 0.75rem; color: #a8c4f0; text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .sector-table td { padding: 10px 10px; font-size: 0.88rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .sector-table tr:hover td { background: rgba(255,255,255,0.05); }
+    .sector-bar {
+      height: 6px; border-radius: 3px; display: inline-block;
+      vertical-align: middle; margin-left: 8px;
+    }
+
+    /* ── Key Points ── */
+    .key-points-list { list-style: none; }
+    .key-points-list li {
+      padding: 10px 14px;
+      border-left: 3px solid rgba(255,255,255,0.3);
+      margin-bottom: 10px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .key-points-list li .point-icon { margin-right: 8px; }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 20px;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #a8c4f0;
+      line-height: 1.8;
+    }
+
+    /* ── Rank badge ── */
+    .rank { font-size: 0.75rem; color: #ffd700; margin-right: 4px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <h1>🇺🇸 U.S. Stock Market Analysis</h1>
+  <div class="subtitle">Nasdaq Pressure as Tech Sells Off — Dow Holds Green</div>
+  <div class="date">📅 2026-06-16 — Final After-Market Data | Data as of ~16:10 ET</div>
+</div>
+
+<!-- ═══ MAJOR ETF PERFORMANCE ═══ -->
+<div class="main-grid">
+  <div class="card full-width">
+    <div class="card-title">📈 Major ETF Performance</div>
+    <div class="etf-grid">
+
+      <div class="etf-card">
+        <div class="etf-symbol">SPY</div>
+        <div class="etf-name">SPDR S&amp;P 500 ETF</div>
+        <div class="etf-price">$750.33</div>
+        <div class="etf-change down">-0.60%</div>
+        <div class="etf-vol">Vol: 60.7M</div>
+      </div>
+
+      <div class="etf-card">
+        <div class="etf-symbol">QQQ</div>
+        <div class="etf-name">Invesco QQQ (Nasdaq-100)</div>
+        <div class="etf-price">$729.86</div>
+        <div class="etf-change down">-1.90%</div>
+        <div class="etf-vol">Vol: 44.4M</div>
+      </div>
+
+      <div class="etf-card">
+        <div class="etf-symbol">DIA</div>
+        <div class="etf-name">SPDR Dow Jones ETF</div>
+        <div class="etf-price">$521.44</div>
+        <div class="etf-change up">+0.58%</div>
+        <div class="etf-vol">Vol: 4.5M</div>
+      </div>
+
+      <div class="etf-card">
+        <div class="etf-symbol">IWM</div>
+        <div class="etf-name">iShares Russell 2000</div>
+        <div class="etf-price">$292.08</div>
+        <div class="etf-change down">-0.87%</div>
+        <div class="etf-vol">Vol: 23.4M</div>
+      </div>
+
+      <div class="etf-card">
+        <div class="etf-symbol">TLT</div>
+        <div class="etf-name">iShares 20+ Yr Treasury</div>
+        <div class="etf-price">$86.19</div>
+        <div class="etf-change up">+0.55%</div>
+        <div class="etf-vol">Vol: 27.1M</div>
+      </div>
+
+      <div class="etf-card">
+        <div class="etf-symbol">GLD</div>
+        <div class="etf-name">SPDR Gold Shares</div>
+        <div class="etf-price">$397.63</div>
+        <div class="etf-change up">+0.27%</div>
+        <div class="etf-vol">Vol: 6.0M</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOP VOLUME-SURGE TICKERS + SECTOR PERFORMANCE ═══ -->
+<div class="main-grid">
+
+  <!-- Volume Surge -->
+  <div class="card">
+    <div class="card-title">🔥 Top Volume-Surge Movers</div>
+    <table class="surge-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ticker</th>
+          <th>Price</th>
+          <th>Change</th>
+          <th>Catalyst</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank">🚀 1</span></td>
+          <td><span class="ticker-badge">WYFI</span></td>
+          <td>$35.65</td>
+          <td class="up">+18.91%</td>
+          <td><span class="catalyst-tag">High Rel-Vol</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">2</span></td>
+          <td><span class="ticker-badge">LION</span></td>
+          <td>$16.36</td>
+          <td class="up">+13.85%</td>
+          <td><span class="catalyst-tag">High Rel-Vol</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">3</span></td>
+          <td><span class="ticker-badge">FCEL</span></td>
+          <td>$19.75</td>
+          <td class="up">+12.86%</td>
+          <td><span class="catalyst-tag">Fuel Cell / Energy</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">4</span></td>
+          <td><span class="ticker-badge">SLP</span></td>
+          <td>$18.24</td>
+          <td class="up">+11.42%</td>
+          <td><span class="catalyst-tag">Acquisition ~$375M</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">5</span></td>
+          <td><span class="ticker-badge">MGNI</span></td>
+          <td>$18.55</td>
+          <td class="up">+10.75%</td>
+          <td><span class="catalyst-tag">Analyst Upgrade</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">6</span></td>
+          <td><span class="ticker-badge">MRNA</span></td>
+          <td>$55.40</td>
+          <td class="up">+6.27%</td>
+          <td><span class="catalyst-tag">FDA mRNA flu view</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">7</span></td>
+          <td><span class="ticker-badge">PURR</span></td>
+          <td>$10.04</td>
+          <td class="up">+7.49%</td>
+          <td><span class="catalyst-tag">High Rel-Vol</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">8</span></td>
+          <td><span class="ticker-badge">TLN</span></td>
+          <td>$406.51</td>
+          <td class="up">+5.26%</td>
+          <td><span class="catalyst-tag">Acquisition close</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">9</span></td>
+          <td><span class="ticker-badge">CYTK</span></td>
+          <td>$75.21</td>
+          <td class="up">+5.36%</td>
+          <td><span class="catalyst-tag">Healthcare momentum</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Sector Performance -->
+  <div class="card">
+    <div class="card-title">🏢 Sector Performance</div>
+    <table class="sector-table">
+      <thead>
+        <tr>
+          <th>Sector</th>
+          <th>Change</th>
+          <th>Stocks</th>
+          <th>Bar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Financial</td>
+          <td class="up">+1.24%</td>
+          <td>1,097</td>
+          <td><span class="sector-bar" style="width:60px;background:#00ff88;"></span></td>
+        </tr>
+        <tr>
+          <td>Industrials</td>
+          <td class="up">+1.16%</td>
+          <td>699</td>
+          <td><span class="sector-bar" style="width:56px;background:#00ff88;"></span></td>
+        </tr>
+        <tr>
+          <td>Basic Materials</td>
+          <td class="up">+0.58%</td>
+          <td>283</td>
+          <td><span class="sector-bar" style="width:28px;background:#00ff88;"></span></td>
+        </tr>
+        <tr>
+          <td>Comm. Services</td>
+          <td class="up">+0.35%</td>
+          <td>264</td>
+          <td><span class="sector-bar" style="width:17px;background:#00ff88;"></span></td>
+        </tr>
+        <tr>
+          <td>Utilities</td>
+          <td class="up">+0.37%</td>
+          <td>110</td>
+          <td><span class="sector-bar" style="width:18px;background:#00ff88;"></span></td>
+        </tr>
+        <tr>
+          <td>Consumer Defensive</td>
+          <td class="up">+0.26%</td>
+          <td>242</td>
+          <td><span class="sector-bar" style="width:13px;background:#00ff88;"></span></td>
+        </tr>
+        <tr>
+          <td>Real Estate</td>
+          <td class="up">+0.15%</td>
+          <td>255</td>
+          <td><span class="sector-bar" style="width:7px;background:#00ff88;"></span></td>
+        </tr>
+        <tr>
+          <td>Healthcare</td>
+          <td class="down">-0.14%</td>
+          <td>1,069</td>
+          <td><span class="sector-bar" style="width:7px;background:#ff6b6b;"></span></td>
+        </tr>
+        <tr>
+          <td>Consumer Cyclical</td>
+          <td class="down">-0.32%</td>
+          <td>541</td>
+          <td><span class="sector-bar" style="width:16px;background:#ff6b6b;"></span></td>
+        </tr>
+        <tr>
+          <td>Energy</td>
+          <td class="down">-0.62%</td>
+          <td>255</td>
+          <td><span class="sector-bar" style="width:30px;background:#ff6b6b;"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Technology</strong></td>
+          <td class="down"><strong>-2.51%</strong></td>
+          <td>784</td>
+          <td><span class="sector-bar" style="width:90px;background:#ff6b6b;"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ═══ POST-CLOSE EARNINGS & AFTER-HOURS (FALLBACK) ═══ -->
+<div class="afterhours-section">
+  <div class="card-title">⏰ Post-Close Earnings &amp; After-Hours</div>
+
+  <div class="fallback-box" style="margin-bottom:16px;">
+    <h4>ℹ️ After-Hours Screener Status</h4>
+    <p style="font-size:0.88rem; color:#d0e8ff; line-height:1.6;">
+      The after-hours earnings screener returned no results for today's close (June 16). No large-cap ($10B+) company reporting after today's close showed a 2%+ gain in after-hours trading at the time of this report (~16:10 ET). The La-Z-Boy (LZB) earnings screener match represents a BMO report from this morning, while 17 Education (YQ) is a nano-cap. The week's remaining reporting schedule is shown below.
+    </p>
+  </div>
+
+  <div class="fallback-box" style="margin-bottom:16px;">
+    <h4>📋 Today's BMO Reporters (Session Impact)</h4>
+    <div class="earnings-cal-item">
+      <span class="ec-date">Jun 16</span>
+      <span class="bmo-tag">BMO</span>
+      <span class="ec-ticker">LZB</span>
+      <span class="ec-name">La-Z-Boy Inc</span>
+      <span class="ec-sector" style="color:#ff6b6b;">-6.99% | EPS +2.81% | Rev +1.15%</span>
+    </div>
+  </div>
+
+  <div class="fallback-box">
+    <h4>🗓️ This Week's Remaining Earnings Calendar</h4>
+    <div class="earnings-cal-item">
+      <span class="ec-date">Jun 17</span>
+      <span class="bmo-tag">BMO</span>
+      <span class="ec-ticker">PGR</span>
+      <span class="ec-name">Progressive Corp</span>
+      <span class="ec-sector">Financial | PE 10.4</span>
+    </div>
+    <div class="earnings-cal-item">
+      <span class="ec-date">Jun 17</span>
+      <span class="bmo-tag">BMO</span>
+      <span class="ec-ticker">KMX</span>
+      <span class="ec-name">CarMax Inc</span>
+      <span class="ec-sector">Consumer Cyclical | PE 32.7</span>
+    </div>
+    <div class="earnings-cal-item">
+      <span class="ec-date">Jun 17</span>
+      <span class="bmo-tag">BMO</span>
+      <span class="ec-ticker">JBL</span>
+      <span class="ec-name">Jabil Inc</span>
+      <span class="ec-sector">Technology | PE 50.3</span>
+    </div>
+    <div class="earnings-cal-item">
+      <span class="ec-date">Jun 17</span>
+      <span class="amc-tag">AMC</span>
+      <span class="ec-ticker">SWBI</span>
+      <span class="ec-name">Smith &amp; Wesson Brands</span>
+      <span class="ec-sector">Industrials | PE 51.8</span>
+    </div>
+    <div class="earnings-cal-item">
+      <span class="ec-date">Jun 18</span>
+      <span class="bmo-tag">BMO</span>
+      <span class="ec-ticker">KR</span>
+      <span class="ec-name">Kroger Co</span>
+      <span class="ec-sector">Consumer Defensive | PE 41.5</span>
+    </div>
+    <div class="earnings-cal-item">
+      <span class="ec-date">Jun 18</span>
+      <span class="bmo-tag">BMO</span>
+      <span class="ec-ticker">ACN</span>
+      <span class="ec-name">Accenture plc</span>
+      <span class="ec-sector">Technology | PE 13.6</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MARKET STATISTICS ═══ -->
+<div class="main-grid">
+  <div class="card full-width">
+    <div class="card-title">📊 Market Statistics</div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-number">36</div>
+        <div class="stat-label">Volume-Surge Stocks</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">814</div>
+        <div class="stat-label">Uptrend Stocks</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="color:#ffd700;">2.4x</div>
+        <div class="stat-label">Avg Relative Volume</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">+6.0%</div>
+        <div class="stat-label">Avg Price Move</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="color:#87cefa;">26</div>
+        <div class="stat-label">Earnings This Week</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="color:#ff6b6b;">-2.51%</div>
+        <div class="stat-label">Tech Sector (Worst)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TODAY'S KEY POINTS ═══ -->
+<div class="main-grid">
+  <div class="card full-width">
+    <div class="card-title">💡 Today's Key Points</div>
+    <ul class="key-points-list">
+      <li>
+        <span class="point-icon">📉</span>
+        <strong>Nasdaq Underperformance:</strong> QQQ fell -1.90%, the sharpest single-day decline among major indexes, dragging SPY to -0.60% and IWM to -0.87%. The Technology sector was the day's clear laggard at -2.51%, suggesting rotation out of high-multiple growth names.
+      </li>
+      <li>
+        <span class="point-icon">📈</span>
+        <strong>Dow Defies the Tape:</strong> DIA gained +0.58%, powered by Financials (+1.24%) and Industrials (+1.16%) — the two strongest sectors of the session. This divergence signals a defensive/value rotation rather than broad-market weakness.
+      </li>
+      <li>
+        <span class="point-icon">🔥</span>
+        <strong>Volume-Surge Leaders:</strong> 36 stocks met volume-surge criteria (rel-vol 1.5x+, price 2%+, above 200-day MA). Top performers: WYFI (+18.91%) on heavy retail interest, LION (+13.85%), FCEL (+12.86%) in the clean-energy space, SLP (+11.42%) on acquisition news (Altaris ~$375M deal), and MGNI (+10.75%) following a Wall Street analyst upgrade.
+      </li>
+      <li>
+        <span class="point-icon">💊</span>
+        <strong>Healthcare Catalyst:</strong> MRNA surged +6.27% after the FDA indicated a favorable view on its mRNA-based flu shot — a notable regulatory catalyst. CYTK added +5.36% on continued healthcare sector momentum.
+      </li>
+      <li>
+        <span class="point-icon">⚡</span>
+        <strong>Energy Infrastructure:</strong> Talen Energy (TLN) jumped +5.26% after completing its acquisition of high-quality Western PJM generation assets, reinforcing AI power-demand infrastructure themes.
+      </li>
+      <li>
+        <span class="point-icon">🏦</span>
+        <strong>Bonds &amp; Gold:</strong> TLT rose +0.55%, consistent with a flight-to-quality bid alongside the Nasdaq sell-off. GLD gained +0.27%, maintaining its role as a modest portfolio hedge. Both moves align with a risk-off undertone in growth sectors while value held up.
+      </li>
+      <li>
+        <span class="point-icon">📅</span>
+        <strong>Earnings Pipeline:</strong> No large-cap names reported after today's close. Wednesday brings PGR, KMX, and JBL before market open — watch JBL for AI/data-center supply-chain signals given the technology sector's weakness today. Accenture (ACN) on Thursday could further validate or refute the tech-sector narrative.
+      </li>
+      <li>
+        <span class="point-icon">🎯</span>
+        <strong>Key Levels to Watch:</strong> SPY has resistance at the June 15 high of $756.68; a break below $749 would confirm near-term distribution. QQQ's intraday low of $729.64 is the immediate support level — a close below $725 would broaden the technical damage. Financial sector strength (1,097 uptrend stocks) provides a notable floor for the broader market.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <p><strong>Data Sources:</strong> Finviz Elite (market overview, screeners, sector performance, news) | Alpaca Markets (ETF &amp; stock snapshots)</p>
+  <p>Last Refreshed: 2026-06-16 ~16:10 ET | Final after-market data + after-hours info</p>
+  <p style="color:#7eb3f0; margin-top:6px;">Note: Earnings figures may be preliminary. This report is for informational purposes only and does not constitute financial advice.</p>
+</div>
+
+</body>
+</html>
