@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-06-16</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --card: #1a2129;
+    --card-alt: #222b35;
+    --border: #2d3742;
+    --text: #e6edf3;
+    --text-dim: #9aa7b4;
+    --accent: #4ea1ff;
+    --green: #2ecc71;
+    --red: #e74c3c;
+    --amber: #f1c40f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 24px 16px 64px;
+  }
+  .container { max-width: 980px; margin: 0 auto; }
+  header.report-head {
+    text-align: center;
+    padding: 28px 20px;
+    background: linear-gradient(135deg, #15202b 0%, #1d2b3a 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 24px;
+  }
+  header.report-head h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+  }
+  header.report-head .subtitle { color: var(--text-dim); font-size: 0.98rem; }
+  header.report-head .timestamp { color: var(--text-dim); font-size: 0.82rem; margin-top: 10px; }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .metric {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .metric .value { font-size: 1.9rem; font-weight: 700; color: var(--accent); }
+  .metric .label { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.6px; margin-top: 4px; }
+
+  .empty-state {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 48px 28px;
+    text-align: center;
+  }
+  .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+  .empty-state h2 { font-size: 1.4rem; margin-bottom: 12px; }
+  .empty-state p { color: var(--text-dim); max-width: 640px; margin: 0 auto 10px; }
+
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+  }
+  .panel h3 { font-size: 1.1rem; margin-bottom: 14px; color: var(--text); }
+  .panel ul { list-style: none; }
+  .panel li { padding: 7px 0; border-bottom: 1px dashed var(--border); color: var(--text-dim); font-size: 0.92rem; }
+  .panel li:last-child { border-bottom: none; }
+  .panel li strong { color: var(--text); }
+
+  .filter-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .filter-table th, .filter-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  .filter-table th { color: var(--text-dim); font-weight: 600; text-transform: uppercase; font-size: 0.74rem; letter-spacing: 0.5px; }
+  .filter-table td { color: var(--text); }
+
+  .grade-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .grade-pill { padding: 6px 12px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; }
+  .grade-A { background: rgba(46,204,113,0.18); color: var(--green); border: 1px solid rgba(46,204,113,0.4); }
+  .grade-B { background: rgba(78,161,255,0.18); color: var(--accent); border: 1px solid rgba(78,161,255,0.4); }
+  .grade-C { background: rgba(241,196,15,0.18); color: var(--amber); border: 1px solid rgba(241,196,15,0.4); }
+  .grade-D { background: rgba(231,76,60,0.18); color: var(--red); border: 1px solid rgba(231,76,60,0.4); }
+
+  footer.disclaimer {
+    margin-top: 28px;
+    padding: 18px 20px;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+  footer.disclaimer strong { color: var(--text); }
+
+  @media (max-width: 600px) {
+    header.report-head h1 { font-size: 1.4rem; }
+    .panel { padding: 18px 16px; }
+    .metric .value { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="report-head">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="subtitle">Daily Earnings-Momentum Screening &amp; Backtest Scoring</div>
+    <div class="timestamp">Report date: Tuesday, June 16, 2026 &middot; Generated 09:05 ET (UTC-04:00)</div>
+  </header>
+
+  <section class="dashboard">
+    <div class="metric">
+      <div class="value">0</div>
+      <div class="label">Stocks Screened</div>
+    </div>
+    <div class="metric">
+      <div class="value">0</div>
+      <div class="label">A-Grade</div>
+    </div>
+    <div class="metric">
+      <div class="value">0</div>
+      <div class="label">B-Grade</div>
+    </div>
+    <div class="metric">
+      <div class="value">0</div>
+      <div class="label">C / D-Grade</div>
+    </div>
+  </section>
+
+  <section class="empty-state">
+    <div class="icon">📭</div>
+    <h2>No stocks available for earnings trading</h2>
+    <p>The fixed-condition earnings screener (<code>finviz:earnings_trading_screener()</code>) returned <strong>zero tickers</strong> for the qualifying earnings window (yesterday after-hours or today pre-market) as of this report.</p>
+    <p>No qualifying large-cap, profitable, post-earnings gap-up candidates were found today. This is a normal and expected outcome when the strict filter conditions are not met. No substitute tickers were sourced from elsewhere, in line with the screening methodology.</p>
+  </section>
+
+  <section class="panel">
+    <h3>Screener Filter Conditions (fixed, read-only)</h3>
+    <table class="filter-table">
+      <thead>
+        <tr><th>Criterion</th><th>Condition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Market capitalization</td><td>Large+ ($10B or higher)</td></tr>
+        <tr><td>Earnings window</td><td>Yesterday after-hours OR today pre-market</td></tr>
+        <tr><td>EPS forecast</td><td>Upward revision</td></tr>
+        <tr><td>Net margin</td><td>3% or higher</td></tr>
+        <tr><td>Average volume</td><td>200,000+ shares</td></tr>
+        <tr><td>Price</td><td>$30 or higher</td></tr>
+        <tr><td>Price action</td><td>Trending up (positive change)</td></tr>
+        <tr><td>4-week performance</td><td>Month above 0%</td></tr>
+        <tr><td>Universe / Sort</td><td>Stocks only, sorted by EPS surprise descending, max 60</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h3>Backtest Scoring Methodology (for reference)</h3>
+    <ul>
+      <li><strong>Gap Size</strong> (25% weight) — optimal in the 0–10% gap band</li>
+      <li><strong>Pre-Earnings Trend</strong> (30% weight) — stronger prior 20-day uptrend scores higher</li>
+      <li><strong>Volume Trend</strong> (20% weight) — recent 20-day vs. 60-day average volume ratio</li>
+      <li><strong>MA200 Position</strong> (15% weight) — distance above the 200-day moving average</li>
+      <li><strong>MA50 Position</strong> (10% weight) — distance above the 50-day moving average</li>
+    </ul>
+    <div class="grade-legend">
+      <span class="grade-pill grade-A">A-Grade · 85+ pts · 70%+ success</span>
+      <span class="grade-pill grade-B">B-Grade · 70–84 pts · 55–69%</span>
+      <span class="grade-pill grade-C">C-Grade · 55–69 pts · 40–54%</span>
+      <span class="grade-pill grade-D">D-Grade · ≤54 pts · &lt;40%</span>
+    </div>
+  </section>
+
+  <footer class="disclaimer">
+    <strong>Disclaimer:</strong> This analysis is generated by an automated earnings-trade screening system for informational and educational purposes only. It does not constitute financial advice, a recommendation, or a solicitation to buy or sell any security. Earnings-momentum and gap trading carry substantial risk of loss. Always perform your own due diligence, use disciplined position sizing and stop-loss management, and consult a licensed financial professional before trading. Past backtest performance does not guarantee future results.
+  </footer>
+
+</div>
+</body>
+</html>
