@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-06-17</title>
+<style>
+  :root{
+    --bg:#0f172a; --panel:#1e293b; --panel2:#273449; --text:#e2e8f0;
+    --muted:#94a3b8; --accent:#38bdf8; --green:#22c55e; --red:#ef4444;
+    --amber:#f59e0b; --border:#334155;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:linear-gradient(160deg,#0b1120 0%,#0f172a 100%);
+    color:var(--text);line-height:1.6;padding:24px;min-height:100vh;
+  }
+  .wrap{max-width:1100px;margin:0 auto;}
+  header.report-head{
+    text-align:center;padding:32px 20px;background:var(--panel);
+    border:1px solid var(--border);border-radius:16px;margin-bottom:24px;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+  }
+  header.report-head h1{font-size:1.9rem;letter-spacing:.3px;margin-bottom:8px;}
+  header.report-head .subtitle{color:var(--accent);font-weight:600;font-size:1rem;}
+  header.report-head .meta{color:var(--muted);font-size:.85rem;margin-top:10px;}
+  .dashboard{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:16px;margin-bottom:24px;
+  }
+  .stat{
+    background:var(--panel);border:1px solid var(--border);border-radius:14px;
+    padding:18px;text-align:center;
+  }
+  .stat .num{font-size:2rem;font-weight:700;color:var(--accent);}
+  .stat .lbl{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;margin-top:4px;}
+  .empty-state{
+    background:var(--panel);border:1px solid var(--border);border-radius:16px;
+    padding:48px 28px;text-align:center;margin-bottom:24px;
+  }
+  .empty-state .icon{font-size:3.2rem;margin-bottom:14px;}
+  .empty-state h2{font-size:1.4rem;margin-bottom:12px;color:var(--text);}
+  .empty-state p{color:var(--muted);max-width:640px;margin:0 auto 12px;}
+  .criteria{
+    background:var(--panel2);border:1px solid var(--border);border-radius:14px;
+    padding:22px;margin-bottom:24px;
+  }
+  .criteria h3{font-size:1.05rem;margin-bottom:14px;color:var(--accent);}
+  .criteria ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;}
+  .criteria li{
+    background:var(--panel);border:1px solid var(--border);border-radius:8px;
+    padding:9px 12px;font-size:.85rem;color:var(--text);
+  }
+  .criteria li b{color:var(--amber);}
+  .scoring{
+    background:var(--panel);border:1px solid var(--border);border-radius:14px;
+    padding:22px;margin-bottom:24px;
+  }
+  .scoring h3{font-size:1.05rem;margin-bottom:14px;color:var(--accent);}
+  table{width:100%;border-collapse:collapse;font-size:.85rem;}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--border);}
+  th{color:var(--muted);text-transform:uppercase;letter-spacing:.4px;font-size:.72rem;}
+  .grade-a{color:var(--green);font-weight:700;}
+  .grade-b{color:var(--accent);font-weight:700;}
+  .grade-c{color:var(--amber);font-weight:700;}
+  .grade-d{color:var(--red);font-weight:700;}
+  .disclaimer{
+    background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);
+    border-radius:12px;padding:16px 20px;font-size:.78rem;color:var(--muted);
+  }
+  .disclaimer b{color:var(--red);}
+  footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:24px;}
+  @media (max-width:640px){
+    body{padding:14px;}
+    header.report-head h1{font-size:1.4rem;}
+    .stat .num{font-size:1.6rem;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="report-head">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="subtitle">Backtest-Scored Earnings Momentum Screening</div>
+    <div class="meta">Report Date: Wednesday, June 17, 2026 &nbsp;|&nbsp; Generated: 2026-06-17 09:01 ET</div>
+  </header>
+
+  <section class="dashboard">
+    <div class="stat"><div class="num">0</div><div class="lbl">Stocks Screened</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">A-Grade</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">B-Grade</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">C-Grade</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">D-Grade</div></div>
+  </section>
+
+  <section class="empty-state">
+    <div class="icon">🗓️</div>
+    <h2>No Stocks Available for Earnings Trading</h2>
+    <p>
+      The fixed-criteria earnings trading screener (<code>finviz:earnings_trading_screener()</code>)
+      returned <b>zero qualifying tickers</b> for today's session. No large-cap stock that
+      reported earnings yesterday after the close or this morning before the open currently
+      meets the full set of screening conditions.
+    </p>
+    <p>
+      This is a normal and expected outcome when the strict filters intersect with a light
+      earnings calendar. No candidates were fabricated or sourced from outside the screener,
+      consistent with the read-only, fixed-filter methodology.
+    </p>
+    <p style="color:var(--accent);font-weight:600;">
+      Recommendation: Stand aside today. Re-run the screen on the next session when more
+      post-earnings gap-up candidates may surface.
+    </p>
+  </section>
+
+  <section class="criteria">
+    <h3>Screener Filter Conditions (Fixed / Read-Only)</h3>
+    <ul>
+      <li>Market cap: <b>Large+ ($10B or higher)</b></li>
+      <li>Earnings: <b>yesterday after-hours OR today pre-market</b></li>
+      <li>EPS forecast: <b>upward revision</b></li>
+      <li>Net margin: <b>3% or higher</b></li>
+      <li>Average volume: <b>200,000+ shares</b></li>
+      <li>Price: <b>$30 or higher</b></li>
+      <li>Price action: <b>trending up</b></li>
+      <li>4-week performance: <b>month above 0%</b></li>
+      <li>Stocks only, sorted by EPS surprise desc.</li>
+    </ul>
+  </section>
+
+  <section class="scoring">
+    <h3>Backtest Scoring Reference (Not Applied — No Candidates)</h3>
+    <table>
+      <thead>
+        <tr><th>Factor</th><th>Weight</th><th>Scoring Range</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Gap Size</td><td>25%</td><td>1–3 pts (0–2% &amp; 2–10% optimal)</td></tr>
+        <tr><td>Pre-Earnings Trend</td><td>30%</td><td>1–5 pts (&gt;20% strongest)</td></tr>
+        <tr><td>Volume Trend</td><td>20%</td><td>1–5 pts (110–120% optimal)</td></tr>
+        <tr><td>MA200 Position</td><td>15%</td><td>1–5 pts (&gt;110% strongest)</td></tr>
+        <tr><td>MA50 Position</td><td>10%</td><td>1–5 pts (&gt;110% strongest)</td></tr>
+      </tbody>
+    </table>
+    <table style="margin-top:16px;">
+      <thead><tr><th>Grade</th><th>Score</th><th>Expected Success Rate</th></tr></thead>
+      <tbody>
+        <tr><td class="grade-a">A ⭐⭐⭐⭐⭐</td><td>85+</td><td>70%+</td></tr>
+        <tr><td class="grade-b">B ⭐⭐⭐⭐</td><td>70–84</td><td>55–69%</td></tr>
+        <tr><td class="grade-c">C ⭐⭐⭐</td><td>55–69</td><td>40–54%</td></tr>
+        <tr><td class="grade-d">D ⭐⭐</td><td>≤54</td><td>Below 40%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="disclaimer">
+    <b>Risk Disclaimer:</b> This report is for informational and educational purposes only
+    and does not constitute investment advice or a recommendation to buy or sell any security.
+    Earnings-based gap trading carries substantial risk, including the risk of rapid and total
+    loss of capital. Past backtest performance does not guarantee future results. Always apply
+    disciplined position sizing and stop-loss management, and conduct your own due diligence
+    before trading.
+  </section>
+
+  <footer>
+    Post-Earnings Gap-Up Stock Analysis &nbsp;|&nbsp; Data sources: Finviz, Alpaca, FMP
+    &nbsp;|&nbsp; Generated 2026-06-17 09:01 ET
+  </footer>
+
+</div>
+</body>
+</html>
