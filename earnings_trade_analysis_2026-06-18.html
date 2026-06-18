@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-06-18</title>
+<style>
+  :root{
+    --bg:#0f1419; --card:#1a212b; --card2:#222b38; --text:#e6edf3;
+    --muted:#8b98a5; --accent:#3fb950; --warn:#d29922; --danger:#f85149;
+    --border:#2d3845; --blue:#58a6ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6; padding:24px;
+  }
+  .wrap{max-width:960px;margin:0 auto;}
+  header{
+    text-align:center; padding:32px 20px; border-radius:16px;
+    background:linear-gradient(135deg,#1a212b 0%,#222b38 100%);
+    border:1px solid var(--border); margin-bottom:24px;
+  }
+  header h1{font-size:1.7rem;margin-bottom:8px;letter-spacing:-.5px;}
+  header .sub{color:var(--muted);font-size:.95rem;}
+  .badge{
+    display:inline-block;padding:4px 12px;border-radius:999px;
+    font-size:.8rem;font-weight:600;margin-top:14px;
+    background:rgba(88,166,255,.12);color:var(--blue);border:1px solid rgba(88,166,255,.3);
+  }
+  .dashboard{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:16px;margin-bottom:24px;
+  }
+  .metric{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:20px;text-align:center;
+  }
+  .metric .num{font-size:2rem;font-weight:700;color:var(--blue);}
+  .metric .lbl{color:var(--muted);font-size:.85rem;margin-top:4px;}
+  .panel{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:32px;margin-bottom:24px;
+  }
+  .empty-state{text-align:center;padding:40px 20px;}
+  .empty-state .icon{font-size:3rem;margin-bottom:16px;}
+  .empty-state h2{font-size:1.3rem;margin-bottom:12px;}
+  .empty-state p{color:var(--muted);max-width:640px;margin:0 auto 12px;}
+  .filters{
+    background:var(--card2);border:1px solid var(--border);border-radius:12px;
+    padding:20px 24px;margin-top:24px;text-align:left;
+  }
+  .filters h3{font-size:1rem;margin-bottom:12px;color:var(--blue);}
+  .filters ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;}
+  .filters li{font-size:.88rem;color:var(--text);padding-left:18px;position:relative;}
+  .filters li::before{content:"\2713";position:absolute;left:0;color:var(--accent);font-weight:700;}
+  .disclaimer{
+    font-size:.78rem;color:var(--muted);text-align:center;
+    border-top:1px solid var(--border);padding-top:20px;margin-top:8px;
+  }
+  footer{text-align:center;color:var(--muted);font-size:.8rem;margin-top:24px;}
+  code{background:#0d1117;padding:2px 6px;border-radius:6px;font-size:.82rem;color:var(--blue);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📊 Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="sub">Backtest-Scored Earnings Momentum Screening</div>
+    <div class="badge">Report Date: 2026-06-18 (Thursday)</div>
+  </header>
+
+  <div class="dashboard">
+    <div class="metric"><div class="num">0</div><div class="lbl">Stocks Screened</div></div>
+    <div class="metric"><div class="num">0</div><div class="lbl">A-Grade ⭐⭐⭐⭐⭐</div></div>
+    <div class="metric"><div class="num">0</div><div class="lbl">B-Grade ⭐⭐⭐⭐</div></div>
+    <div class="metric"><div class="num">0</div><div class="lbl">C/D-Grade</div></div>
+  </div>
+
+  <div class="panel">
+    <div class="empty-state">
+      <div class="icon">🔍</div>
+      <h2>No Stocks Available for Earnings Trading</h2>
+      <p>
+        The Finviz <code>earnings_trading_screener()</code> returned <strong>no candidates</strong>
+        for today's session. No Large-cap ($10B+) stock that reported earnings after yesterday's
+        close (2026-06-17 AMC) or before today's open (2026-06-18 BMO) currently satisfies all of
+        the screener's fixed momentum and quality filters.
+      </p>
+      <p>
+        Per the methodology, screener results are <strong>not augmented from any other source</strong>.
+        A zero-result day is a normal and expected outcome when the fixed filter conditions are strict —
+        it most often reflects a light earnings calendar near quarter-end (mid-June) combined with the
+        requirement that the stock be gapping/trending up with an EPS estimate upward revision.
+      </p>
+
+      <div class="filters">
+        <h3>Fixed Screener Filters (all must be satisfied)</h3>
+        <ul>
+          <li>Market cap: Large+ ($10B or higher)</li>
+          <li>Earnings: yesterday AMC or today BMO</li>
+          <li>EPS forecast: upward revision</li>
+          <li>Net margin: 3% or higher</li>
+          <li>Average volume: 200,000+ shares</li>
+          <li>Price: $30 or higher</li>
+          <li>Price action: trending up</li>
+          <li>4-week performance: above 0%</li>
+          <li>Stocks only (no ETFs/funds)</li>
+          <li>Sorted by EPS surprise (desc)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3 style="color:var(--blue);font-size:1.05rem;margin-bottom:12px;">📌 Trader Note</h3>
+    <p style="color:var(--muted);font-size:.92rem;">
+      No actionable post-earnings gap-up setups today. No new positions are warranted from this
+      strategy. Preserve capital, keep watchlists current, and re-run the screen at the next session
+      when the earnings calendar reactivates. The next heavy reporting wave typically resumes with the
+      Q2 season in mid-to-late July.
+    </p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> This report is for informational and educational purposes only and
+    does not constitute financial advice or a recommendation to buy or sell any security. Earnings-based
+    trading carries substantial risk, including the risk of rapid and significant loss. Always perform
+    your own due diligence and apply strict position sizing and stop-loss discipline.
+  </div>
+
+  <footer>
+    Analysis performed: 2026-06-18T06:01:13-05:00 (ET) &middot;
+    Data source: Finviz earnings_trading_screener (Stage 1) &middot;
+    Backtest 5-element scoring model
+  </footer>
+</div>
+</body>
+</html>
