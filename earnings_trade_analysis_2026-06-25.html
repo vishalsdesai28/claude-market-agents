@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-06-25</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c232d; --border:#30363d;
+    --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff;
+    --green:#3fb950; --amber:#d29922; --red:#f85149; --grey:#6e7681;
+    --gradeA:#3fb950; --gradeB:#58a6ff; --gradeC:#d29922; --gradeD:#f85149;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.55;padding:24px 16px;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  header.page{text-align:center;margin-bottom:28px;}
+  header.page h1{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;
+    background:linear-gradient(90deg,#58a6ff,#3fb950);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  header.page .sub{color:var(--muted);font-size:.95rem;margin-top:6px;}
+  header.page .ts{color:var(--grey);font-size:.8rem;margin-top:4px;}
+  .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 30px;}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;}
+  .stat .n{font-size:1.7rem;font-weight:800;}
+  .stat .l{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;margin-top:4px;}
+  table.rank{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);
+    border-radius:12px;overflow:hidden;margin-bottom:32px;}
+  table.rank th,table.rank td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--border);font-size:.9rem;}
+  table.rank th{background:var(--card2);color:var(--muted);text-transform:uppercase;font-size:.72rem;letter-spacing:.5px;}
+  table.rank tr:last-child td{border-bottom:none;}
+  .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:.78rem;color:#0d1117;}
+  .gA{background:var(--gradeA);} .gB{background:var(--gradeB);} .gC{background:var(--gradeC);} .gD{background:var(--gradeD);}
+  .pos{color:var(--green);font-weight:700;} .neg{color:var(--red);font-weight:700;} .neu{color:var(--muted);}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:22px;}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:16px;}
+  .card .name h2{font-size:1.3rem;} .card .name .tk{color:var(--accent);font-weight:700;}
+  .card .name .co{color:var(--muted);font-size:.85rem;}
+  .card .price{text-align:right;}
+  .card .price .p{font-size:1.5rem;font-weight:800;}
+  .card .price .g{font-size:.9rem;}
+  .card .scorebox{text-align:center;min-width:96px;}
+  .card .scorebox .sc{font-size:2rem;font-weight:800;line-height:1;}
+  .card .scorebox .gr{margin-top:6px;}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px;}
+  .metric{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;}
+  .metric .ml{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.4px;}
+  .metric .mv{font-size:1.05rem;font-weight:700;margin-top:3px;}
+  .bars{margin:14px 0;}
+  .bar{display:flex;align-items:center;gap:10px;margin-bottom:7px;font-size:.82rem;}
+  .bar .lbl{width:150px;color:var(--muted);flex-shrink:0;}
+  .bar .track{flex:1;background:var(--card2);border-radius:6px;height:14px;overflow:hidden;border:1px solid var(--border);}
+  .bar .fill{height:100%;border-radius:6px;}
+  .bar .pts{width:54px;text-align:right;font-weight:700;}
+  .f5{background:var(--green);} .f4{background:#58a6ff;} .f3{background:#d29922;} .f2{background:#db6d28;} .f1{background:var(--red);}
+  .section-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:14px 0 6px;font-weight:700;}
+  .news{font-size:.88rem;color:var(--text);}
+  .news ul{margin:6px 0 0 18px;} .news li{margin-bottom:4px;}
+  .tech{font-size:.86rem;color:var(--muted);}
+  .prob{display:flex;align-items:center;gap:10px;margin-top:6px;}
+  .prob .track{flex:1;height:10px;background:var(--card2);border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+  .prob .fill{height:100%;background:linear-gradient(90deg,#d29922,#3fb950);}
+  .prob .val{font-weight:800;width:48px;text-align:right;}
+  .disclaimer{background:#1c232d;border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:10px;
+    padding:14px 16px;font-size:.8rem;color:var(--muted);margin-top:10px;}
+  footer{text-align:center;color:var(--grey);font-size:.78rem;margin-top:28px;}
+  a{color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="sub">Earnings reactions — yesterday after-hours &amp; today pre-market | Thursday, June 25, 2026</div>
+    <div class="ts">Analysis generated 2026-06-25 09:05 ET · Pre-market data · Backtest scoring system (5-element weighted model)</div>
+  </header>
+
+  <!-- Summary dashboard -->
+  <div class="summary">
+    <div class="stat"><div class="n">3</div><div class="l">Stocks Screened</div></div>
+    <div class="stat"><div class="n" style="color:var(--gradeB)">1</div><div class="l">B-Grade</div></div>
+    <div class="stat"><div class="n" style="color:var(--gradeC)">1</div><div class="l">C-Grade</div></div>
+    <div class="stat"><div class="n" style="color:var(--gradeD)">1</div><div class="l">D-Grade</div></div>
+    <div class="stat"><div class="n">MU</div><div class="l">Top Pick (75)</div></div>
+  </div>
+
+  <!-- Ranking table -->
+  <table class="rank">
+    <thead>
+      <tr><th>Rank</th><th>Ticker</th><th>Company</th><th>Price</th><th>Gap</th><th>Score</th><th>Grade</th><th>Success Prob.</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td><span class="tk" style="color:var(--accent);font-weight:700">MU</span></td>
+        <td>Micron Technology</td><td>$1,238.10</td><td class="pos">+17.98%</td>
+        <td><b>75.0</b></td><td><span class="pill gB">B</span></td><td>62%</td>
+      </tr>
+      <tr>
+        <td>2</td><td><span class="tk" style="color:var(--accent);font-weight:700">AYI</span></td>
+        <td>Acuity Inc.</td><td>$335.20</td><td class="pos">+8.02%</td>
+        <td><b>68.0</b></td><td><span class="pill gC">C</span></td><td>50%</td>
+      </tr>
+      <tr>
+        <td>3</td><td><span class="tk" style="color:var(--accent);font-weight:700">MKC</span></td>
+        <td>McCormick &amp; Co.</td><td>$47.80</td><td class="pos">+0.50%</td>
+        <td><b>51.0</b></td><td><span class="pill gD">D</span></td><td>38%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============ MU CARD ============ -->
+  <div class="card">
+    <div class="top">
+      <div class="name">
+        <h2><span class="tk">MU</span> — Micron Technology, Inc.</h2>
+        <div class="co">Semiconductors · Memory (DRAM/HBM/NAND) · Reported FQ3 after close 06/24</div>
+      </div>
+      <div class="price">
+        <div class="p">$1,238.10</div>
+        <div class="g pos">Gap +17.98%</div>
+      </div>
+      <div class="scorebox">
+        <div class="sc" style="color:var(--gradeB)">75.0</div>
+        <div class="gr"><span class="pill gB">B-GRADE</span></div>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="ml">Prior Close (06/24)</div><div class="mv">$1,048.51</div></div>
+      <div class="metric"><div class="ml">Pre-Earnings 20D Trend</div><div class="mv pos">+17.04%</div></div>
+      <div class="metric"><div class="ml">Volume Ratio (20D/60D)</div><div class="mv pos">109.1%</div></div>
+      <div class="metric"><div class="ml">vs 50-Day MA</div><div class="mv pos">+56.90%</div></div>
+      <div class="metric"><div class="ml">vs 200-Day MA</div><div class="mv pos">+194.11%</div></div>
+    </div>
+
+    <div class="section-title">5-Element Backtest Score</div>
+    <div class="bars">
+      <div class="bar"><span class="lbl">Gap Size (25%)</span><span class="track"><span class="fill f2" style="width:40%"></span></span><span class="pts">2/5</span></div>
+      <div class="bar"><span class="lbl">Pre-Earnings Trend (30%)</span><span class="track"><span class="fill f4" style="width:80%"></span></span><span class="pts">4/5</span></div>
+      <div class="bar"><span class="lbl">Volume Trend (20%)</span><span class="track"><span class="fill f4" style="width:80%"></span></span><span class="pts">4/5</span></div>
+      <div class="bar"><span class="lbl">MA200 (15%)</span><span class="track"><span class="fill f5" style="width:100%"></span></span><span class="pts">5/5</span></div>
+      <div class="bar"><span class="lbl">MA50 (10%)</span><span class="track"><span class="fill f5" style="width:100%"></span></span><span class="pts">5/5</span></div>
+    </div>
+
+    <div class="section-title">Success Probability</div>
+    <div class="prob"><span class="track"><span class="fill" style="width:62%"></span></span><span class="val">62%</span></div>
+
+    <div class="section-title">News Analysis</div>
+    <div class="news">
+      <ul>
+        <li><b>Blowout quarter:</b> Record revenue, reported as up ~346% YoY; net profit jumped more than 1,200% on relentless AI memory (HBM/DRAM) demand.</li>
+        <li><b>Guidance above Street:</b> Next-quarter forecast came in well above consensus; management flagged exponential growth in multiyear customer deals improving revenue visibility.</li>
+        <li><b>Sector catalyst:</b> Results re-ignited the AI chip trade (SanDisk, WDC, STX, QCOM, AMAT, LRCX rallied); one analyst lifted target to $2,000.</li>
+        <li><b>Watch-outs:</b> Management expects "meaningful moderation in the rate of price increases"; SK Hynix's $30B US listing and stretched valuations are cited risks.</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Technical Factors</div>
+    <div class="tech">Extended above all key MAs (price +20.65% vs MA20, +56.90% vs MA50, +194.11% vs MA200) — strong long-term uptrend but heavily stretched short-term. Volume ratio 109.1% confirms rising participation without the >120% instability flag. The +17.98% gap is large (10%+ band scores lower historically). Pre-earnings 20-day trend +17.04% indicates strong momentum into the print.</div>
+
+    <div class="disclaimer">Large gap-up (+18%) on an already-extended chart: highest probability setup is to wait for a controlled pullback / first-day-range hold rather than chasing the open. Manage size; memory names are high-beta.</div>
+  </div>
+
+  <!-- ============ AYI CARD ============ -->
+  <div class="card">
+    <div class="top">
+      <div class="name">
+        <h2><span class="tk">AYI</span> — Acuity Inc.</h2>
+        <div class="co">Industrials · Lighting &amp; Building Management Solutions · Reported FQ3 pre-market 06/25</div>
+      </div>
+      <div class="price">
+        <div class="p">$335.20</div>
+        <div class="g pos">Gap +8.02%</div>
+      </div>
+      <div class="scorebox">
+        <div class="sc" style="color:var(--gradeC)">68.0</div>
+        <div class="gr"><span class="pill gC">C-GRADE</span></div>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="ml">Prior Close (06/24)</div><div class="mv">$305.51</div></div>
+      <div class="metric"><div class="ml">Pre-Earnings 20D Trend</div><div class="mv pos">+2.66%</div></div>
+      <div class="metric"><div class="ml">Volume Ratio (20D/60D)</div><div class="mv pos">103.9%</div></div>
+      <div class="metric"><div class="ml">vs 50-Day MA</div><div class="mv pos">+13.60%</div></div>
+      <div class="metric"><div class="ml">vs 200-Day MA</div><div class="mv pos">+4.22%</div></div>
+    </div>
+
+    <div class="section-title">5-Element Backtest Score</div>
+    <div class="bars">
+      <div class="bar"><span class="lbl">Gap Size (25%)</span><span class="track"><span class="fill f3" style="width:60%"></span></span><span class="pts">3/5</span></div>
+      <div class="bar"><span class="lbl">Pre-Earnings Trend (30%)</span><span class="track"><span class="fill f3" style="width:60%"></span></span><span class="pts">3/5</span></div>
+      <div class="bar"><span class="lbl">Volume Trend (20%)</span><span class="track"><span class="fill f4" style="width:80%"></span></span><span class="pts">4/5</span></div>
+      <div class="bar"><span class="lbl">MA200 (15%)</span><span class="track"><span class="fill f3" style="width:60%"></span></span><span class="pts">3/5</span></div>
+      <div class="bar"><span class="lbl">MA50 (10%)</span><span class="track"><span class="fill f5" style="width:100%"></span></span><span class="pts">5/5</span></div>
+    </div>
+
+    <div class="section-title">Success Probability</div>
+    <div class="prob"><span class="track"><span class="fill" style="width:50%"></span></span><span class="val">50%</span></div>
+
+    <div class="section-title">News Analysis</div>
+    <div class="news">
+      <ul>
+        <li><b>Earnings beat:</b> Acuity reported fiscal 2026 third-quarter results that topped estimates, driving an ~8% pre-market gap-up.</li>
+        <li><b>Shareholder return:</b> Board declared a quarterly dividend (announced 06/24), signaling balance-sheet confidence.</li>
+        <li><b>Quality screen:</b> Passed the upward-EPS-revision and 3%+ net-margin filters; profitable industrial with steady demand for lighting/building-management products.</li>
+        <li><b>Context:</b> Print follows a constructive multi-week recovery off the early-June low near $280.</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Technical Factors</div>
+    <div class="tech">Cleanly above all MAs (price +9.86% vs MA20, +13.60% vs MA50, +4.22% vs MA200) — the +4.22% MA200 reading places it in the "slightly bullish" band, just reclaiming its long-term trend. Volume ratio 103.9% shows healthy, non-spiked interest. The +8.02% gap sits in the favorable 5-10% band. Modest pre-earnings trend (+2.66%) keeps it from being overextended.</div>
+
+    <div class="disclaimer">Cleanest balance of the three: moderate gap, MA-supported, normal volume. C-grade reflects mid-range pre-earnings momentum rather than any structural flaw. Standard risk controls apply.</div>
+  </div>
+
+  <!-- ============ MKC CARD ============ -->
+  <div class="card">
+    <div class="top">
+      <div class="name">
+        <h2><span class="tk">MKC</span> — McCormick &amp; Company, Inc.</h2>
+        <div class="co">Consumer Staples · Spices &amp; Flavor Solutions · Reported FQ2 pre-market 06/25</div>
+      </div>
+      <div class="price">
+        <div class="p">$47.80</div>
+        <div class="g pos">Gap +0.50%</div>
+      </div>
+      <div class="scorebox">
+        <div class="sc" style="color:var(--gradeD)">51.0</div>
+        <div class="gr"><span class="pill gD">D-GRADE</span></div>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="ml">Prior Close (06/24)</div><div class="mv">$47.60</div></div>
+      <div class="metric"><div class="ml">Pre-Earnings 20D Trend</div><div class="mv pos">+1.67%</div></div>
+      <div class="metric"><div class="ml">Volume Ratio (20D/60D)</div><div class="mv pos">108.6%</div></div>
+      <div class="metric"><div class="ml">vs 50-Day MA</div><div class="mv neg">-1.45%</div></div>
+      <div class="metric"><div class="ml">vs 200-Day MA</div><div class="mv neg">-20.93%</div></div>
+    </div>
+
+    <div class="section-title">5-Element Backtest Score</div>
+    <div class="bars">
+      <div class="bar"><span class="lbl">Gap Size (25%)</span><span class="track"><span class="fill f2" style="width:40%"></span></span><span class="pts">2/5</span></div>
+      <div class="bar"><span class="lbl">Pre-Earnings Trend (30%)</span><span class="track"><span class="fill f3" style="width:60%"></span></span><span class="pts">3/5</span></div>
+      <div class="bar"><span class="lbl">Volume Trend (20%)</span><span class="track"><span class="fill f4" style="width:80%"></span></span><span class="pts">4/5</span></div>
+      <div class="bar"><span class="lbl">MA200 (15%)</span><span class="track"><span class="fill f1" style="width:20%"></span></span><span class="pts">1/5</span></div>
+      <div class="bar"><span class="lbl">MA50 (10%)</span><span class="track"><span class="fill f2" style="width:40%"></span></span><span class="pts">2/5</span></div>
+    </div>
+
+    <div class="section-title">Success Probability</div>
+    <div class="prob"><span class="track"><span class="fill" style="width:38%"></span></span><span class="val">38%</span></div>
+
+    <div class="section-title">News Analysis</div>
+    <div class="news">
+      <ul>
+        <li><b>Beat &amp; reaffirm:</b> McCormick beat Q2 estimates and reaffirmed its 2026 outlook; CEO highlighted margin strength in a tough cost environment.</li>
+        <li><b>Strategic angle:</b> Higher sales reported amid the combination with Unilever's spice/flavor operations.</li>
+        <li><b>Income:</b> Declared a $0.48 quarterly dividend (06/23) — a defensive staples income story.</li>
+        <li><b>Muted reaction:</b> Results follow poor recent share-price performance; pre-market gap is only ~+0.5%, signaling limited surprise.</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Technical Factors</div>
+    <div class="tech">Weakest technical backdrop: price below the 50-day MA (-1.45%) and deeply below the 200-day MA (-20.93%), a clear long-term downtrend. The flat +0.50% gap scores in the low 0-2% band. Volume ratio 108.6% is the one positive (rising interest). Pre-earnings trend +1.67% is barely positive. Reclaiming MA50/MA200 is required before any trend trade.</div>
+
+    <div class="disclaimer">D-grade: below-trend staples name with a near-flat reaction. Low historical edge for momentum gap trades. Better suited to value/income holders than short-term earnings momentum; avoid chasing.</div>
+  </div>
+
+  <div class="disclaimer" style="border-left-color:var(--red);">
+    <b>Risk Disclaimer.</b> This analysis is generated by an automated backtest scoring model for educational and informational purposes only and is <b>not investment advice</b>. Prices are pre-market and subject to change at the regular-session open. Earnings gap trades carry elevated risk of rapid loss. Always use stop-losses, size positions conservatively (typically 0.5-1% account risk per trade), and conduct your own due diligence. Past patterns do not guarantee future results.
+  </div>
+
+  <footer>
+    Post-Earnings Gap-Up Stock Analysis · Generated 2026-06-25 · Screener: finviz earnings_trading_screener (Large+, EPS upward revision, net margin 3%+, $30+) · Data: Finviz · Alpaca · FMP
+  </footer>
+
+</div>
+</body>
+</html>
