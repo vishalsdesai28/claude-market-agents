@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Earnings Gap-Up Stock Analysis — 2026-07-01</title>
+<style>
+  :root{
+    --bg:#0e1117; --card:#161b22; --card2:#1c2230; --border:#2b3240;
+    --txt:#e6edf3; --muted:#9aa7b4; --accent:#58a6ff;
+    --green:#2ea043; --green-soft:#264d33; --red:#f85149; --red-soft:#4d2626;
+    --amber:#d29922; --amber-soft:#4d411a; --gradC:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--txt);line-height:1.55;padding:0 0 60px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+  header.hero{background:linear-gradient(135deg,#12233d 0%,#0e1117 70%);
+    border-bottom:1px solid var(--border);padding:38px 0 30px;margin-bottom:26px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
+  .hero .sub{color:var(--muted);font-size:1.02rem}
+  .hero .ts{color:var(--muted);font-size:.85rem;margin-top:10px}
+  .disc-top{background:var(--amber-soft);border:1px solid var(--amber);
+    border-radius:8px;padding:10px 14px;font-size:.85rem;color:#f0d489;margin-top:16px}
+
+  .dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:30px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+  .stat .k{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.6px}
+  .stat .v{font-size:1.65rem;font-weight:800;margin-top:4px}
+  .stat .v small{font-size:.9rem;font-weight:600;color:var(--muted)}
+
+  h2.section{font-size:1.25rem;font-weight:700;margin:30px 0 14px;padding-bottom:8px;
+    border-bottom:1px solid var(--border)}
+
+  .grade-badge{display:inline-block;font-weight:800;border-radius:20px;padding:3px 14px;font-size:.9rem}
+  .g-A{background:var(--green-soft);color:#7ee787;border:1px solid var(--green)}
+  .g-B{background:#1b3a5c;color:#79c0ff;border:1px solid var(--accent)}
+  .g-C{background:var(--amber-soft);color:#f0d489;border:1px solid var(--amber)}
+  .g-D{background:var(--red-soft);color:#ff9d96;border:1px solid var(--red)}
+
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:22px 24px;margin-bottom:22px;overflow:hidden}
+  .card-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:8px}
+  .card-top .name{font-size:1.4rem;font-weight:800}
+  .card-top .name .tk{color:var(--accent)}
+  .card-top .name .co{display:block;color:var(--muted);font-size:.9rem;font-weight:500;margin-top:2px}
+  .price-box{text-align:right}
+  .price-box .p{font-size:1.7rem;font-weight:800}
+  .price-box .chg{font-weight:700}
+  .up{color:var(--green)} .down{color:var(--red)}
+
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:16px 0}
+  .m{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;text-align:center}
+  .m .lbl{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.5px}
+  .m .val{font-size:1.15rem;font-weight:800;margin-top:3px}
+
+  .score-tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92rem}
+  .score-tbl th,.score-tbl td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--border)}
+  .score-tbl th{color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.4px}
+  .score-tbl td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .bar{height:8px;border-radius:5px;background:#233043;overflow:hidden;min-width:60px}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,#3fb950,#58a6ff)}
+  .totrow td{font-weight:800;border-top:2px solid var(--border);border-bottom:none;font-size:1rem}
+
+  .prob-wrap{margin:16px 0}
+  .prob-lbl{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);margin-bottom:5px}
+  .prob-bar{height:14px;border-radius:8px;background:#233043;overflow:hidden}
+  .prob-bar > i{display:block;height:100%;background:linear-gradient(90deg,#d29922,#3fb950)}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  .panel h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:8px}
+  .panel ul{list-style:none}
+  .panel li{padding:5px 0 5px 18px;position:relative;font-size:.9rem;color:#cdd7e1}
+  .panel li:before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  .panel p{font-size:.9rem;color:#cdd7e1}
+
+  .noresult{background:var(--card);border:1px dashed var(--border);border-radius:14px;padding:30px;text-align:center;color:var(--muted)}
+
+  footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+  .disc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:.82rem;color:var(--muted);margin-top:14px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 4px;font-size:.8rem;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:5px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1>Post-Earnings Gap-Up Stock Analysis</h1>
+    <div class="sub">Data-driven backtest scoring for post-earnings momentum swing trades</div>
+    <div class="ts">Report date: 2026-07-01 (Wed) &nbsp;|&nbsp; Analysis generated: 2026-07-01 06:05 PDT / 09:05 ET</div>
+    <div class="disc-top">Screener universe: <strong>Finviz earnings_trading_screener()</strong> only (Large+ cap $10B+, EPS upward revision, net margin 3%+, price $30+, reported yesterday after-hours or today pre-market, up on the day). No external augmentation.</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- Summary Dashboard -->
+  <div class="dash">
+    <div class="stat"><div class="k">Stocks Screened</div><div class="v">1</div></div>
+    <div class="stat"><div class="k">A-Grade (85+)</div><div class="v">0</div></div>
+    <div class="stat"><div class="k">B-Grade (70-84)</div><div class="v">0</div></div>
+    <div class="stat"><div class="k">C-Grade (55-69)</div><div class="v" style="color:var(--gradC)">1</div></div>
+    <div class="stat"><div class="k">D-Grade (&le;54)</div><div class="v">0</div></div>
+    <div class="stat"><div class="k">Top Score</div><div class="v">63<small>/100</small></div></div>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot" style="background:var(--green)"></span>A: 70%+ win rate</span>
+    <span><span class="dot" style="background:var(--accent)"></span>B: 55-69%</span>
+    <span><span class="dot" style="background:var(--amber)"></span>C: 40-54%</span>
+    <span><span class="dot" style="background:var(--red)"></span>D: &lt;40%</span>
+  </div>
+
+  <!-- C-GRADE SECTION -->
+  <h2 class="section">C-Grade Candidates (55-69 pts &middot; 40-54% success rate) &#11088;&#11088;&#11088;</h2>
+
+  <div class="card">
+    <div class="card-top">
+      <div class="name"><span class="tk">$STZ</span> <span class="grade-badge g-C">C-Grade</span>
+        <span class="co">Constellation Brands, Inc. &middot; Consumer Defensive / Beverages — Alcoholic</span>
+      </div>
+      <div class="price-box">
+        <div class="p">$142.70</div>
+        <div class="chg up">+2.60% &#9650; (vs $139.09 prior close)</div>
+      </div>
+    </div>
+
+    <!-- key metrics -->
+    <div class="metrics">
+      <div class="m"><div class="lbl">Gap-Up</div><div class="val up">+2.60%</div></div>
+      <div class="m"><div class="lbl">Pre-Earnings 20D</div><div class="val up">+2.08%</div></div>
+      <div class="m"><div class="lbl">Volume Ratio</div><div class="val">110.1%</div></div>
+      <div class="m"><div class="lbl">vs MA50</div><div class="val down">-2.11%</div></div>
+      <div class="m"><div class="lbl">vs MA200</div><div class="val down">-2.15%</div></div>
+      <div class="m"><div class="lbl">vs MA20</div><div class="val up">+0.44%</div></div>
+    </div>
+
+    <!-- 5-element score table -->
+    <table class="score-tbl">
+      <thead>
+        <tr><th>Factor</th><th>Weight</th><th>Reading</th><th>Pts (1-5)</th><th>Contribution</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Gap Size</td><td>25%</td><td>+2.60% (2-5% band)</td><td class="num">3</td><td class="num">15.0</td></tr>
+        <tr><td>Pre-Earnings Trend</td><td>30%</td><td>+2.08% (0-10% stable up)</td><td class="num">3</td><td class="num">18.0</td></tr>
+        <tr><td>Volume Trend</td><td>20%</td><td>110.1% (110-120% high)</td><td class="num">5</td><td class="num">20.0</td></tr>
+        <tr><td>MA200 Position</td><td>15%</td><td>97.85% of MA200 (neutral)</td><td class="num">2</td><td class="num">6.0</td></tr>
+        <tr><td>MA50 Position</td><td>10%</td><td>97.89% of MA50 (neutral)</td><td class="num">2</td><td class="num">4.0</td></tr>
+        <tr class="totrow"><td>Total Score</td><td></td><td></td><td></td><td class="num">63.0</td></tr>
+      </tbody>
+    </table>
+
+    <!-- success probability -->
+    <div class="prob-wrap">
+      <div class="prob-lbl"><span>Estimated 2-10 day upside probability</span><span>52%</span></div>
+      <div class="prob-bar"><i style="width:52%"></i></div>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h4>Earnings Result (Q1 FY2027)</h4>
+        <ul>
+          <li>EPS beat consensus estimates; earnings growth driven by the core beer business (Modelo, Corona, Pacifico).</li>
+          <li>Net sales fell ~3.3% YoY, reflecting softening consumer trends and a weaker wine &amp; spirits segment.</li>
+          <li>Beer depletions held up better than the top-line miss implied, supporting the margin story.</li>
+          <li>Shares gapped up on the beat despite the revenue decline — a "less bad than feared" reaction.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>Technical Factors</h4>
+        <p>Price reclaimed the 20-day SMA (+0.44%) but remains just below the 50-day (-2.11%) and 200-day (-2.15%) — a neutral, recovery-candidate posture consistent with the screener's "4W performance 0% to down" filter. Volume ratio of 110.1% (20D vs 60D) signals rising, healthy interest without the instability of a &gt;120% spike. Pre-earnings 20-day trend of +2.08% shows a stable base into the print. The setup is a base-recovery attempt rather than an established uptrend; a clean reclaim of the $145.8 MA cluster is the key confirmation level.</p>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:14px">
+      <h4>Trade Rationale &amp; Risk Framing</h4>
+      <p>C-grade (63/100). Strengths: volume expansion (5 pts) and a stable pre-earnings base (3 pts) on a genuine EPS beat. Constraint: price sits below both the 50- and 200-day averages (2 pts each), capping the score and keeping this a lower-conviction, recovery-type setup. Reference levels — entry into strength above the gap with a stop below the recent $135-136 pivot, first target at the $145.8 MA cluster, extended target near the mid-June $148-151 swing highs. Size conservatively given the sub-MA200 posture. Levels are illustrative, not advice.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div><strong>Methodology.</strong> Universe from Finviz <code>earnings_trading_screener()</code>. Per-ticker data: Finviz moving-average position, Alpaca 60-trading-day bars (volume) and 21-day bars (pre-earnings trend). Score = Gap&times;0.25 + Pre-Earnings&times;0.30 + Volume&times;0.20 + MA200&times;0.15 + MA50&times;0.10, each factor 1-5, scaled to 100.</div>
+    <div class="disc"><strong>Disclaimer.</strong> This report is for educational and informational purposes only and is not investment advice, a recommendation, or a solicitation to buy or sell any security. Earnings-reaction trades are high-risk and can result in rapid, substantial losses. Backtest grades reflect historical pattern tendencies and do not guarantee future results. Always conduct your own due diligence, use disciplined position sizing and stop-losses, and consult a licensed financial professional. Prices are intraday snapshots and may be delayed.</div>
+    <div style="margin-top:10px">Generated by earnings-trade-analyst &middot; 2026-07-01</div>
+  </footer>
+
+</div>
+</body>
+</html>
