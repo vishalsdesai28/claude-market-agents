@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Stock Market Analysis - July 2, 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  header {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
+  header h1 {
+    font-size: 2.4em;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  header .date-label {
+    font-size: 1.2em;
+    color: #cfe0ff;
+    font-weight: 500;
+  }
+  .exec-summary {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .exec-summary h2 { margin-bottom: 15px; font-size: 1.5em; }
+  .exec-summary p { line-height: 1.7; color: #e8f0ff; font-size: 1.05em; }
+  .section {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .section h2 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+  }
+  .etf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .etf-card {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  .etf-card:hover { transform: translateY(-5px); }
+  .etf-card .symbol { font-size: 1.3em; font-weight: 700; margin-bottom: 5px; }
+  .etf-card .name { font-size: 0.8em; color: #cfe0ff; margin-bottom: 10px; }
+  .etf-card .price { font-size: 1.6em; font-weight: 800; margin-bottom: 5px; }
+  .etf-card .change { font-size: 1.1em; font-weight: 700; }
+  .positive { color: #00ff88; text-shadow: 0 0 10px rgba(0,255,136,0.4); }
+  .negative { color: #ff6b6b; text-shadow: 0 0 10px rgba(255,107,107,0.4); }
+  .neutral { color: #ffd700; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  th { background: rgba(255,255,255,0.1); font-weight: 700; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; }
+  tr:hover { background: rgba(255,255,255,0.08); }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 700;
+  }
+  .badge-up { background: rgba(0,255,136,0.2); color: #00ff88; }
+  .badge-down { background: rgba(255,107,107,0.2); color: #ff6b6b; }
+  .catalyst { font-size: 0.82em; color: #cfe0ff; }
+  .catalyst.unverified { color: #a9b7d1; font-style: italic; }
+
+  .afterhours-section {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+    border-left: 5px solid #ffff00;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .afterhours-section h2 { border-bottom: 2px solid rgba(255,255,255,0.4); padding-bottom: 12px; margin-bottom: 20px; }
+  .fallback-box {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  .fallback-box h3 { margin-bottom: 10px; font-size: 1.15em; }
+  .fallback-box ul { margin-left: 20px; line-height: 1.8; }
+  .earnings-card {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 14px;
+    padding: 18px;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .afterhours-badge {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: #ff4444;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.72em;
+    font-weight: bold;
+  }
+  .earnings-surprise { display: flex; justify-content: space-between; margin: 10px 0; flex-wrap: wrap; gap: 10px; }
+  .surprise-positive { color: #00ff88; font-weight: 700; }
+  .surprise-negative { color: #ff6b6b; font-weight: 700; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+  .stat-card .value { font-size: 2.2em; font-weight: 800; color: #ffd700; text-shadow: 0 0 15px rgba(255,215,0,0.4); }
+  .stat-card .label { font-size: 0.85em; color: #cfe0ff; margin-top: 5px; }
+
+  .sector-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sector-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sector-card .sname { font-weight: 700; }
+  .sector-card .smeta { font-size: 0.8em; color: #cfe0ff; }
+
+  .keypoints-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .keypoint-card {
+    background: rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .keypoint-card h3 { margin-bottom: 10px; color: #ffd700; font-size: 1.05em; }
+  .keypoint-card ul { margin-left: 20px; line-height: 1.8; color: #e8f0ff; }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    color: #cfe0ff;
+    font-size: 0.85em;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .etf-grid, .stats-grid, .sector-grid, .keypoints-grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 1.7em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>🇺🇸 U.S. Stock Market Analysis</h1>
+    <div class="date-label">📅 2026-07-02 (Thursday) – Final After-Market Data</div>
+  </header>
+
+  <div class="exec-summary">
+    <h2>📋 Executive Summary</h2>
+    <p>
+      A weak June jobs report drove a sharp value-over-growth rotation on Thursday, July 2, the last full trading session before markets close Friday, July 3 for Independence Day (observed).
+      Nonfarm payrolls rose just +57,000 in June, roughly half the +115,000 Dow Jones consensus estimate and down from a downwardly-revised +129,000 in May (originally reported as +172,000); the unemployment rate held at 4.2% only because the labor-force participation rate slid to 61.5%, its lowest level since March 2021, while April and May payrolls were revised down a combined -74,000.
+      Equity markets split sharply on the news: the Dow (DIA +1.05%, DJIA index +1.14% to a fresh record close of 52,900.07, roughly +595 points) rallied hard as investors rotated into value and rate-sensitive defensives, while the Nasdaq (QQQ -1.73%, Composite -0.87%) extended Wednesday's chip-sector-led slide as growth/tech names lagged. The S&amp;P 500 (SPY -0.13%, index -0.07%) was little changed, caught between the two moves, and the Russell 2000 (IWM -0.58%) slipped despite the broader rotation, a mild divergence from the classic small-cap/rate-cut playbook.
+      Gold was the standout macro trade, with GLD surging +2.03% on rising rate-cut expectations, while Treasuries barely moved (TLT -0.01%, 10-year yield easing only about 1bp to ~4.46%) — a muted bond reaction relative to the size of the payrolls miss. The VIX eased to 16.19 (-2.4%), suggesting the rotation was orderly rather than a risk-off scramble. Tesla was a notable single-stock outlier, falling roughly -7% despite beating Q2 delivery estimates, underscoring the day's punishing mood toward richly-valued growth names.
+      Breadth stayed constructive beneath the index-level churn: 830 stocks remained in confirmed uptrends and 48 names cleared the volume-surge screener (avg +5.7% move on 2.2x relative volume), a list dominated by small-cap healthcare/biotech names riding the day's best-performing sector — Healthcare (+2.79%). Tenax Therapeutics (TENX +16.33%) led on a confirmed catalyst (late-breaking LEVEL trial data presented at the ESC Congress 2026), and SELLAS Life Sciences (SLS +12.89%) rebounded on prediction-market odds (83%) favoring a November AML trial (SLS009) readout; most of the remaining biotech movers (TECX, VOR, DMRA) and Moderna (MRNA +10.01%) had no company-specific news attached and appear to be sector-wide sympathy moves. Genuine Parts Co (GPC +12.92%) and Churchill Capital Corp XI (CCXI +11.96%, a SPAC) both surged on well-above-average volume with no verifiable news catalyst as of this report; treat both as unexplained until confirmed.
+      On the earnings front, Lindsay Corp (LNN) was the only notable before-the-open reporter, beating EPS estimates by +33.74% and revenue by +1.88%, closing +0.87%. No company cleared Finviz's large-cap ($10B+) after-hours earnings screener tonight. The next major earnings cluster — PENG, LEVI, HELE, SMPL, PEP, DAL — arrives July 7-10, after the holiday break.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>📈 Major ETF Performance</h2>
+    <div class="etf-grid">
+      <div class="etf-card">
+        <div class="symbol">SPY</div>
+        <div class="name">SPDR S&amp;P 500 ETF Trust</div>
+        <div class="price">$744.78</div>
+        <div class="change negative">-0.13%</div>
+      </div>
+      <div class="etf-card">
+        <div class="symbol">QQQ</div>
+        <div class="name">Invesco QQQ Trust (Nasdaq 100)</div>
+        <div class="price">$712.60</div>
+        <div class="change negative">-1.73%</div>
+      </div>
+      <div class="etf-card">
+        <div class="symbol">DIA</div>
+        <div class="name">SPDR Dow Jones Industrial Avg ETF</div>
+        <div class="price">$527.88</div>
+        <div class="change positive">+1.05%</div>
+      </div>
+      <div class="etf-card">
+        <div class="symbol">IWM</div>
+        <div class="name">iShares Russell 2000 ETF</div>
+        <div class="price">$297.58</div>
+        <div class="change negative">-0.58%</div>
+      </div>
+      <div class="etf-card">
+        <div class="symbol">TLT</div>
+        <div class="name">iShares 20+ Year Treasury Bond ETF</div>
+        <div class="price">$85.51</div>
+        <div class="change negative">-0.01%</div>
+      </div>
+      <div class="etf-card">
+        <div class="symbol">GLD</div>
+        <div class="name">SPDR Gold Shares ETF</div>
+        <div class="price">$378.13</div>
+        <div class="change positive">+2.03%</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 14px;background:rgba(255,255,255,0.08);border-radius:12px;font-size:0.85em;color:#cfe0ff;">
+      📊 Cash indexes: S&amp;P 500 7,477.63 (-0.07%) &nbsp;|&nbsp; Nasdaq Composite 25,813.43 (-0.87%) &nbsp;|&nbsp; Dow Jones 52,900.07 (+1.14%, fresh record close) &nbsp;|&nbsp; VIX 16.19 (-2.41%)
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🔥 Top Volume-Surge Tickers</h2>
+    <table>
+      <thead>
+        <tr><th>Symbol</th><th>Company</th><th>Change</th><th>Volume</th><th>Catalyst (verified)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>TENX</strong></td>
+          <td>Tenax Therapeutics Inc</td>
+          <td><span class="badge badge-up">+16.33%</span></td>
+          <td>3,811,142</td>
+          <td class="catalyst">Late-breaking presentation of LEVEL clinical trial data at ESC Congress 2026 (announced 7:00 AM ET today)</td>
+        </tr>
+        <tr>
+          <td><strong>TECX</strong></td>
+          <td>Tectonic Therapeutic Inc</td>
+          <td><span class="badge badge-up">+15.85%</span></td>
+          <td>478,373</td>
+          <td class="catalyst unverified">No company-specific news found; moves with today's broad Healthcare sector rally (+2.79%)</td>
+        </tr>
+        <tr>
+          <td><strong>GPC</strong></td>
+          <td>Genuine Parts Company</td>
+          <td><span class="badge badge-up">+12.92%</span></td>
+          <td>5,059,332</td>
+          <td class="catalyst unverified">No news catalyst confirmed; next earnings not until ~7/9-7/21. Unexplained large-cap outlier on heavy volume</td>
+        </tr>
+        <tr>
+          <td><strong>SLS</strong></td>
+          <td>SELLAS Life Sciences Group Inc</td>
+          <td><span class="badge badge-up">+12.89%</span></td>
+          <td>17,151,500</td>
+          <td class="catalyst">Prediction-market odds (83%) now favor SLS009 hitting its primary endpoint in November AML trial readout</td>
+        </tr>
+        <tr>
+          <td><strong>VOR</strong></td>
+          <td>Vor Biopharma Inc</td>
+          <td><span class="badge badge-up">+11.96%</span></td>
+          <td>3,909,796</td>
+          <td class="catalyst unverified">No company-specific news found; Healthcare sector sympathy move</td>
+        </tr>
+        <tr>
+          <td><strong>CCXI</strong></td>
+          <td>Churchill Capital Corp XI (SPAC)</td>
+          <td><span class="badge badge-up">+11.96%</span></td>
+          <td>10,487,982</td>
+          <td class="catalyst unverified">No verified merger-target news found despite market chatter; treat as speculative/unconfirmed</td>
+        </tr>
+        <tr>
+          <td><strong>DMRA</strong></td>
+          <td>Damora Therapeutics Inc</td>
+          <td><span class="badge badge-up">+10.67%</span></td>
+          <td>760,859</td>
+          <td class="catalyst unverified">Only news is a routine Nasdaq Rule 5635(c)(4) inducement-grant filing, not a real catalyst; likely sector sympathy</td>
+        </tr>
+        <tr>
+          <td><strong>MRNA</strong></td>
+          <td>Moderna Inc</td>
+          <td><span class="badge badge-up">+10.01%</span></td>
+          <td>13,481,092</td>
+          <td class="catalyst unverified">Flagged alongside PANW, AAL for hitting 52-week highs; no company-specific news found today</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px;font-size:0.85em;color:#cfe0ff;">
+      Also active in the 48-name volume-surge cohort: CRNX (Crinetics Pharmaceuticals, +9.18%), ABVX (Abivax, +9.12%), and several defensive/utility names (AWK, DUK, AEP, IDA) — consistent with today's rate-cut-hope-driven rotation into Healthcare, Utilities, and Consumer Defensive.
+    </div>
+  </div>
+
+  <div class="afterhours-section">
+    <h2>⏰ Post-Close Earnings &amp; After-Hours</h2>
+    <div class="fallback-box">
+      <h3>📭 Large-Cap After-Hours Screener: No Matches</h3>
+      <p>Finviz's after-hours earnings screener (≥$10B market cap, ≥2% AH move, reported today after close) returned zero matches this evening. No major reporters are on tonight's calendar; the next confirmed earnings cluster begins next Tuesday.</p>
+    </div>
+
+    <div class="earnings-card">
+      <h3>📌 Today's Verified BMO Reporter</h3>
+      <div style="font-size:1.15em; font-weight:800; margin-top:8px;">$LNN — Lindsay Corp <span style="font-size:0.7em;font-weight:600;color:#fff;">(BMO)</span></div>
+      <div class="earnings-surprise">
+        <span>EPS Surprise: <span class="surprise-positive">+33.74%</span></span>
+        <span>Revenue Surprise: <span class="surprise-positive">+1.88%</span></span>
+        <span>Regular-Session Change: <span class="surprise-positive">+0.87%</span></span>
+      </div>
+      <div style="font-size:0.88em; color:#fff;">Irrigation-equipment maker Lindsay Corp topped both EPS and revenue estimates before today's open; shares closed $122.12, up +0.87% on the beat.</div>
+    </div>
+
+    <div class="fallback-box">
+      <h3>🗓️ Remainder of This Week &amp; Next Week's Major Earnings</h3>
+      <p style="margin-bottom:10px;">No further earnings releases are scheduled for the rest of this week — <strong>markets are closed Friday, July 3</strong> for Independence Day (observed, since July 4 falls on a Saturday this year). Trading resumes Monday, July 6.</p>
+      <ul>
+        <li><strong>PENG</strong> (Penguin Solutions) — Tue 7/7, after close</li>
+        <li><strong>LEVI</strong> (Levi Strauss &amp; Co) — Wed 7/8, after close</li>
+        <li><strong>HELE</strong> (Helen of Troy) — Wed 7/8, before open</li>
+        <li><strong>SMPL</strong> (Simply Good Foods) — Thu 7/9, before open</li>
+        <li><strong>PEP</strong> (PepsiCo) — Thu 7/9, before open</li>
+        <li><strong>DAL</strong> (Delta Air Lines) — Fri 7/10, before open</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📊 Market Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="value">48</div>
+        <div class="label">Volume-Surge Tickers</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">830</div>
+        <div class="label">Uptrend Tickers</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">2.2x</div>
+        <div class="label">Avg. Relative Volume (surge cohort)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">+5.7%</div>
+        <div class="label">Avg. Price Move (surge cohort)</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 14px;background:rgba(255,255,255,0.08);border-radius:12px;font-size:0.85em;color:#cfe0ff;">
+      📋 Earnings releases today: <strong style="color:#ffd700;">1</strong> confirmed BMO reporter (LNN) &nbsp;|&nbsp; 0 large-cap after-hours reporters &nbsp;|&nbsp; 25 companies on this week's earnings calendar per Finviz market overview
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🏢 Sector Performance</h2>
+    <div class="sector-grid">
+      <div class="sector-card">
+        <div>
+          <div class="sname">Healthcare</div>
+          <div class="smeta">1,066 stocks · $9.20T mkt cap</div>
+        </div>
+        <div class="change positive">+2.79%</div>
+      </div>
+      <div class="sector-card">
+        <div>
+          <div class="sname">Consumer Defensive</div>
+          <div class="smeta">241 stocks · $4.44T mkt cap</div>
+        </div>
+        <div class="change positive">+2.22%</div>
+      </div>
+      <div class="sector-card">
+        <div>
+          <div class="sname">Basic Materials</div>
+          <div class="smeta">284 stocks · $2.81T mkt cap</div>
+        </div>
+        <div class="change positive">+2.08%</div>
+      </div>
+      <div class="sector-card">
+        <div>
+          <div class="sname">Utilities</div>
+          <div class="smeta">110 stocks · $1.98T mkt cap</div>
+        </div>
+        <div class="change positive">+1.94%</div>
+      </div>
+      <div class="sector-card">
+        <div>
+          <div class="sname">Real Estate</div>
+          <div class="smeta">255 stocks · $1.84T mkt cap</div>
+        </div>
+        <div class="change positive">+1.20%</div>
+      </div>
+      <div class="sector-card">
+        <div>
+          <div class="sname">Technology</div>
+          <div class="smeta">788 stocks · $31.10T mkt cap</div>
+        </div>
+        <div class="change negative">-1.79%</div>
+      </div>
+    </div>
+    <table style="margin-top:20px;">
+      <thead><tr><th>Sector</th><th>Change</th><th># Stocks</th></tr></thead>
+      <tbody>
+        <tr><td>Energy</td><td class="positive">+1.18%</td><td>254</td></tr>
+        <tr><td>Financial</td><td class="positive">+1.14%</td><td>1,110</td></tr>
+        <tr><td>Industrials</td><td class="positive">+0.21%</td><td>705</td></tr>
+        <tr><td>Consumer Cyclical</td><td class="negative">-0.79%</td><td>539</td></tr>
+        <tr><td>Communication Services</td><td class="negative">-0.87%</td><td>262</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>💡 Today's Key Points</h2>
+    <div class="keypoints-grid">
+      <div class="keypoint-card">
+        <h3>🔥 Hot Sectors</h3>
+        <ul>
+          <li>Healthcare (+2.79%) led all sectors, fueled by a small-cap biotech volume-surge wave</li>
+          <li>Consumer Defensive (+2.22%) and Basic Materials (+2.08%) followed as rate-cut-hope defensives rallied</li>
+          <li>Utilities (+1.94%) and Real Estate (+1.20%) also benefited from lower short-end rate expectations</li>
+        </ul>
+      </div>
+      <div class="keypoint-card">
+        <h3>📊 Volume-Surge Characteristics</h3>
+        <ul>
+          <li>48 stocks flagged, avg move +5.7% on 2.2x relative volume — a healthcare/biotech-heavy list</li>
+          <li>Only two movers had a confirmed, verifiable catalyst: TENX (ESC Congress trial data) and SLS (prediction-market trial odds)</li>
+          <li>GPC and CCXI both surged on heavy volume with no confirmed news — flagged as unexplained rather than attributed to a guessed catalyst</li>
+        </ul>
+      </div>
+      <div class="keypoint-card">
+        <h3>🌙 Earnings &amp; After-Hours Focal Points</h3>
+        <ul>
+          <li>No large-cap ($10B+) after-hours reporters tonight — Finviz's AH earnings screener came back empty</li>
+          <li>LNN (Lindsay Corp) beat EPS by +33.74% and revenue by +1.88% before today's open, closing +0.87%</li>
+          <li>Markets closed Friday 7/3 for Independence Day (observed); next earnings cluster is 7/7-7/10 (PENG, LEVI, HELE, SMPL, PEP, DAL)</li>
+        </ul>
+      </div>
+      <div class="keypoint-card">
+        <h3>🌍 Broad Market Trend &amp; Bonds/Gold</h3>
+        <ul>
+          <li>June payrolls miss (+57K vs. +115K est.) drove Dow to a record close (+1.14%) while Nasdaq extended Wednesday's chip-led slide (-0.87%)</li>
+          <li>GLD +2.03% was the standout macro trade on rising rate-cut odds; TLT was nearly flat (-0.01%), a muted bond reaction to the miss</li>
+          <li>VIX eased to 16.19 (-2.41%), signaling an orderly rotation rather than a risk-off scramble</li>
+          <li>Tesla fell roughly -7% despite beating Q2 delivery estimates, underscoring pressure on richly-valued growth names</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>Data Sources:</strong> Finviz Elite (market overview, sector performance, volume-surge &amp; earnings screeners, stock news), Alpaca Markets (ETF &amp; equity snapshots, daily bars), FMP (index levels, VIX, company profiles), supplemented by verified web search for the June jobs report (BLS/CNBC/TheStreet/Yahoo Finance) and Tesla delivery commentary</p>
+    <p><strong>Last Refreshed:</strong> 2026-07-02, ~16:26 ET (approx. 26 minutes post-close)</p>
+    <p>Final after-market data + after-hours info. This report is for informational purposes only and does not constitute financial advice.</p>
+  </footer>
+
+</div>
+</body>
+</html>
