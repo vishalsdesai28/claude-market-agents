@@ -30,6 +30,12 @@
     color: #cfe0ff;
     font-weight: 500;
   }
+  header .sub-label {
+    font-size: 0.95em;
+    color: #ffd700;
+    font-weight: 600;
+    margin-top: 6px;
+  }
   .exec-summary {
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(10px);
@@ -41,7 +47,8 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
   .exec-summary h2 { margin-bottom: 15px; font-size: 1.5em; }
-  .exec-summary p { line-height: 1.7; color: #e8f0ff; font-size: 1.05em; }
+  .exec-summary p { line-height: 1.7; color: #e8f0ff; font-size: 1.05em; margin-bottom: 14px; }
+  .exec-summary p:last-child { margin-bottom: 0; }
   .section {
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(10px);
@@ -199,17 +206,59 @@
   <header>
     <h1>🇺🇸 U.S. Stock Market Analysis</h1>
     <div class="date-label">📅 2026-07-02 (Thursday) – Final After-Market Data</div>
+    <div class="sub-label">Last trading session before the July 4th long weekend (markets closed Fri 7/3)</div>
   </header>
 
   <div class="exec-summary">
     <h2>📋 Executive Summary</h2>
     <p>
-      A weak June jobs report drove a sharp value-over-growth rotation on Thursday, July 2, the last full trading session before markets close Friday, July 3 for Independence Day (observed).
-      Nonfarm payrolls rose just +57,000 in June, roughly half the +115,000 Dow Jones consensus estimate and down from a downwardly-revised +129,000 in May (originally reported as +172,000); the unemployment rate held at 4.2% only because the labor-force participation rate slid to 61.5%, its lowest level since March 2021, while April and May payrolls were revised down a combined -74,000.
-      Equity markets split sharply on the news: the Dow (DIA +1.05%, DJIA index +1.14% to a fresh record close of 52,900.07, roughly +595 points) rallied hard as investors rotated into value and rate-sensitive defensives, while the Nasdaq (QQQ -1.73%, Composite -0.87%) extended Wednesday's chip-sector-led slide as growth/tech names lagged. The S&amp;P 500 (SPY -0.13%, index -0.07%) was little changed, caught between the two moves, and the Russell 2000 (IWM -0.58%) slipped despite the broader rotation, a mild divergence from the classic small-cap/rate-cut playbook.
-      Gold was the standout macro trade, with GLD surging +2.03% on rising rate-cut expectations, while Treasuries barely moved (TLT -0.01%, 10-year yield easing only about 1bp to ~4.46%) — a muted bond reaction relative to the size of the payrolls miss. The VIX eased to 16.19 (-2.4%), suggesting the rotation was orderly rather than a risk-off scramble. Tesla was a notable single-stock outlier, falling roughly -7% despite beating Q2 delivery estimates, underscoring the day's punishing mood toward richly-valued growth names.
-      Breadth stayed constructive beneath the index-level churn: 830 stocks remained in confirmed uptrends and 48 names cleared the volume-surge screener (avg +5.7% move on 2.2x relative volume), a list dominated by small-cap healthcare/biotech names riding the day's best-performing sector — Healthcare (+2.79%). Tenax Therapeutics (TENX +16.33%) led on a confirmed catalyst (late-breaking LEVEL trial data presented at the ESC Congress 2026), and SELLAS Life Sciences (SLS +12.89%) rebounded on prediction-market odds (83%) favoring a November AML trial (SLS009) readout; most of the remaining biotech movers (TECX, VOR, DMRA) and Moderna (MRNA +10.01%) had no company-specific news attached and appear to be sector-wide sympathy moves. Genuine Parts Co (GPC +12.92%) and Churchill Capital Corp XI (CCXI +11.96%, a SPAC) both surged on well-above-average volume with no verifiable news catalyst as of this report; treat both as unexplained until confirmed.
-      On the earnings front, Lindsay Corp (LNN) was the only notable before-the-open reporter, beating EPS estimates by +33.74% and revenue by +1.88%, closing +0.87%. No company cleared Finviz's large-cap ($10B+) after-hours earnings screener tonight. The next major earnings cluster — PENG, LEVI, HELE, SMPL, PEP, DAL — arrives July 7-10, after the holiday break.
+      U.S. equities split sharply on Thursday, July 2 — the last full session before Friday's Independence Day market
+      closure — after the Bureau of Labor Statistics reported June nonfarm payrolls grew by just <strong>+57,000</strong>,
+      far below the <strong>115,000</strong> Dow Jones consensus estimate and down from a downwardly-revised +129,000 in
+      May. The unemployment rate nonetheless fell to <strong>4.2%</strong> from 4.3%, driven largely by a slump in
+      labor-force participation to <strong>61.5%</strong> — the lowest since March 2021 — rather than genuine hiring
+      strength. Markets read the soft print as effectively ruling out any near-term Fed rate hike, fueling a rotation
+      into value and rate-sensitive names: the Dow (DIA <strong>+1.05%</strong>; cash index +1.14% to a fresh record
+      close of 52,900.07) rallied hard, while the S&amp;P 500 (SPY -0.13%; cash index -0.07% to 7,477.63) was little
+      changed, caught between the rotation's push and pull. Small caps (IWM -0.58%) eased despite having just logged
+      their best first half since 1991. Gold (GLD) surged <strong>+2.03%</strong> on dollar weakness and rate-cut hopes,
+      while Treasuries (TLT) were essentially flat (-0.01%). The CBOE Volatility Index (VIX) held low at 16.15
+      (from a 16.59 prior close), signalling the rotation stayed orderly rather than panicked.
+    </p>
+    <p>
+      The Nasdaq (QQQ <strong>-1.73%</strong>; Composite -0.87% to 25,813.43) was the session's clear laggard, as chip
+      stocks extended a second straight day of heavy selling following the Philadelphia Semiconductor Index's
+      best-ever quarter (+88% in Q2). The SOX fell as much as 6% intraday on profit-taking, valuation concerns
+      (BofA's "bubble risk" indicator), Meta's AI-cloud-compute pivot spooking infrastructure names, a chip-smuggling
+      probe at Super Micro in Taiwan, and spillover from a steep overnight rout in Samsung and SK Hynix. Memory names
+      bore the brunt: <strong>SNDK -14.13%</strong>, <strong>MU -5.49%</strong>, <strong>INTC -5.25%</strong>,
+      <strong>AMD -4.26%</strong>, <strong>AVGO -2.41%</strong>, while <strong>NVDA</strong> held up relatively better
+      at -1.39% after unveiling a new AI revenue-sharing model for "neocloud" partners. Tesla was also a notable
+      single-stock outlier, sliding <strong>-7.49%</strong> even after beating Q2 delivery estimates — a sign of just
+      how punishing the mood was toward richly-valued growth names today.
+    </p>
+    <p>
+      Beneath the index-level story, breadth stayed constructive with <strong>830 stocks in confirmed uptrends</strong>
+      and <strong>52 volume-surge tickers</strong> (avg +5.6% move on 2.2x relative volume). Biotech and special
+      situations dominated the leaderboard — Tenax Therapeutics (<strong>TENX +16.33%</strong>) on late-breaking ESC
+      Congress trial data, Tectonic Therapeutic (<strong>TECX +15.85%</strong>, no confirmed catalyst), and Genuine
+      Parts (<strong>GPC +12.92%</strong>) on a report that O'Reilly Automotive made a cash bid for its ~$10B
+      automotive parts unit (ORLY itself fell ~5%). Rivian (<strong>RIVN +8.44%</strong>) raised its full-year delivery
+      outlook after Q2 deliveries beat estimates, CRISPR Therapeutics and Vertex (<strong>CRSP +8.02%</strong>) rallied
+      after the FDA cleared gene-therapy Casgevy for children as young as 2, Abivax (<strong>ABVX +9.12%</strong>)
+      extended its rebound on a Jefferies upgrade and buyout chatter, and Moderna (<strong>MRNA +10.01%</strong>) hit a
+      52-week high. Several other movers — TECX, SLS, VOR, Churchill Capital Corp XI (CCXI, a SPAC), DMRA, CRNX — had
+      no confirmed same-day catalyst and are flagged as unexplained/speculative rather than attributed to a guessed
+      story. Sector leadership rotated defensively: Healthcare (+2.80%), Consumer Defensive (+2.26%) and Basic
+      Materials (+2.09%) led, while Technology (-1.72%) lagged badly alongside Communication Services (-0.81%) and
+      Consumer Cyclical (-0.72%).
+    </p>
+    <p>
+      Earnings flow was quiet ahead of the holiday: Lindsay Corp (<strong>LNN</strong>) beat before the open (EPS
+      surprise +33.74%, revenue +1.88%) but only edged up +0.87%, and Finviz's large-cap after-hours screener returned
+      no matches tonight — consistent with most companies avoiding reports right before a long weekend. Markets are
+      closed Friday, July 3 for Independence Day (observed, since July 4 falls on a Saturday this year), reopening
+      Monday, July 6. The next earnings catalysts cluster July 7–10 (PENG, LEVI, HELE, SMPL, PEP, DAL).
     </p>
   </div>
 
@@ -254,7 +303,7 @@
       </div>
     </div>
     <div style="margin-top:16px;padding:12px 14px;background:rgba(255,255,255,0.08);border-radius:12px;font-size:0.85em;color:#cfe0ff;">
-      📊 Cash indexes: S&amp;P 500 7,477.63 (-0.07%) &nbsp;|&nbsp; Nasdaq Composite 25,813.43 (-0.87%) &nbsp;|&nbsp; Dow Jones 52,900.07 (+1.14%, fresh record close) &nbsp;|&nbsp; VIX 16.19 (-2.41%)
+      📊 Cash indexes: S&amp;P 500 7,477.63 (-0.07%) &nbsp;|&nbsp; Nasdaq Composite 25,813.43 (-0.87%) &nbsp;|&nbsp; Dow Jones 52,900.07 (+1.14%, fresh record close) &nbsp;|&nbsp; VIX 16.15 (prior close 16.59)
     </div>
   </div>
 
@@ -269,70 +318,89 @@
           <td><strong>TENX</strong></td>
           <td>Tenax Therapeutics Inc</td>
           <td><span class="badge badge-up">+16.33%</span></td>
-          <td>3,811,142</td>
-          <td class="catalyst">Late-breaking presentation of LEVEL clinical trial data at ESC Congress 2026 (announced 7:00 AM ET today)</td>
+          <td>3,893,338</td>
+          <td class="catalyst">Late-breaking presentation of LEVEL clinical trial data at ESC Congress 2026 (announced ~7:00 AM ET today)</td>
         </tr>
         <tr>
           <td><strong>TECX</strong></td>
           <td>Tectonic Therapeutic Inc</td>
           <td><span class="badge badge-up">+15.85%</span></td>
-          <td>478,373</td>
-          <td class="catalyst unverified">No company-specific news found; moves with today's broad Healthcare sector rally (+2.79%)</td>
+          <td>478,556</td>
+          <td class="catalyst unverified">No company-specific news found; moves with today's broad Healthcare sector rally (+2.80%)</td>
         </tr>
         <tr>
           <td><strong>GPC</strong></td>
           <td>Genuine Parts Company</td>
           <td><span class="badge badge-up">+12.92%</span></td>
-          <td>5,059,332</td>
-          <td class="catalyst unverified">No news catalyst confirmed; next earnings not until ~7/9-7/21. Unexplained large-cap outlier on heavy volume</td>
+          <td>5,082,259</td>
+          <td class="catalyst">Report: O'Reilly Automotive made a cash bid for GPC's ~$10B automotive parts unit; ORLY itself fell ~5% on the report</td>
         </tr>
         <tr>
           <td><strong>SLS</strong></td>
           <td>SELLAS Life Sciences Group Inc</td>
           <td><span class="badge badge-up">+12.89%</span></td>
-          <td>17,151,500</td>
-          <td class="catalyst">Prediction-market odds (83%) now favor SLS009 hitting its primary endpoint in November AML trial readout</td>
+          <td>17,226,362</td>
+          <td class="catalyst unverified">No same-day catalyst confirmed; recent coverage centers on prediction-market odds (83%) for a November AML trial (SLS009) readout</td>
         </tr>
         <tr>
           <td><strong>VOR</strong></td>
           <td>Vor Biopharma Inc</td>
           <td><span class="badge badge-up">+11.96%</span></td>
-          <td>3,909,796</td>
-          <td class="catalyst unverified">No company-specific news found; Healthcare sector sympathy move</td>
+          <td>3,910,693</td>
+          <td class="catalyst unverified">Only routine Nasdaq Rule 5635(c)(4) inducement-grant filing found; not a demonstrated price catalyst</td>
         </tr>
         <tr>
           <td><strong>CCXI</strong></td>
           <td>Churchill Capital Corp XI (SPAC)</td>
           <td><span class="badge badge-up">+11.96%</span></td>
-          <td>10,487,982</td>
-          <td class="catalyst unverified">No verified merger-target news found despite market chatter; treat as speculative/unconfirmed</td>
+          <td>10,724,240</td>
+          <td class="catalyst unverified">No verified merger-target news found; treat as speculative/unconfirmed despite heavy volume</td>
         </tr>
         <tr>
           <td><strong>DMRA</strong></td>
           <td>Damora Therapeutics Inc</td>
           <td><span class="badge badge-up">+10.67%</span></td>
-          <td>760,859</td>
-          <td class="catalyst unverified">Only news is a routine Nasdaq Rule 5635(c)(4) inducement-grant filing, not a real catalyst; likely sector sympathy</td>
+          <td>760,888</td>
+          <td class="catalyst unverified">Only routine inducement-grant filing found; not a demonstrated price catalyst</td>
         </tr>
         <tr>
           <td><strong>MRNA</strong></td>
           <td>Moderna Inc</td>
           <td><span class="badge badge-up">+10.01%</span></td>
-          <td>13,481,092</td>
-          <td class="catalyst unverified">Flagged alongside PANW, AAL for hitting 52-week highs; no company-specific news found today</td>
+          <td>14,091,864</td>
+          <td class="catalyst unverified">Flagged alongside PANW, AAL for hitting 52-week highs; no company-specific news item identified</td>
+        </tr>
+        <tr>
+          <td><strong>CRNX</strong></td>
+          <td>Crinetics Pharmaceuticals Inc</td>
+          <td><span class="badge badge-up">+9.18%</span></td>
+          <td>2,176,724</td>
+          <td class="catalyst unverified">No fresh catalyst confirmed; Q2 2026 results not due until Aug 4</td>
+        </tr>
+        <tr>
+          <td><strong>ABVX</strong></td>
+          <td>Abivax SA (ADS)</td>
+          <td><span class="badge badge-up">+9.12%</span></td>
+          <td>4,019,455</td>
+          <td class="catalyst">Jefferies upgraded to Buy and lifted its price target as obefazimod safety concerns ease; buyout chatter also builds</td>
         </tr>
       </tbody>
     </table>
-    <div style="margin-top:14px;font-size:0.85em;color:#cfe0ff;">
-      Also active in the 48-name volume-surge cohort: CRNX (Crinetics Pharmaceuticals, +9.18%), ABVX (Abivax, +9.12%), and several defensive/utility names (AWK, DUK, AEP, IDA) — consistent with today's rate-cut-hope-driven rotation into Healthcare, Utilities, and Consumer Defensive.
-    </div>
+    <p style="margin-top:14px; font-size:0.85em; color:#cfe0ff;">
+      Other notable movers outside the top 10: <strong>RIVN +8.44%</strong> (raised FY2026 delivery guidance after Q2
+      deliveries beat estimates), <strong>CRSP +8.02%</strong> (FDA cleared Casgevy gene therapy for children ages 2+,
+      alongside VRTX), <strong>SPGI +6.01%</strong> (no confirmed same-day catalyst).
+    </p>
   </div>
 
   <div class="afterhours-section">
     <h2>⏰ Post-Close Earnings &amp; After-Hours</h2>
     <div class="fallback-box">
       <h3>📭 Large-Cap After-Hours Screener: No Matches</h3>
-      <p>Finviz's after-hours earnings screener (≥$10B market cap, ≥2% AH move, reported today after close) returned zero matches this evening. No major reporters are on tonight's calendar; the next confirmed earnings cluster begins next Tuesday.</p>
+      <p>Both Finviz's after-hours earnings screener (≥$10B market cap, ≥2% AH move) and the "reports after today's
+      close" screener returned zero matches this evening. This is consistent with companies generally avoiding
+      earnings releases immediately ahead of the July 4th long weekend — very few large-caps are scheduled to report
+      between now and Monday's reopen.</p>
     </div>
 
     <div class="earnings-card">
@@ -343,12 +411,17 @@
         <span>Revenue Surprise: <span class="surprise-positive">+1.88%</span></span>
         <span>Regular-Session Change: <span class="surprise-positive">+0.87%</span></span>
       </div>
-      <div style="font-size:0.88em; color:#fff;">Irrigation-equipment maker Lindsay Corp topped both EPS and revenue estimates before today's open; shares closed $122.12, up +0.87% on the beat.</div>
+      <div style="font-size:0.88em; color:#fff;">Irrigation-equipment maker Lindsay Corp topped both EPS and revenue
+      estimates before today's open (EPS surprise +33.74%), but the reaction was muted — shares closed at $122.12, up
+      just +0.87%, after already running +7.6% over the trailing month heading into the print.</div>
     </div>
 
     <div class="fallback-box">
-      <h3>🗓️ Remainder of This Week &amp; Next Week's Major Earnings</h3>
-      <p style="margin-bottom:10px;">No further earnings releases are scheduled for the rest of this week — <strong>markets are closed Friday, July 3</strong> for Independence Day (observed, since July 4 falls on a Saturday this year). Trading resumes Monday, July 6.</p>
+      <h3>🗓️ Holiday Closure &amp; Next Week's Major Earnings</h3>
+      <p style="margin-bottom:10px;">Today, Thursday July 2, was the final trading session of the week —
+      <strong>U.S. markets are closed Friday, July 3</strong> for Independence Day (observed, since July 4 falls on a
+      Saturday this year), with equities and bond markets resuming Monday, July 6. No further reporters are scheduled
+      before the break. The next verified earnings cluster arrives July 7–10, kicking off the Q2 season:</p>
       <ul>
         <li><strong>PENG</strong> (Penguin Solutions) — Tue 7/7, after close</li>
         <li><strong>LEVI</strong> (Levi Strauss &amp; Co) — Wed 7/8, after close</li>
@@ -364,7 +437,7 @@
     <h2>📊 Market Statistics</h2>
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="value">48</div>
+        <div class="value">52</div>
         <div class="label">Volume-Surge Tickers</div>
       </div>
       <div class="stat-card">
@@ -376,12 +449,14 @@
         <div class="label">Avg. Relative Volume (surge cohort)</div>
       </div>
       <div class="stat-card">
-        <div class="value">+5.7%</div>
+        <div class="value">+5.6%</div>
         <div class="label">Avg. Price Move (surge cohort)</div>
       </div>
     </div>
     <div style="margin-top:16px;padding:12px 14px;background:rgba(255,255,255,0.08);border-radius:12px;font-size:0.85em;color:#cfe0ff;">
-      📋 Earnings releases today: <strong style="color:#ffd700;">1</strong> confirmed BMO reporter (LNN) &nbsp;|&nbsp; 0 large-cap after-hours reporters &nbsp;|&nbsp; 25 companies on this week's earnings calendar per Finviz market overview
+      📋 Earnings releases today: <strong style="color:#ffd700;">1</strong> confirmed BMO reporter (LNN); 0 large-cap
+      after-hours reporters &nbsp;|&nbsp; 25 companies on this week's earnings calendar per Finviz market overview
+      &nbsp;|&nbsp; VIX 16.15 (prior close 16.59)
     </div>
   </div>
 
@@ -393,21 +468,21 @@
           <div class="sname">Healthcare</div>
           <div class="smeta">1,066 stocks · $9.20T mkt cap</div>
         </div>
-        <div class="change positive">+2.79%</div>
+        <div class="change positive">+2.80%</div>
       </div>
       <div class="sector-card">
         <div>
           <div class="sname">Consumer Defensive</div>
           <div class="smeta">241 stocks · $4.44T mkt cap</div>
         </div>
-        <div class="change positive">+2.22%</div>
+        <div class="change positive">+2.26%</div>
       </div>
       <div class="sector-card">
         <div>
           <div class="sname">Basic Materials</div>
           <div class="smeta">284 stocks · $2.81T mkt cap</div>
         </div>
-        <div class="change positive">+2.08%</div>
+        <div class="change positive">+2.09%</div>
       </div>
       <div class="sector-card">
         <div>
@@ -425,20 +500,20 @@
       </div>
       <div class="sector-card">
         <div>
-          <div class="sname">Technology</div>
-          <div class="smeta">788 stocks · $31.10T mkt cap</div>
+          <div class="sname">Energy</div>
+          <div class="smeta">254 stocks · $4.21T mkt cap</div>
         </div>
-        <div class="change negative">-1.79%</div>
+        <div class="change positive">+1.18%</div>
       </div>
     </div>
     <table style="margin-top:20px;">
       <thead><tr><th>Sector</th><th>Change</th><th># Stocks</th></tr></thead>
       <tbody>
-        <tr><td>Energy</td><td class="positive">+1.18%</td><td>254</td></tr>
         <tr><td>Financial</td><td class="positive">+1.14%</td><td>1,110</td></tr>
-        <tr><td>Industrials</td><td class="positive">+0.21%</td><td>705</td></tr>
-        <tr><td>Consumer Cyclical</td><td class="negative">-0.79%</td><td>539</td></tr>
-        <tr><td>Communication Services</td><td class="negative">-0.87%</td><td>262</td></tr>
+        <tr><td>Industrials</td><td class="positive">+0.23%</td><td>705</td></tr>
+        <tr><td>Communication Services</td><td class="negative">-0.81%</td><td>262</td></tr>
+        <tr><td>Consumer Cyclical</td><td class="negative">-0.72%</td><td>539</td></tr>
+        <tr><td>Technology</td><td class="negative">-1.72%</td><td>788</td></tr>
       </tbody>
     </table>
   </div>
@@ -449,43 +524,44 @@
       <div class="keypoint-card">
         <h3>🔥 Hot Sectors</h3>
         <ul>
-          <li>Healthcare (+2.79%) led all sectors, fueled by a small-cap biotech volume-surge wave</li>
-          <li>Consumer Defensive (+2.22%) and Basic Materials (+2.08%) followed as rate-cut-hope defensives rallied</li>
-          <li>Utilities (+1.94%) and Real Estate (+1.20%) also benefited from lower short-end rate expectations</li>
+          <li>Healthcare (+2.80%), Consumer Defensive (+2.26%) and Basic Materials (+2.09%) led the defensive/value rotation</li>
+          <li>Utilities (+1.94%) and Real Estate (+1.20%) also caught a bid on rate-cut hopes tied to the soft jobs print</li>
+          <li>Technology (-1.72%) was by far the weakest sector, dragged down by the second straight day of chip selling</li>
         </ul>
       </div>
       <div class="keypoint-card">
         <h3>📊 Volume-Surge Characteristics</h3>
         <ul>
-          <li>48 stocks flagged, avg move +5.7% on 2.2x relative volume — a healthcare/biotech-heavy list</li>
-          <li>Only two movers had a confirmed, verifiable catalyst: TENX (ESC Congress trial data) and SLS (prediction-market trial odds)</li>
-          <li>GPC and CCXI both surged on heavy volume with no confirmed news — flagged as unexplained rather than attributed to a guessed catalyst</li>
+          <li>52 stocks flagged, avg move +5.6% on 2.2x relative volume — a biotech/small-cap-heavy list</li>
+          <li>Only three movers had a confirmed, verifiable catalyst: TENX (ESC Congress trial data), GPC (O'Reilly bid report) and ABVX (Jefferies upgrade + buyout chatter)</li>
+          <li>Several movers (TECX, SLS, VOR, CCXI, DMRA, CRNX) surged on heavy volume with no confirmed news — flagged as unexplained rather than attributed to a guessed catalyst</li>
         </ul>
       </div>
       <div class="keypoint-card">
         <h3>🌙 Earnings &amp; After-Hours Focal Points</h3>
         <ul>
           <li>No large-cap ($10B+) after-hours reporters tonight — Finviz's AH earnings screener came back empty</li>
-          <li>LNN (Lindsay Corp) beat EPS by +33.74% and revenue by +1.88% before today's open, closing +0.87%</li>
-          <li>Markets closed Friday 7/3 for Independence Day (observed); next earnings cluster is 7/7-7/10 (PENG, LEVI, HELE, SMPL, PEP, DAL)</li>
+          <li>LNN (Lindsay Corp) beat EPS by +33.74% and revenue by +1.88% before today's open, but only closed +0.87% — a "beat-but-priced-in" reaction after a strong month-long run</li>
+          <li>CRSP/VRTX rallied on FDA clearance of Casgevy gene therapy for children ages 2+</li>
+          <li>Markets closed Friday 7/3 for Independence Day (observed); next earnings cluster is 7/7–7/10 (PENG, LEVI, HELE, SMPL, PEP, DAL)</li>
         </ul>
       </div>
       <div class="keypoint-card">
         <h3>🌍 Broad Market Trend &amp; Bonds/Gold</h3>
         <ul>
-          <li>June payrolls miss (+57K vs. +115K est.) drove Dow to a record close (+1.14%) while Nasdaq extended Wednesday's chip-led slide (-0.87%)</li>
-          <li>GLD +2.03% was the standout macro trade on rising rate-cut odds; TLT was nearly flat (-0.01%), a muted bond reaction to the miss</li>
-          <li>VIX eased to 16.19 (-2.41%), signaling an orderly rotation rather than a risk-off scramble</li>
-          <li>Tesla fell roughly -7% despite beating Q2 delivery estimates, underscoring pressure on richly-valued growth names</li>
+          <li>June payrolls miss (+57K vs. +115K est.) drove the Dow to a fresh record close (+1.14%) while the Nasdaq extended the chip-led slide (-0.87%)</li>
+          <li>GLD +2.03% was the standout macro trade on rising rate-cut odds; TLT was essentially flat (-0.01%), a muted bond reaction to the miss</li>
+          <li>VIX held low at 16.15 (from 16.59), signalling an orderly rotation rather than a risk-off scramble</li>
+          <li>Tesla fell -7.49% despite beating Q2 delivery estimates, underscoring pressure on richly-valued growth names; breadth stayed constructive at 830 uptrend stocks</li>
         </ul>
       </div>
     </div>
   </div>
 
   <footer>
-    <p><strong>Data Sources:</strong> Finviz Elite (market overview, sector performance, volume-surge &amp; earnings screeners, stock news), Alpaca Markets (ETF &amp; equity snapshots, daily bars), FMP (index levels, VIX, company profiles), supplemented by verified web search for the June jobs report (BLS/CNBC/TheStreet/Yahoo Finance) and Tesla delivery commentary</p>
-    <p><strong>Last Refreshed:</strong> 2026-07-02, ~16:26 ET (approx. 26 minutes post-close)</p>
-    <p>Final after-market data + after-hours info. This report is for informational purposes only and does not constitute financial advice.</p>
+    <p><strong>Data Sources:</strong> Finviz Elite (market overview, sector performance, volume-surge &amp; earnings screeners, stock news), Alpaca Markets (ETF &amp; equity snapshots, daily bars), FMP (cash index levels, VIX, company profiles), supplemented by verified web search for the June jobs report (BLS/CNBC) and semiconductor sell-off coverage (Bloomberg, CNBC, Barron's)</p>
+    <p><strong>Last Refreshed:</strong> 2026-07-02, ~15:15 PT / 18:15 ET (approx. 2h15m post-close)</p>
+    <p>Final after-market data. No large-cap after-hours earnings reported tonight. This report is for informational purposes only and does not constitute financial advice.</p>
   </footer>
 
 </div>
