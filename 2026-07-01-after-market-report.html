@@ -92,6 +92,8 @@
   }
   .badge-up { background: rgba(0,255,136,0.2); color: #00ff88; }
   .badge-down { background: rgba(255,107,107,0.2); color: #ff6b6b; }
+  .catalyst { font-size: 0.82em; color: #cfe0ff; }
+  .catalyst.unverified { color: #a9b7d1; font-style: italic; }
 
   .afterhours-section {
     background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
@@ -118,6 +120,17 @@
     padding: 18px;
     position: relative;
     margin-bottom: 12px;
+  }
+  .afterhours-badge {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: #ff4444;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.72em;
+    font-weight: bold;
   }
   .earnings-surprise { display: flex; justify-content: space-between; margin: 10px 0; flex-wrap: wrap; gap: 10px; }
   .surprise-positive { color: #00ff88; font-weight: 700; }
@@ -185,18 +198,21 @@
 
   <header>
     <h1>🇺🇸 U.S. Stock Market Analysis</h1>
-    <div class="date-label">📅 2026-07-01 – Final After-Market Data</div>
+    <div class="date-label">📅 2026-07-01 (Wednesday) – Final After-Market Data</div>
   </header>
 
   <div class="exec-summary">
     <h2>📋 Executive Summary</h2>
     <p>
-      U.S. equities closed mostly lower on Wednesday, July 1, the first trading session of Q3 and the second half of 2026, as profit-taking hit the mega-cap tech complex following a record-setting close in June.
-      The S&amp;P 500 (SPY) slipped -0.14%, the Nasdaq 100 (QQQ) led losses at -1.52% amid weakness in large-cap semiconductors and software names, the Dow (DIA) finished essentially flat at +0.00%, and small caps (IWM) declined -0.38%.
-      Treasuries firmed with the 20+ Year Treasury ETF (TLT) down -1.04% in price terms, signaling higher long-end yields, while gold (GLD) advanced +0.60% as a partial safe-haven bid emerged.
-      Beneath the index-level softness, breadth was healthy: 886 stocks remained in confirmed uptrends and 62 names registered volume-surge breakouts, led by Freedom Holding (FRHC, regulatory approval), Guardant Health (GH, insurance-coverage win), and Progress Software (PRGS, Q2 earnings beat).
-      Sector leadership rotated toward Communication Services (+2.60%) and Financials (+1.63%), while Technology (-2.35%) and Industrials (-2.28%) were the session's laggards.
-      Earnings were a key regular-session driver: General Mills (GIS, +8.53%), FactSet (FDS, +6.72%), and MSC Industrial (MSM, +3.69%) all beat estimates before the open, while Progress Software's (PRGS) Tuesday-night beat carried into a +16.62% regular-session gain today. No large-cap company is scheduled to report after tonight's close, consistent with the quiet, holiday-adjacent pre-Independence Day calendar.
+      U.S. equities pulled back modestly on Wednesday, July 1 — the first session of Q3 and the second half of 2026 — as new Fed Chair Kevin Warsh's global debut overshadowed a soft-but-still-expansionary macro data slate.
+      Speaking at the ECB's Sintra forum in Portugal (his first international appearance roughly six weeks after taking the Fed's helm), Warsh said "we've seen that prices are too high," a hawkish signal that tempered rate-cut hopes.
+      That came alongside a cooler ADP private payrolls print (+98,000 in June vs. +110,000 expected, down from +122,000 in May) and an ISM Manufacturing PMI that eased to 53.3 from 54.0 in May, still marking a sixth straight month of expansion.
+      The S&amp;P 500 (SPY) slipped -0.14%, the Nasdaq 100 (QQQ) led losses at -1.52% as chip and software names gave back part of their best-quarter-since-2020 rally, the Dow (DIA) closed essentially flat at +0.00%, and small caps (IWM) fell -0.38%.
+      Treasuries sold off (TLT -1.04%, implying higher long-end yields) while gold firmed (GLD +0.60%) on the more hawkish tone.
+      Beneath the index-level softness, breadth stayed constructive: 886 stocks remained in confirmed uptrends and 61 names registered volume-surge breakouts (avg +5.8% move on 2.4x relative volume), led by Real Asset Acquisition Corp (RAAQ +24.26%, the SPAC pursuing a merger with IQM Quantum Computers), Freedom Holding (FRHC +20.42%, Turkish bank acquisition approval), and Progress Software (PRGS +16.62%, a Q2 earnings beat carried over from Tuesday night).
+      Sector leadership rotated defensively into Communication Services (+2.61%) and Financials (+1.61%), while Technology (-2.35%) and Industrials (-2.28%) lagged.
+      Regular-session earnings reactions were a major theme: General Mills (GIS +8.53%), FactSet (FDS +6.72%), and MSC Industrial (MSM +3.69%) all beat estimates before today's open.
+      After the close, small-cap reporters Greenbrier (GBX), Culp (CULP), Bassett Furniture (BSET), and Franklin Covey (FC) posted mixed results — none large enough to clear Finviz's $10B+ after-hours screener, but Franklin Covey was down roughly -18% in thin, very early after-hours trading following a steep EPS miss, with its 5:00 PM ET earnings call still to come.
     </p>
   </div>
 
@@ -212,7 +228,7 @@
       <div class="etf-card">
         <div class="symbol">QQQ</div>
         <div class="name">Invesco QQQ Trust (Nasdaq 100)</div>
-        <div class="price">$725.23</div>
+        <div class="price">$725.17</div>
         <div class="change negative">-1.52%</div>
       </div>
       <div class="etf-card">
@@ -246,38 +262,64 @@
     <h2>🔥 Top Volume-Surge Tickers</h2>
     <table>
       <thead>
-        <tr><th>Symbol</th><th>Company</th><th>Change</th><th>Volume</th></tr>
+        <tr><th>Symbol</th><th>Company</th><th>Change</th><th>Volume</th><th>Catalyst (verified)</th></tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>RAAQ</strong></td>
-          <td>Real Asset Acquisition Corp. (SPAC)</td>
+          <td>Real Asset Acquisition Corp (SPAC)</td>
           <td><span class="badge badge-up">+24.26%</span></td>
-          <td>2,927,923</td>
+          <td>2,929,413</td>
+          <td class="catalyst">SPAC target IQM Quantum Computers named a "Major Player" in IDC MarketScape quantum-computing vendor assessment</td>
         </tr>
         <tr>
           <td><strong>FRHC</strong></td>
           <td>Freedom Holding Corp</td>
           <td><span class="badge badge-up">+20.42%</span></td>
-          <td>349,124</td>
+          <td>349,125</td>
+          <td class="catalyst">Received BRSA regulatory approval to acquire a Turkish bank</td>
         </tr>
         <tr>
           <td><strong>PRGS</strong></td>
           <td>Progress Software Corp</td>
           <td><span class="badge badge-up">+16.62%</span></td>
-          <td>3,361,493</td>
+          <td>3,361,543</td>
+          <td class="catalyst">Fiscal Q2 2026 EPS beat +8.76% (reported Tue 6/30 after close); reaction carried into today</td>
         </tr>
         <tr>
           <td><strong>RDDT</strong></td>
           <td>Reddit Inc</td>
           <td><span class="badge badge-up">+13.93%</span></td>
-          <td>8,733,534</td>
+          <td>8,734,043</td>
+          <td class="catalyst unverified">No fresh earnings/news catalyst confirmed (next report Aug 11); general momentum &amp; marketing-campaign buzz</td>
         </tr>
         <tr>
           <td><strong>GH</strong></td>
           <td>Guardant Health Inc</td>
           <td><span class="badge badge-up">+13.82%</span></td>
-          <td>6,703,499</td>
+          <td>6,703,554</td>
+          <td class="catalyst">UnitedHealth Group now covers Guardant's Shield blood test for colorectal cancer screening; stock at 5-yr+ highs</td>
+        </tr>
+        <tr>
+          <td><strong>DLO</strong></td>
+          <td>DLocal Limited</td>
+          <td><span class="badge badge-up">+12.93%</span></td>
+          <td>11,554,891</td>
+          <td class="catalyst unverified">No fresh earnings/news catalyst confirmed (next report Aug 13)</td>
+        </tr>
+        <tr>
+          <td><strong>JACK</strong></td>
+          <td>Jack in the Box Inc</td>
+          <td><span class="badge badge-up">+10.12%</span></td>
+          <td>2,757,871</td>
+          <td class="catalyst">Short-squeeze momentum tied to recent Russell index addition (IBD/Stocktwits coverage)</td>
+        </tr>
+        <tr>
+          <td><strong>RGNX</strong></td>
+          <td>REGENXBIO Inc</td>
+          <td><span class="badge badge-up">+9.27%</span></td>
+          <td>4,452,182</td>
+          <td class="catalyst">First patient dosed in Phase IIb/III NAAVIGATE trial; company to receive $100M milestone payment</td>
         </tr>
       </tbody>
     </table>
@@ -286,42 +328,66 @@
   <div class="afterhours-section">
     <h2>⏰ Post-Close Earnings &amp; After-Hours</h2>
     <div class="fallback-box">
-      <h3>📭 No After-Hours Earnings Movers Tonight</h3>
-      <p>The Finviz after-hours earnings screener (large-cap, ≥2% AH move) returned no matches for the close of July 1. No large-cap company is scheduled to report after tonight's close. Today's earnings action all landed before the open or last night after Tuesday's close instead — see below.</p>
+      <h3>📭 Large-Cap After-Hours Screener: No Matches (Yet)</h3>
+      <p>Finviz's after-hours earnings screener (≥$10B market cap, ≥2% AH move) returned no matches as of ~20-30 minutes post-close — expected, since most large-cap reporters for tonight have not yet released results or are still on their earnings calls. However, several smaller-cap companies did report right at/just after the 4:00 PM ET close, too small to clear the $10B+ screener threshold; their preliminary after-hours reactions below are based on very thin, early trading (~20 minutes old) and should be treated as provisional.</p>
     </div>
 
     <div class="earnings-card">
-      <h3>📌 Today's Verified BMO Reporters Driving the Session</h3>
+      <div class="afterhours-badge">AH — reported ~4:01-4:15 PM ET</div>
+      <h3>📌 Tonight's Small/Mid-Cap Reporters</h3>
 
-      <div style="font-size:1.2em; font-weight:800; margin-top:8px;">$GIS — General Mills Inc <span style="font-size:0.7em;font-weight:600;color:#fff;">(BMO, 8:30 AM ET)</span></div>
+      <div style="font-size:1.15em; font-weight:800; margin-top:10px;">$FC — Franklin Covey Co</div>
       <div class="earnings-surprise">
-        <span>Regular-Session Change: <span class="surprise-positive">+8.53%</span></span>
+        <span>EPS Surprise: <span class="surprise-negative">-780.00%</span></span>
+        <span>Revenue Surprise: <span class="surprise-positive">+1.61%</span></span>
+        <span>AH Change: <span class="surprise-negative">-18.37%</span></span>
       </div>
-      <div style="font-size:0.9em; color:#fff;">Fiscal Q4 2026 adjusted results topped estimates and management set a $3B cost-savings target, though FY2027 guidance was described as cautious; stock closed regular session +8.53% ($37.77 vs. $34.80 prior close).</div>
+      <div style="font-size:0.88em; color:#fff;">Reported fiscal Q3 2026 results after the close alongside a 5:00 PM ET conference call (not yet held). A severe EPS miss sent shares from a $24.99 regular close down to ~$20.40 in very thin early after-hours trading — the standout mover of tonight's reporters, but liquidity is minimal this soon after the print.</div>
 
-      <div style="font-size:1.2em; font-weight:800; margin-top:16px;">$FDS — FactSet Research Systems <span style="font-size:0.7em;font-weight:600;color:#fff;">(BMO, 7:00 AM ET)</span></div>
+      <div style="font-size:1.15em; font-weight:800; margin-top:16px;">$GBX — Greenbrier Cos Inc</div>
       <div class="earnings-surprise">
-        <span>Regular-Session Change: <span class="surprise-positive">+6.72%</span></span>
+        <span>EPS Surprise: <span class="surprise-negative">-42.91%</span></span>
+        <span>Revenue Surprise: <span class="surprise-negative">-11.48%</span></span>
+        <span>AH Change: <span class="surprise-positive">+0.58%</span></span>
       </div>
-      <div style="font-size:0.9em; color:#fff;">Fiscal Q3 2026 profit topped estimates on steady demand for data/analytics services; some coverage flagged a disappointing forward outlook, but shares still closed regular session +6.72% ($245.55 vs. $230.08 prior close).</div>
+      <div style="font-size:0.88em; color:#fff;">Fiscal Q3 results missed on both lines; regular session already closed -2.31% ahead of the print, with only a muted +0.58% AH reaction so far.</div>
 
-      <div style="font-size:1.2em; font-weight:800; margin-top:16px;">$MSM — MSC Industrial Direct <span style="font-size:0.7em;font-weight:600;color:#fff;">(BMO, 6:30 AM ET)</span></div>
+      <div style="font-size:1.15em; font-weight:800; margin-top:16px;">$BSET — Bassett Furniture Industries</div>
       <div class="earnings-surprise">
-        <span>Regular-Session Change: <span class="surprise-positive">+3.69%</span></span>
+        <span>EPS Surprise: <span class="surprise-negative">-23.53%</span></span>
+        <span>Revenue Surprise: <span class="surprise-negative">-4.31%</span></span>
+        <span>AH Change: <span class="surprise-positive">+0.69%</span></span>
       </div>
-      <div style="font-size:0.9em; color:#fff;">Fiscal Q3 2026 results topped expectations, sending shares up +3.69% ($123.34 vs. $118.95 prior close) on above-average volume.</div>
+      <div style="font-size:0.88em; color:#fff;">Fiscal Q2 EPS missed despite a +6.04% regular-session gain heading into the print; AH reaction muted (+0.69%) so far.</div>
 
-      <div style="font-size:1.2em; font-weight:800; margin-top:16px;">$PRGS — Progress Software Corp <span style="font-size:0.7em;font-weight:600;color:#fff;">(reported after Tue 6/30 close)</span></div>
+      <div style="font-size:1.15em; font-weight:800; margin-top:16px;">$CULP — Culp Inc</div>
       <div class="earnings-surprise">
-        <span>EPS Surprise: <span class="surprise-positive">+8.76%</span></span>
-        <span>Revenue Surprise: <span class="surprise-negative">-2.22%</span></span>
-        <span>EPS Growth QoQ: <span class="surprise-positive">+29.14%</span></span>
+        <span>EPS Surprise: <span class="surprise-negative">-92.86%</span></span>
+        <span>Revenue Surprise: <span class="surprise-negative">-7.13%</span></span>
+        <span>AH Change: <span class="surprise-negative">-0.97%</span></span>
       </div>
-      <div style="font-size:0.9em; color:#fff;">Reported fiscal Q2 2026 results Tuesday 6/30 at 4:30 PM ET; the after-hours reaction carried into today's regular session, closing +16.62% on strong revenue growth commentary and an EPS beat, with 1-week performance now +30.71%.</div>
+      <div style="font-size:0.88em; color:#fff;">Fiscal Q4/full-year FY2026 results missed on both lines; muted -0.97% AH reaction so far on very light volume.</div>
+    </div>
+
+    <div class="earnings-card">
+      <h3>📌 Today's Verified BMO Reporters Driving the Regular Session</h3>
+
+      <div style="font-size:1.15em; font-weight:800; margin-top:8px;">$GIS — General Mills Inc <span style="font-size:0.7em;font-weight:600;color:#fff;">(BMO, ~7:00 AM ET)</span></div>
+      <div class="earnings-surprise"><span>Regular-Session Change: <span class="surprise-positive">+8.53%</span></span></div>
+      <div style="font-size:0.88em; color:#fff;">Fiscal Q4 2026 adjusted results beat estimates and management set a $3B cost-savings target, though FY2027 commentary was cautious amid a "challenging" consumer backdrop; shares closed +8.53% ($37.77 vs. $34.80 prior close).</div>
+
+      <div style="font-size:1.15em; font-weight:800; margin-top:16px;">$FDS — FactSet Research Systems <span style="font-size:0.7em;font-weight:600;color:#fff;">(BMO, ~7:00 AM ET)</span></div>
+      <div class="earnings-surprise"><span>Regular-Session Change: <span class="surprise-positive">+6.72%</span></span></div>
+      <div style="font-size:0.88em; color:#fff;">Fiscal Q3 2026 profit topped estimates on steady demand for data/analytics services; shares gapped up to an intraday high of $254.19 before slipping on a disappointing outlook, still closing +6.72% ($245.55 vs. $230.08 prior close).</div>
+
+      <div style="font-size:1.15em; font-weight:800; margin-top:16px;">$MSM — MSC Industrial Direct <span style="font-size:0.7em;font-weight:600;color:#fff;">(BMO, ~6:30 AM ET)</span></div>
+      <div class="earnings-surprise"><span>Regular-Session Change: <span class="surprise-positive">+3.69%</span></span></div>
+      <div style="font-size:0.88em; color:#fff;">Fiscal Q3 2026 results topped expectations, sending shares up +3.69% ($123.34 vs. $118.95 prior close) on well-above-average volume.</div>
     </div>
 
     <div class="fallback-box">
-      <h3>🗓️ Next Week's Major Earnings Calendar (verified via upcoming_earnings_screener)</h3>
+      <h3>🗓️ This Week's Remaining Calendar &amp; Next Week's Major Earnings</h3>
+      <p style="margin-bottom:10px;">No further large/mid-cap earnings are scheduled between Thursday 7/2 and Sunday 7/5 per the current screener pull — a holiday-quiet stretch. Thursday 7/2 is the last full trading session of the week (SIFMA recommends a 2:00 PM ET early close for bond markets); <strong>markets are closed Friday 7/3</strong> for Independence Day (observed, since July 4 falls on a Saturday this year), with equities resuming Monday 7/6.</p>
       <ul>
         <li><strong>PENG</strong> (Penguin Solutions) — Tue 7/7, after close</li>
         <li><strong>LEVI</strong> (Levi Strauss &amp; Co) — Wed 7/8, after close</li>
@@ -330,7 +396,6 @@
         <li><strong>PEP</strong> (PepsiCo) — Thu 7/9, before open</li>
         <li><strong>DAL</strong> (Delta Air Lines) — Fri 7/10, before open</li>
       </ul>
-      <p style="margin-top:10px; font-size:0.85em;">Note: Independence Day (7/4) falls on a Saturday this year; markets are typically closed the preceding Friday (7/3) for the observed holiday — confirm via official NYSE calendar before trading. No further large/mid-cap companies are scheduled to report between 7/2 and 7/6 per the current screener pull.</p>
     </div>
   </div>
 
@@ -338,7 +403,7 @@
     <h2>📊 Market Statistics</h2>
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="value">62</div>
+        <div class="value">61</div>
         <div class="label">Volume-Surge Tickers</div>
       </div>
       <div class="stat-card">
@@ -350,12 +415,12 @@
         <div class="label">Avg. Relative Volume (surge cohort)</div>
       </div>
       <div class="stat-card">
-        <div class="value">+5.7%</div>
+        <div class="value">+5.8%</div>
         <div class="label">Avg. Price Move (surge cohort)</div>
       </div>
     </div>
     <div style="margin-top:16px;padding:12px 14px;background:rgba(255,255,255,0.08);border-radius:12px;font-size:0.85em;color:#cfe0ff;">
-      📋 Earnings releases today: <strong style="color:#ffd700;">4</strong> confirmed (GIS, FDS, MSM before today's open; PRGS after Tuesday's close) &nbsp;|&nbsp; 23 companies on this week's earnings calendar per Finviz market overview
+      📋 Earnings releases today: <strong style="color:#ffd700;">7</strong> confirmed (GIS, FDS, MSM before today's open; GBX, CULP, BSET, FC after today's close) &nbsp;|&nbsp; 23 companies on this week's earnings calendar per Finviz market overview
     </div>
   </div>
 
@@ -365,42 +430,42 @@
       <div class="sector-card">
         <div>
           <div class="sname">Communication Services</div>
-          <div class="smeta">262 stocks · $12.91T mkt cap</div>
+          <div class="smeta">262 stocks · $12.92T mkt cap</div>
         </div>
-        <div class="change positive">+2.60%</div>
+        <div class="change positive">+2.61%</div>
       </div>
       <div class="sector-card">
         <div>
           <div class="sname">Financial</div>
           <div class="smeta">1,106 stocks · $14.70T mkt cap</div>
         </div>
-        <div class="change positive">+1.63%</div>
+        <div class="change positive">+1.61%</div>
       </div>
       <div class="sector-card">
         <div>
           <div class="sname">Consumer Cyclical</div>
           <div class="smeta">539 stocks · $9.13T mkt cap</div>
         </div>
-        <div class="change positive">+0.88%</div>
+        <div class="change positive">+0.87%</div>
       </div>
       <div class="sector-card">
         <div>
           <div class="sname">Real Estate</div>
           <div class="smeta">255 stocks · $1.81T mkt cap</div>
         </div>
-        <div class="change positive">+0.38%</div>
+        <div class="change positive">+0.37%</div>
       </div>
       <div class="sector-card">
         <div>
           <div class="sname">Healthcare</div>
           <div class="smeta">1,065 stocks · $8.95T mkt cap</div>
         </div>
-        <div class="change positive">+0.23%</div>
+        <div class="change positive">+0.22%</div>
       </div>
       <div class="sector-card">
         <div>
           <div class="sname">Technology</div>
-          <div class="smeta">787 stocks · $31.64T mkt cap</div>
+          <div class="smeta">787 stocks · $31.63T mkt cap</div>
         </div>
         <div class="change negative">-2.35%</div>
       </div>
@@ -409,9 +474,9 @@
       <thead><tr><th>Sector</th><th>Change</th><th># Stocks</th></tr></thead>
       <tbody>
         <tr><td>Consumer Defensive</td><td class="negative">-0.49%</td><td>241</td></tr>
-        <tr><td>Basic Materials</td><td class="negative">-0.58%</td><td>283</td></tr>
-        <tr><td>Energy</td><td class="negative">-0.97%</td><td>254</td></tr>
-        <tr><td>Utilities</td><td class="negative">-1.37%</td><td>110</td></tr>
+        <tr><td>Basic Materials</td><td class="negative">-0.59%</td><td>283</td></tr>
+        <tr><td>Energy</td><td class="negative">-0.98%</td><td>254</td></tr>
+        <tr><td>Utilities</td><td class="negative">-1.38%</td><td>110</td></tr>
         <tr><td>Industrials</td><td class="negative">-2.28%</td><td>705</td></tr>
       </tbody>
     </table>
@@ -423,44 +488,44 @@
       <div class="keypoint-card">
         <h3>🔥 Hot Sectors</h3>
         <ul>
-          <li>Communication Services (+2.60%) led all sectors</li>
-          <li>Financials (+1.63%) extended their recent strength</li>
-          <li>Consumer Cyclical (+0.88%) held up despite tech weakness</li>
+          <li>Communication Services (+2.61%) led all sectors</li>
+          <li>Financials (+1.61%) extended their recent strength</li>
+          <li>Consumer Cyclical (+0.87%) held up despite tech weakness</li>
         </ul>
       </div>
       <div class="keypoint-card">
         <h3>📊 Volume-Surge Characteristics</h3>
         <ul>
-          <li>62 stocks flagged, avg move +5.7% on 2.4x relative volume</li>
-          <li>Small/mid-cap names dominated the list (RAAQ, FRHC, ZBIO)</li>
-          <li>Healthcare diagnostics (GH) and fintech (DLO) both represented</li>
+          <li>61 stocks flagged, avg move +5.8% on 2.4x relative volume</li>
+          <li>Small/mid-cap special situations dominated: a quantum-computing SPAC (RAAQ), a brokerage regulatory win (FRHC), and a software earnings beat (PRGS)</li>
+          <li>Healthcare diagnostics (GH) and biotech trial news (RGNX) both represented; several movers (RDDT, DLO, ZBIO, FBYD) had no confirmed fresh catalyst in today's news</li>
         </ul>
       </div>
       <div class="keypoint-card">
         <h3>🌙 Earnings &amp; After-Hours Focal Points</h3>
         <ul>
-          <li>No after-hours earnings movers tonight — no large-cap reporters scheduled post-close</li>
+          <li>No large-cap ($10B+) after-hours movers yet — most big reporters for tonight haven't released results</li>
           <li>GIS +8.53%, FDS +6.72%, MSM +3.69% all beat estimates before today's open</li>
-          <li>PRGS (Progress Software) EPS beat +8.76% from Tuesday night drove a +16.62% regular-session gain today</li>
-          <li>Next earnings catalysts cluster 7/7–7/10 (PENG, LEVI, HELE, SMPL, PEP, DAL)</li>
+          <li>Small-cap AMC reporters GBX/CULP/BSET/FC posted mixed-to-weak results; FC's stock was down ~18% in very thin early AH trading on a severe EPS miss (call at 5 PM ET still pending)</li>
+          <li>Next earnings catalysts cluster 7/7–7/10 (PENG, LEVI, HELE, SMPL, PEP, DAL) after the holiday break</li>
         </ul>
       </div>
       <div class="keypoint-card">
         <h3>🌍 Broad Market Trend &amp; Bonds/Gold</h3>
         <ul>
-          <li>Major indexes mixed-to-lower after June's record close; Nasdaq underperformed</li>
+          <li>Major indexes mixed-to-lower after June's record/quarter-end close; Nasdaq underperformed as new Fed Chair Warsh's Sintra comments ("prices are too high") dented rate-cut hopes</li>
           <li>TLT -1.04% signals higher long-end Treasury yields into Q3</li>
-          <li>GLD +0.60% suggests modest safe-haven demand alongside the tech pullback</li>
-          <li>Breadth remains constructive: 886 stocks in confirmed uptrends</li>
+          <li>GLD +0.60% suggests a modest hawkish-Fed / inflation hedge alongside the tech pullback</li>
+          <li>Breadth remains constructive: 886 stocks in confirmed uptrends despite the index-level pullback</li>
         </ul>
       </div>
     </div>
   </div>
 
   <footer>
-    <p><strong>Data Sources:</strong> Finviz Elite (market overview, sector performance, volume-surge &amp; earnings screeners), Alpaca Markets (ETF &amp; equity snapshots, daily bars)</p>
-    <p><strong>Last Refreshed:</strong> 2026-07-01, ~16:12 ET (post-close)</p>
-    <p>Final after-market data + after-hours info. This report is for informational purposes only and does not constitute financial advice.</p>
+    <p><strong>Data Sources:</strong> Finviz Elite (market overview, sector performance, volume-surge &amp; earnings screeners, stock news), Alpaca Markets (ETF &amp; equity snapshots, daily bars, after-hours quotes), supplemented by verified web search for macro data (ADP, ISM) and Fed Chair Warsh's Sintra remarks</p>
+    <p><strong>Last Refreshed:</strong> 2026-07-01, ~16:26 ET (approx. 25 minutes post-close)</p>
+    <p>Final after-market data + preliminary after-hours info (small-cap AH reactions are based on very thin, early trading and may change materially once liquidity normalizes). This report is for informational purposes only and does not constitute financial advice.</p>
   </footer>
 
 </div>
