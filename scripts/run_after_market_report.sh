@@ -8,8 +8,8 @@
 # to break Claude CLI 2.1.117+ when claude is later spawned via subshell
 # under launchd. Mirror of run_earnings_trade_report.sh.
 
-PROJECT_DIR=/Users/takueisaotome/PycharmProjects/claude-market-agents
-SCRIPT_DIR="${PROJECT_DIR}/scripts"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 LOG_DIR="${PROJECT_DIR}/logs"
 TODAY=$(date +%Y-%m-%d)
 LOG_FILE="${LOG_DIR}/after_market_${TODAY}.log"
@@ -28,7 +28,7 @@ source "${SCRIPT_DIR}/lib_retry.sh"
 
 cd "$PROJECT_DIR" || exit 1
 
-TIMEOUT_SECS=600
+TIMEOUT_SECS=1200
 MAX_ATTEMPTS=3
 BACKOFF_SECS=30
 LAST_EXIT_CODE=1
